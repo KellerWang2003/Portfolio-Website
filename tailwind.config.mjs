@@ -10,6 +10,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        homeBG: "#9EA4AE",
+      },
+      fontFamily: {
+        oxanium: ['Oxanium', 'Helvetica', 'sans-serif'],
+        oswald: ['Oswald', 'Helvetica', 'sans-serif'],
       },
     },
   },
