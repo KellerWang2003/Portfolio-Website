@@ -1,7 +1,7 @@
 import './globals.css'
 import { Oxanium } from 'next/font/google';
-import Navigation from "@/components/navigation";
-import { AnimatePresence } from 'framer-motion';
+import LayoutWrapper from "@/components/layoutWrapper";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const oxanium = Oxanium({ 
   subsets: ['latin'],
@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${oxanium.variable} overscroll-none`}>
-        <main className={`bg-homeBG h-screen w-full p-4 flex flex-col`}>
-          <Navigation />
-            {children}
-        </main>
+        <LayoutWrapper>
+          {children}
+          <SpeedInsights />
+        </LayoutWrapper>
       </body>
     </html>
   )
