@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 
 const projects = [
   {
-    cover: "/images/Rocket/Desktop/LandingDesktop.png",
+    cover: "/images/Rocket/rocketEngineCatalogCover.png",
     title: "Rocket Engine Catalog",
     year: "2024",
     tags: ["Visual Development", "Interaction Design"],
@@ -13,14 +13,14 @@ const projects = [
     link: "/projects/RocketEngineCatalog"
   },
   {
-    cover: "/images/rocketEngineCatalogCover.png",
+    cover: "/images/Rocket/rocketEngineCatalogCover.png",
     title: "Another Project Title",
     year: "2024",
     tags: ["Tag1", "Tag2"],
     description: "Description for another project."
   },
   {
-    cover: "/images/rocketEngineCatalogCover.png",
+    cover: "/images/Rocket/rocketEngineCatalogCover.png",
     title: "Yet Another Project Title",
     year: "2024",
     tags: ["Tag3", "Tag4"],
