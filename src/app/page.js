@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 
 const projects = [
   {
-    cover: "/images/rocketEngineCatalogCover.png",
+    cover: "/images/Rocket/Desktop/LandingDesktop.png",
     title: "Rocket Engine Catalog",
     year: "2024",
     tags: ["Visual Development", "Interaction Design"],
