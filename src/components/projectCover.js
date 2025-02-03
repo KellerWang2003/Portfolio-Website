@@ -16,7 +16,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 <section className="flex flex-col gap-4">
                     <Tags tags={tags} />
                     <div className="flex justify-between items-end gap-8">
-                        <h1 className="text-6xl">{title.toUpperCase()}</h1>
+                        <h1 className="text-5xl">{title.toUpperCase()}</h1>
                         <div className="w-6 h-6 mb-2">
                             <svg width="24" height="24" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="black" />
@@ -27,10 +27,11 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 </section>
 
             </div>
-            <div className="relative w-3/5 aspect-video">
+            <div className="w-3/5 aspect-video">
 
-                <Image src={cover} alt={title} fill className="rounded object-cover" />
+                <Image src={cover} alt={title} width={960} height={540} className="rounded object-cover aspect-video" />
             </div>
+
 
         </div>
 
