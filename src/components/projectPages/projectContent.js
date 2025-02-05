@@ -1,11 +1,11 @@
-export default function ProjectContent({ }) {
+export default function ProjectContent({ leftChild, rightChild }) {
     return (
-        <div className="w-full h-[400px] flex">
-            <div className="w-2/5 h-full bg-red-800 bg-opacity-10 flex flex-col justify-end">
-                hello
+        <div className="w-full flex font-oxanium">
+            <div className="w-2/5 flex-1 pr-16">
+                {leftChild}
             </div>
-            <div className="w-3/5 h-full bg-blue-200 bg-opacity-10">
-                
+            <div className="w-3/5">
+                {rightChild}
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ export default function LayoutWrapper({ children }) {
     };
 
     return (
-        <main className={`h-screen w-full p-4 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
+        <main className={`h-dvh w-full p-4 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
             <Navigation />
             {children}
         </main>
