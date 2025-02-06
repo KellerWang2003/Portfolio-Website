@@ -14,9 +14,9 @@ const projects = [
   },
   {
     cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Another Project Title",
+    title: "Inclusight",
     year: "2024",
-    tags: ["Tag1", "Tag2"],
+    tags: ["User Research", "Market Research", "User Testing"],
     description: "Description for another project."
   },
   {
@@ -36,7 +36,7 @@ export default function Home() {
         {/* Introduction */}
         <section className="w-full flex justify-between pb-16
                     text-[#7E7E7E] text-base font-oxanium">
-          <div className="w-[530px]">HI, I AM <strong className="text-[#363636]">KELLER WANG</strong>, AN UI/UX DESIGNER WITH METICULOUS EYES FOR DETAIL. CURRENTLY, I'M EXPLORING AND GROWING MY CRAFT AT <strong className="text-[#363636]">ARTCENTER COLLEGE OF DESIGN.</strong>
+          <div className="w-[530px]">Hello, I AM <strong className="text-[#363636]">KELLER WANG</strong>, AN UI/UX DESIGNER WITH METICULOUS EYES FOR DETAIL. CURRENTLY, I'M EXPLORING AND GROWING MY CRAFT AT <strong className="text-[#363636]">ARTCENTER COLLEGE OF DESIGN.</strong>
           </div>
           <div className="text-right ml-12 min-w-36">Based in<br />Los Angeles, CA</div>
         </section>

@@ -13,13 +13,17 @@ const ProgressItem = ({
 
     return (
         <section
-            className={`relative px-4 py-3 rounded flex
+            className={`relative px-4 py-3 rounded flex backdrop-blur-sm
             ${isActive ? 'grow' : 'grow-0'}`}
-            style={{ backgroundColor: bgColor, transition: 'flex-grow 0.7s ease-in-out' }}
+            style={{ 
+                backgroundColor: `${bgColor}E6`, // Changed to E6 for 90% opacity in hex
+                transition: 'flex-grow 0.7s ease-in-out',
+                border: `1px solid ${bgColor}33` // Adding 33 for 20% opacity in hex
+            }}
         >
             <h2 
                 ref={ref}
-                className="text-base font-bold"
+                className="text-sm font-bold"
             >
                 {section.title}
             </h2>
@@ -44,7 +48,7 @@ const ProgressItem = ({
                                 delay: 0
                             }
                         }}
-                        className="absolute w-full text-base flex justify-around pr-12"
+                        className="absolute w-full text-sm flex justify-around pr-12"
                         style={{ 
                             paddingLeft: `${bounds.width + 48}px`
                         }}
@@ -65,7 +69,7 @@ export default function ProgressBar({ bgColor, content }) {
     const [currentStep, setCurrentStep] = useState(1);
 
     return (
-        <div className="sticky top-0 flex flex-col gap-4">
+        <div className="sticky top-0 flex flex-col gap-4 font-oxanium">
             <div className="w-full flex gap-2">
                 {content.map((section, sectionIndex) => (
                     <ProgressItem
@@ -81,7 +85,7 @@ export default function ProgressBar({ bgColor, content }) {
                 onClick={() => setCurrentStep(prev => 
                     prev === content.length ? 1 : prev + 1
                 )}
-                className="px-4 py-2 w-fit rounded-lg text-base font-bold"
+                className="px-4 py-2 w-fit rounded-lg text-base font-bold hidden"
                 style={{ backgroundColor: bgColor }}
             >
                 Switch Section
