@@ -14,9 +14,9 @@ const projects = [
   },
   {
     cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Another Project Title",
+    title: "Inclusight",
     year: "2024",
-    tags: ["Tag1", "Tag2"],
+    tags: ["User Research", "Market Research", "User Testing"],
     description: "Description for another project."
   },
   {

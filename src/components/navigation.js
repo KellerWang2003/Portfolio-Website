@@ -48,7 +48,7 @@ export default function Navigation({ bgColor = "#E0E0E0", textColor = "#000000" 
   return (
     <>
       {/* Desktop Navigation (hidden on small screens, visible on md and up) */}
-      <nav className="hidden md:flex w-full px-6 py-3 rounded-xl 
+      <nav className="hidden md:flex w-full px-4 py-3 rounded-xl 
                     font-oxanium text-base justify-between" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
         <div className="flex items-center gap-10">
           <NavButton href="/" textColor={colors.textColor}>Index</NavButton>
