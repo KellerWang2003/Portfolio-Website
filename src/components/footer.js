@@ -75,7 +75,7 @@ export default function Footer({ color = "black", backgroundColor = "#F7F4EC" })
                     </section>
                 </motion.a>
                 {/* right */}
-                <div className="text-base font-oxanium">© 2025 All rights reserved.</div>
+                <div className="text-base font-oxanium hidden md:block">© 2025 All rights reserved.</div>
             </div >
         </footer >
     )

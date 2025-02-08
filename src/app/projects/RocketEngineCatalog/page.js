@@ -31,7 +31,7 @@ const VIDEO_SOURCES = {
     },
 
     details: {
-        src: "/images/Rocket/Content/VideoDetails.mov",
+        src: "/images/Rocket/Content/VideoDetails.mp4",
         type: "video/mov"
     }
 };
@@ -85,6 +85,7 @@ export default function RocketEngineCatalog() {
                     images2={mobileImages}
                 />
                 <ProgressBar bgColor="#2E2E2E" content={content} />
+                {/* Design */}
                 <div className="flex flex-col gap-48 pt-16">
                     {/* Engine Factory */}
                     <ProjectContent
@@ -300,7 +301,6 @@ export default function RocketEngineCatalog() {
                         leftChild={
                             <div className="h-full flex flex-col justify-between">
                                 <section className="flex flex-col gap-2">
-                                    <h2 className="text-4xl">FUTURE PLANS</h2>
                                     <div className="border-l px-4">Training</div>
                                 </section>
 
@@ -315,22 +315,14 @@ export default function RocketEngineCatalog() {
 
                             </div>}
                         rightChild={
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            >
-                                <source src={VIDEO_SOURCES.details.src} type={VIDEO_SOURCES.home.type} />
-                                Your browser does not support the video tag.
-                            </video>
+                            <Image src="/images/Rocket/Content/FuturePlan2.png" alt="Future Plans" width={960} height={540} />
+
                         }
                     />
                     {/* Mobile Gallery */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-[350px]">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">MOBILE GALLERY</h2>
                                 </section>
@@ -349,7 +341,7 @@ export default function RocketEngineCatalog() {
 
                             </div>}
                         rightChild={
-                            <div className="w-full flex flex-col gap-4">
+                            <div className="w-full flex flex-col gap-8">
                                 <section className="flex gap-4 text-sm">
                                     <div className="flex-1">
                                         <Image src="/images/Rocket/Mobile/HomeMobile.png"
@@ -357,7 +349,7 @@ export default function RocketEngineCatalog() {
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Home]
+                                        Home
                                     </div>
                                     <div className="flex-1">
                                         <Image src="/images/Rocket/Mobile/LandingMobile.png"
@@ -365,33 +357,84 @@ export default function RocketEngineCatalog() {
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Landing]
+                                        Landing
                                     </div>
                                     <div className="flex-1"></div>
                                 </section>
                                 <section className="flex gap-4 text-sm">
                                     <div className="flex-1">
-                                        <Image src="/images/Rocket/Mobile/HomeMobile.png"
+                                        <Image src="/images/Rocket/Mobile/LandingMobile1.png"
                                             alt="Mobile Home"
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Home]
+                                        Configuring your engine ---{'>'}
                                     </div>
                                     <div className="flex-1">
-                                        <Image src="/images/Rocket/Mobile/LandingMobile.png"
+                                        <Image src="/images/Rocket/Mobile/LandingMobile2.png"
                                             alt="Mobile Home"
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Landing]
                                     </div>
-                                    <div className="flex-1"></div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile3.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                </section>
+                                <section className="flex gap-4 text-sm">
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile4.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile5.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Summary
+                                    </div>
+                                    <div className="flex-1">
+                                    </div>
+                                </section>
+                                <section className="flex gap-4 text-sm">
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile6.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Selecting your engine
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile7.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/DetailsMobile.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Details
+                                    </div>
                                 </section>
                             </div>
                         }
                     />
                 </div>
+                {/* Research */}
+                <div className="flex flex-col gap-48"></div>
                 <Footer color="#EAEAEA" backgroundColor="#181818" />
             </main>
         </ContentWrapper>
