@@ -1,5 +1,14 @@
 export default function ProjectContent({ order = "", leftChild, rightChild }) {
-    return (
+
+    const MobileContent = (
+        <div className="w-full min-h-[65dvh] flex flex-col gap-6 justify-between">
+            {leftChild}
+            {rightChild}
+        </div>
+    )
+
+
+    const DesktopContent = (
         <div className="w-full flex font-oxanium">
             {order === 'reverse' ? (
                 <>
@@ -21,5 +30,13 @@ export default function ProjectContent({ order = "", leftChild, rightChild }) {
                 </>
             )}
         </div>
+    )
+
+
+    return (
+        <>
+            <div className="hidden md:block">{DesktopContent}</div>
+            <div className="block md:hidden">{MobileContent}</div>
+        </>
     )
 }

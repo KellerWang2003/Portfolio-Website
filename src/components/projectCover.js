@@ -34,10 +34,10 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
     );
 
     const MobileContent = (
-        <div className="w-full flex flex-col gap-10 cursor-pointer text-black font-oxanium">
+        <div className="w-full flex flex-col gap-10 cursor-pointer text-black font-oxanium text-sm">
             <section className="w-full aspect-video flex flex-col gap-2">
                 <div className="flex justify-between">
-                    <h2 className="text-base font-bold">PROJECT 0{number + 1}</h2>
+                    <h2 className="font-bold">PROJECT 0{number + 1}</h2>
                     <div>{year}</div>
                 </div>
                 <Image src={cover} alt={title} width={960} height={540} className="rounded object-cover aspect-video" />

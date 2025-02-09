@@ -31,7 +31,7 @@ function HorizontalScrollingCarousel({
 
     useEffect(() => {
         let controls;
-        let finalPosition = -width / 2 - 8;
+        let finalPosition = -width / 2 - 4;
 
         const positions = direction === 'left'
             ? [0, finalPosition]
@@ -50,7 +50,7 @@ function HorizontalScrollingCarousel({
 
     return (
         <main className="w-full h-full relative overflow-hidden">
-            <motion.div className="absolute h-full left-0 flex gap-4"
+            <motion.div className="absolute h-full left-0 flex gap-2"
                 ref={ref}
                 style={{
                     x: xTranslation,
@@ -63,9 +63,9 @@ function HorizontalScrollingCarousel({
 
                         src={image}
                         alt={`Rocket Engine Catalog Screenshot ${(index % images.length) + 1}`}
-                        width={800}
+                        width={700}
                         height={400}
-                        className="object-contain h-full w-full"
+                        className="object-contain h-full w-fit"
                     />
                 ))}
             </motion.div>

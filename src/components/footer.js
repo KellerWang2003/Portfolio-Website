@@ -42,7 +42,7 @@ export default function Footer({ color = "black", backgroundColor = "#F7F4EC" })
                     whileHover="hover"
                     animate="exit">
                     {/* text */}
-                    <section className="relative text-base font-oxanium">
+                    <section className="relative text-sm md:text-base font-oxanium">
                         <div>Designed & Developed  by Keller Wang</div>
                         <motion.div
                             className="absolute bottom-[2px] left-0 w-full h-[1px]"

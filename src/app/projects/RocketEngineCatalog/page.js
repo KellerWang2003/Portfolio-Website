@@ -86,14 +86,15 @@ export default function RocketEngineCatalog() {
                 />
                 <ProgressBar bgColor="#2E2E2E" content={content} />
                 {/* Design */}
-                <div className="flex flex-col gap-48 pt-16">
+                <div className="flex flex-col gap-48 pt-16 text-sm md:text-base">
                     {/* Engine Factory */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">ENGINE FACTORY</h2>
                                     <div className="border-l px-4">Home Page</div>
+
                                 </section>
                                 <section className="flex flex-col gap-4">
                                     <div className="font-bold">PAGE HIERARCHY</div>
@@ -135,7 +136,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">FABRICATION SHOP</h2>
                                     <div className="border-l px-4">Landing Page</div>
@@ -164,7 +165,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="">Part 1 - Building the engine</h2>
                                 </section>
@@ -189,7 +190,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
 
                                 </section>
@@ -216,10 +217,11 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="">Part 2 - Selecting your engine</h2>
                                 </section>
+
                                 <section className="flex flex-col gap-4">
                                     <p>Based on the user's selected configuration, the system will display a list of existing engines that match their requirements.</p>
                                     <p>Once the user has identified an engine they are interested in, they can proceed to the Hangar Bay (Details Page) to view more information about that specific engine.</p>
@@ -242,7 +244,7 @@ export default function RocketEngineCatalog() {
                     {/* Hanger Bay */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">HANGER BAY</h2>
                                     <div className="border-l px-4">Details Page</div>
@@ -272,7 +274,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">FUTURE PLANS</h2>
                                     <div className="border-l px-4">Hanger Bay</div>
@@ -299,7 +301,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <div className="border-l px-4">Training</div>
                                 </section>
