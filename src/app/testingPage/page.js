@@ -4,6 +4,18 @@ import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
 import ScrollingCarousel from "@/components/projectPages/scrollingCarousel";
 
+    const desktopImages = [
+        "/images/Rocket/Desktop/HomeDesktop.png",
+        "/images/Rocket/Desktop/LandingDesktop.png",
+        "/images/Rocket/Desktop/LandingDesktop1.png",
+        "/images/Rocket/Desktop/LandingDesktop2.png",
+        "/images/Rocket/Desktop/LandingDesktop3.png",
+        "/images/Rocket/Desktop/LandingDesktop4.png",
+        "/images/Rocket/Desktop/DetailsDesktop.png",
+        "/images/Rocket/Desktop/DetailsDesktop1.png",
+    ];
+
+
 export default function TestingPage() {
     return (
         <ContentWrapper>
@@ -12,11 +24,13 @@ export default function TestingPage() {
                 <div className="w-full h-[2px] bg-gray-700"></div>
             </header>
             {/* Testing Area */}
-            <div className="relative group text-black">
-                hello
-                <div className='absolute bg-black bottom-[1px] left-0 w-full h-[2px]
-                      transform scale-x-0 origin-left transition-transform duration-300 ease-in-out group-hover:scale-x-100'></div>
-            </div>
         </ContentWrapper>
+
+
+
+
+
+
+
     )
 }

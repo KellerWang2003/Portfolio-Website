@@ -31,7 +31,7 @@ const VIDEO_SOURCES = {
     },
 
     details: {
-        src: "/images/Rocket/Content/VideoDetails.mov",
+        src: "/images/Rocket/Content/VideoDetails.mp4",
         type: "video/mov"
     }
 };
@@ -85,14 +85,16 @@ export default function RocketEngineCatalog() {
                     images2={mobileImages}
                 />
                 <ProgressBar bgColor="#2E2E2E" content={content} />
-                <div className="flex flex-col gap-48 pt-16">
+                {/* Design */}
+                <div className="flex flex-col gap-48 pt-16 text-sm md:text-base">
                     {/* Engine Factory */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">ENGINE FACTORY</h2>
                                     <div className="border-l px-4">Home Page</div>
+
                                 </section>
                                 <section className="flex flex-col gap-4">
                                     <div className="font-bold">PAGE HIERARCHY</div>
@@ -134,7 +136,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">FABRICATION SHOP</h2>
                                     <div className="border-l px-4">Landing Page</div>
@@ -163,7 +165,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="">Part 1 - Building the engine</h2>
                                 </section>
@@ -188,7 +190,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
 
                                 </section>
@@ -215,10 +217,11 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="">Part 2 - Selecting your engine</h2>
                                 </section>
+
                                 <section className="flex flex-col gap-4">
                                     <p>Based on the user's selected configuration, the system will display a list of existing engines that match their requirements.</p>
                                     <p>Once the user has identified an engine they are interested in, they can proceed to the Hangar Bay (Details Page) to view more information about that specific engine.</p>
@@ -241,7 +244,7 @@ export default function RocketEngineCatalog() {
                     {/* Hanger Bay */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">HANGER BAY</h2>
                                     <div className="border-l px-4">Details Page</div>
@@ -271,7 +274,7 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">FUTURE PLANS</h2>
                                     <div className="border-l px-4">Hanger Bay</div>
@@ -298,9 +301,8 @@ export default function RocketEngineCatalog() {
                     <ProjectContent
                         order="reverse"
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-10 justify-between">
                                 <section className="flex flex-col gap-2">
-                                    <h2 className="text-4xl">FUTURE PLANS</h2>
                                     <div className="border-l px-4">Training</div>
                                 </section>
 
@@ -315,22 +317,14 @@ export default function RocketEngineCatalog() {
 
                             </div>}
                         rightChild={
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            >
-                                <source src={VIDEO_SOURCES.details.src} type={VIDEO_SOURCES.home.type} />
-                                Your browser does not support the video tag.
-                            </video>
+                            <Image src="/images/Rocket/Content/FuturePlan2.png" alt="Future Plans" width={960} height={540} />
+
                         }
                     />
                     {/* Mobile Gallery */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col justify-between">
+                            <div className="h-full flex flex-col gap-[350px]">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">MOBILE GALLERY</h2>
                                 </section>
@@ -349,7 +343,7 @@ export default function RocketEngineCatalog() {
 
                             </div>}
                         rightChild={
-                            <div className="w-full flex flex-col gap-4">
+                            <div className="w-full flex flex-col gap-8">
                                 <section className="flex gap-4 text-sm">
                                     <div className="flex-1">
                                         <Image src="/images/Rocket/Mobile/HomeMobile.png"
@@ -357,7 +351,7 @@ export default function RocketEngineCatalog() {
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Home]
+                                        Home
                                     </div>
                                     <div className="flex-1">
                                         <Image src="/images/Rocket/Mobile/LandingMobile.png"
@@ -365,33 +359,84 @@ export default function RocketEngineCatalog() {
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Landing]
+                                        Landing
                                     </div>
                                     <div className="flex-1"></div>
                                 </section>
                                 <section className="flex gap-4 text-sm">
                                     <div className="flex-1">
-                                        <Image src="/images/Rocket/Mobile/HomeMobile.png"
+                                        <Image src="/images/Rocket/Mobile/LandingMobile1.png"
                                             alt="Mobile Home"
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Home]
+                                        Configuring your engine ---{'>'}
                                     </div>
                                     <div className="flex-1">
-                                        <Image src="/images/Rocket/Mobile/LandingMobile.png"
+                                        <Image src="/images/Rocket/Mobile/LandingMobile2.png"
                                             alt="Mobile Home"
                                             width={250}
                                             height={520}
                                             className="object-contain w-full" />
-                                            [Landing]
                                     </div>
-                                    <div className="flex-1"></div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile3.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                </section>
+                                <section className="flex gap-4 text-sm">
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile4.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile5.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Summary
+                                    </div>
+                                    <div className="flex-1">
+                                    </div>
+                                </section>
+                                <section className="flex gap-4 text-sm">
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile6.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Selecting your engine
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/LandingMobile7.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <Image src="/images/Rocket/Mobile/DetailsMobile.png"
+                                            alt="Mobile Home"
+                                            width={250}
+                                            height={520}
+                                            className="object-contain w-full" />
+                                            Details
+                                    </div>
                                 </section>
                             </div>
                         }
                     />
                 </div>
+                {/* Research */}
+                <div className="flex flex-col gap-48"></div>
                 <Footer color="#EAEAEA" backgroundColor="#181818" />
             </main>
         </ContentWrapper>

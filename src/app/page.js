@@ -42,7 +42,7 @@ export default function Home() {
         </section>
         <section className="flex flex-col gap-10">
           <AnimatedLogo />
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-24">
             {projects.map((project, index) => (
               <ProjectCover
                 key={index}
