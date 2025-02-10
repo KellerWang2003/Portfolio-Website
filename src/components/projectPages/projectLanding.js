@@ -22,8 +22,8 @@ export default function ProjectLanding({ textColor, title, tags, description, im
 
     const DesktopLanding = (
         <div className="w-full h-[75dvh] flex pb-8 border-b border-current" style={{ color: textColor }}>
-            <section className="w-2/5 flex flex-col justify-between gap-2 pr-24">
-                <div className="text-6xl font-oxanium">{title}</div>
+            <section className="w-2/5 flex flex-col justify-between gap-2 pr-16">
+                <div className="text-5xl font-oxanium">{title}</div>
                 <div className="flex flex-col gap-4">
                     <Tags tags={tags} />
                     <div className="text-base font-oxanium">{description}</div>

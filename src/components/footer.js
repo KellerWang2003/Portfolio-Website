@@ -30,7 +30,7 @@ const underlineVariants = {
 
 export default function Footer({ color = "black", backgroundColor = "#F7F4EC" }) {
     return (
-        <footer className="w-full flex flex-col gap-3 -mb-2" style={{ color: color }}>
+        <footer className="w-full flex flex-col gap-3 md:-mb-2" style={{ color: color }}>
             {/* line */}
             <div className="w-full h-px" style={{ backgroundColor: color }}></div>
             {/* text */}

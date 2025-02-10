@@ -1,7 +1,7 @@
 export default function ProjectContent({ order = "", leftChild, rightChild }) {
 
     const MobileContent = (
-        <div className="w-full min-h-[65dvh] flex flex-col gap-6 justify-between">
+        <div className="w-full flex flex-col gap-8 justify-between">
             {leftChild}
             {rightChild}
         </div>
@@ -35,8 +35,8 @@ export default function ProjectContent({ order = "", leftChild, rightChild }) {
 
     return (
         <>
-            <div className="hidden md:block">{DesktopContent}</div>
-            <div className="block md:hidden">{MobileContent}</div>
+            <div className="hidden lg:block">{DesktopContent}</div>
+            <div className="block lg:hidden">{MobileContent}</div>
         </>
     )
 }

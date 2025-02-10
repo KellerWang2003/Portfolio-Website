@@ -64,13 +64,13 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
 
     return link ? (
         <Link href={link}>
-            <div className="hidden md:block">{DesktopContent}</div>
-            <div className="block md:hidden">{MobileContent}</div>
+            <div className="hidden lg:block">{DesktopContent}</div>
+            <div className="block lg:hidden">{MobileContent}</div>
         </Link>
     ) : (
         <>
-            <div className="hidden md:block">{DesktopContent}</div>
-            <div className="block md:hidden">{MobileContent}</div>
+            <div className="hidden lg:block">{DesktopContent}</div>
+            <div className="block lg:hidden">{MobileContent}</div>
         </>
     );
 

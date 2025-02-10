@@ -65,11 +65,13 @@ const ProgressItem = ({
     );
 };
 
-export default function ProgressBar({ bgColor, content }) {
+export default function ProgressBar({ type = "desktop", bgColor, content }) {
     const [currentStep, setCurrentStep] = useState(1);
 
-    return (
-        <div className="hidden md:block sticky top-0 flex flex-col gap-4 font-oxanium">
+    const DesktopProgressBar = ({ className }) => (
+        <div className={`sticky -top-8 flex flex-col font-oxanium ${className}`}>
+            <div className='absolute w-full h-px bg-black blur-sm z-10'></div>
+            <div className='w-full h-px bg-black z-10'></div>
             <div className="w-full flex gap-2">
                 {content.map((section, sectionIndex) => (
                     <ProgressItem
@@ -91,5 +93,27 @@ export default function ProgressBar({ bgColor, content }) {
                 Switch Section
             </button>
         </div>
+    )
+
+    const MobileProgressBar = ({ className }) => {
+        return (
+            <div className={`absolute left-0 bottom-0 w-full h-12 flex backdrop-blur-sm ${className} z-10`}>
+                <div className='mx-2 w-full h-full'
+                style={{ backgroundColor: `${bgColor}E6` }}>
+                    
+                </div>
+            </div>
+        )
+    }
+    
+    return (
+        <>
+            {type === "desktop" ? (
+                <DesktopProgressBar className="hidden md:block" />
+            ) : (
+                <MobileProgressBar className="block md:hidden" />
+            )}
+
+        </>
     );
 }
