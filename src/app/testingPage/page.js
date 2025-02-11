@@ -1,8 +1,11 @@
+'use client'
 import AnimatedLogo from "@/components/animatedLogo";
 import ContentWrapper from "@/components/contentWrapper";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
-import ScrollingCarousel from "@/components/projectPages/scrollingCarousel";
+import { Divide as Hamburger } from 'hamburger-react'
+import { useState } from "react";
+
 
     const desktopImages = [
         "/images/Rocket/Desktop/HomeDesktop.png",
@@ -17,6 +20,8 @@ import ScrollingCarousel from "@/components/projectPages/scrollingCarousel";
 
 
 export default function TestingPage() {
+
+    const [isOpen, setOpen] = useState(false)
     return (
         <ContentWrapper>
             <header className="flex flex-col gap-4 mb-8">
@@ -24,6 +29,7 @@ export default function TestingPage() {
                 <div className="w-full h-[2px] bg-gray-700"></div>
             </header>
             {/* Testing Area */}
+            
         </ContentWrapper>
 
 

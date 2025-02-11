@@ -1,7 +1,9 @@
 "use client";
 import Navigation from "@/components/navigation";
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
+
+export const MenuContext = createContext();
 
 const backgroundColors = {
     'default': '#9EA4AE',
@@ -17,9 +19,11 @@ export default function LayoutWrapper({ children }) {
     };
 
     return (
-        <main className={`h-dvh w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
-            <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-            {children}
-        </main>
-    )
+        <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
+            <main className={`h-dvh w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
+                <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+                {children}
+            </main>
+        </MenuContext.Provider>
+    );
 }

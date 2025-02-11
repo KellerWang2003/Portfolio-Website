@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import AnimatedUnderline from './animatedUnderline';
+import { Divide as Hamburger } from 'hamburger-react';
 
 // Color configurations for different pages
 const PAGE_COLORS = {
@@ -50,10 +51,12 @@ const DesktopNav = ({ colors }) => {
         <NavButton href="/contact" textColor={colors.textColor}>
           Contact
         </NavButton>
-        <NavButton href="/resume" textColor={colors.textColor}>
-
-          Resume
-        </NavButton>
+        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
+           className="transition-opacity duration-300 hover:opacity-60">
+          <AnimatedUnderline lineColor={colors.textColor}>
+            Resume
+          </AnimatedUnderline>
+        </a>
       </div>
     </nav>
   );
@@ -71,21 +74,30 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
     <nav className={`relative w-full px-4 ${isMenuOpen ? 'h-60' : 'h-12'} rounded-xl 
                     font-oxanium text-sm overflow-hidden
                     flex justify-end
-                    transition-[height] duration-500`}
+                    transition-[height] duration-300`}
       style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
         
       {/* Top Bar */}
-      <button className="h-12 flex justify-between items-center w-[calc(100%-4rem)] z-50"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <button className="h-12 flex justify-end items-center w-[calc(100%-3rem)] z-50"
+             onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {/* Menu */}
-        <div className="flex-1 flex justify-end">
-
-          {isMenuOpen ? 'Close' : 'Menu'}
+        <div className="-mr-3">
+          <Hamburger
+            toggled={isMenuOpen}
+            toggle={() => {}}  // Empty function since button handles toggle
+            color={colors.textColor}
+            distance="md"
+            rounded
+            size={18}
+            duration={0.3}
+            easing="ease-in-out"
+            label="Show Menu"
+          />
         </div>
       </button>
 
       {/* Logo */}
-        <span className={`absolute top-6 transition-[left] duration-500 ease-in-out ${isMenuOpen ? 'left-6' : 'left-1/2'} transform -translate-x-1/2 -translate-y-1/2`}>
+        <span className={`absolute top-6 transition-[left] duration-300 ease-in-out ${isMenuOpen ? 'left-6' : 'left-1/2'} transform -translate-x-1/2 -translate-y-1/2`}>
             <svg width="20" height="20" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
               <path fillRule="evenodd" clipRule="evenodd" d="M8.17811 0.554984C8.61593 0.861549 8.72234 1.46499 8.41577 1.90281L2.25333 10.7037C1.94676 11.1415 1.34332 11.2479 0.905496 10.9414C0.467676 10.6348 0.361272 10.0313 0.667838 9.59353L6.83028 0.792642C7.13685 0.354822 7.74029 0.248418 8.17811 0.554984Z" fill={colors.textColor} />
@@ -97,7 +109,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
 
       {/* Opened Section */}
       <section className={`absolute ${isMenuOpen ? 'top-12' : 'top-px'} left-0 w-full h-48 
-        flex flex-col justify-around transition-[top] duration-500 ease-in-out
+        flex flex-col justify-around transition-[top] duration-300 ease-in-out
         -mt-2 mb-2 px-4`}>
         <MobileDivider />
         <Link href="/" onClick={handleLinkClick} className=''>Index</Link>
@@ -106,13 +118,18 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
         <MobileDivider />
         <Link href="/contact" onClick={handleLinkClick} className=''>Contact</Link>
         <MobileDivider />
-        <Link href="/resume" onClick={handleLinkClick} className=''>Resume</Link>
+        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className=''>Resume</a>
       </section>
     </nav>
   )
 }
 
-export default function Navigation({ bgColor = "#E0E0E0", textColor = "#000000", isMenuOpen, setIsMenuOpen }) {
+export default function Navigation({ 
+  bgColor = "#E0E0E0", 
+  textColor = "#000000", 
+  isMenuOpen = false,  // explicitly show default value
+  setIsMenuOpen 
+}) {
   const pathname = usePathname();
 
   // Get page-specific colors or fall back to default props

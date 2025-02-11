@@ -33,7 +33,7 @@ export default function Sandbox() {
     return (
 
         <ContentWrapper>
-            <h1 className="hidden text-base font-oxanium text-[#7E7E7E] pb-20">THIS IS WHERE I EXPLORE A BIT......</h1>
+            <h1 className="text-base font-oxanium text-[#7E7E7E] pt-20 pb-[50dvh]">THIS IS WHERE I EXPLORE A BIT......</h1>
             <main className="w-full flex flex-col gap-36 pb-36 font-oxanium text-black">
                 <ProjectSection title="Graphic Design">
                     <ProjectCard title="Posters">
@@ -99,7 +99,7 @@ export default function Sandbox() {
                             </div>
                         </div>
                         {/* bottom */}
-                        <div className="w-full grid grid-cols-4 gap-2 md:gap-4">
+                        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
                             <Image
                                 src="/images/Sandbox/Graphics/Specimen Book/Content1.png"
                                 alt="Specimen Book Page 1"
