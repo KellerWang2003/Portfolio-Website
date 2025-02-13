@@ -86,7 +86,7 @@ export default function RocketEngineCatalog() {
                 />
                 <ProgressBar bgColor="#2E2E2E" content={content} />
                 {/* Design */}
-                <div className="flex flex-col gap-56 pt-12 md:px-16 text-sm md:text-base">
+                <div className="flex flex-col gap-56 pt-12 md:px-16 text-sm md:text-base text-[#EAEAEA]">
                     {/* Engine Factory */}
                     <ProjectContent
                         leftChild={
