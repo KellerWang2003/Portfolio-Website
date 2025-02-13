@@ -40,9 +40,9 @@ export default function Home() {
           </div>
           <div className="text-right ml-12 min-w-36">Based in<br />Los Angeles, CA</div>
         </section>
-        <section className="flex flex-col gap-12">
+        <section className="flex flex-col gap-8">
           <AnimatedLogo />
-          <div className="flex flex-col gap-24">
+          <div className="flex flex-col gap-20">
             {projects.map((project, index) => (
               <ProjectCover
                 key={index}

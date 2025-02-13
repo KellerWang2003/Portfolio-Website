@@ -1,10 +1,19 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Tags from "./tags";
+import { motion } from "framer-motion";
+import TiltedCard from "@/blocks/Components/TiltedCard/TiltedCard";
 
 export default function ProjectCover({ number, cover, year, title, tags, description, link }) {
     const DesktopContent = (
-        <div className="w-full flex gap-6 cursor-pointer text-black font-oxanium">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-full flex gap-6 cursor-pointer text-black font-oxanium"
+        >
             <div className="w-2/5 flex flex-col justify-between">
                 <section className="w-full h-full max-h-[30%] flex flex-col justify-between">
                     <div className="flex justify-between">
@@ -30,11 +39,17 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
             <div className="w-3/5 aspect-video">
                 <Image src={cover} alt={title} width={960} height={540} className="rounded object-cover aspect-video" />
             </div>
-        </div>
+        </motion.div>
     );
 
     const MobileContent = (
-        <div className="w-full flex flex-col gap-10 cursor-pointer text-black font-oxanium text-sm">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-full flex flex-col gap-10 cursor-pointer text-black font-oxanium text-sm"
+        >
             <section className="w-full aspect-video flex flex-col gap-2">
                 <div className="flex justify-between">
                     <h2 className="font-bold">PROJECT 0{number + 1}</h2>
@@ -56,7 +71,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 <div className="w-full h-px bg-black"></div>
             </section>
 
-        </div>
+        </motion.div>
 
 
 
