@@ -1,5 +1,5 @@
 'use client'
-import AnimatedLogo from "@/components/animatedLogo";
+import AnimatedLogo from "@/components/homeLanding";
 import ContentWrapper from "@/components/contentWrapper";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";

@@ -1,6 +1,7 @@
 import ContentWrapper from "@/components/contentWrapper";
 import Image from "next/image";
 import Footer from "@/components/footer";
+import FadeInAnimation from "@/components/fadeInAnimation";
 
 function ProjectCard({ title, children }) {
     return (
@@ -14,17 +15,19 @@ function ProjectCard({ title, children }) {
 }
 
 
-function ProjectSection({ title, children }) {
+function ProjectSection({ title, children, isFirst = false }) {
     return (
-        <div className="w-full flex flex-col items-end gap-12">
-            <div className="w-full flex flex-col gap-2">
-                <h2 className="text-3xl">{title}</h2>
-                <div className="w-full h-px bg-black"></div>
+        <FadeInAnimation isFirst={isFirst}>
+            <div className="w-full flex flex-col items-end gap-12">
+                <div className="w-full flex flex-col gap-2">
+                    <h2 className="text-3xl">{title}</h2>
+                    <div className="w-full h-px bg-black"></div>
+                </div>
+                <div className="flex flex-col gap-12 w-full md:w-4/5">
+                    {children}
+                </div>
             </div>
-            <div className="flex flex-col gap-12 w-full md:w-4/5">
-                {children}
-            </div>
-        </div>
+        </FadeInAnimation>
     )
 }
 
@@ -35,7 +38,7 @@ export default function Sandbox() {
         <ContentWrapper>
             <h1 className="text-base font-oxanium text-[#7E7E7E] pt-20 pb-[50dvh]">THIS IS WHERE I EXPLORE A BIT......</h1>
             <main className="w-full flex flex-col gap-36 pb-36 font-oxanium text-black">
-                <ProjectSection title="Graphic Design">
+                <ProjectSection title="Graphic Design" isFirst={true}>
                     <ProjectCard title="Posters">
                         <div className="w-full flex gap-2 md:gap-4">
                             <div className="w-1/4 h-full flex flex-col gap-2">
@@ -155,7 +158,7 @@ export default function Sandbox() {
                 </ProjectSection>
                 <ProjectSection title="Motion Design">
                     <ProjectCard title="Logo Animation">
-                        <video 
+                        <video
                             src="/images/Sandbox/Animations/Logo.mp4"
                             controls
                             loop
@@ -166,7 +169,7 @@ export default function Sandbox() {
                         ></video>
                     </ProjectCard>
                     <ProjectCard title="Dune Teaser">
-                        <video 
+                        <video
                             src="/images/Sandbox/Animations/DuneTeaser.mp4"
                             controls
                             loop
@@ -214,7 +217,7 @@ export default function Sandbox() {
                     </ProjectCard>
                 </ProjectSection>
             </main>
-            <Footer/>
+            <Footer />
         </ContentWrapper>
     );
 }

@@ -48,9 +48,7 @@ const DesktopNav = ({ colors }) => {
         </svg>
       </Link>
       <div className="flex items-center gap-10">
-        <NavButton href="/contact" textColor={colors.textColor}>
-          Contact
-        </NavButton>
+        <NavButton href="/info" textColor={colors.textColor}>Info</NavButton>
         <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
            className="transition-opacity duration-300 hover:opacity-60">
           <AnimatedUnderline lineColor={colors.textColor}>
@@ -116,7 +114,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
         <MobileDivider />
         <Link href="/sandbox" onClick={handleLinkClick} className=''>Sandbox</Link>
         <MobileDivider />
-        <Link href="/contact" onClick={handleLinkClick} className=''>Contact</Link>
+        <Link href="/info" onClick={handleLinkClick} className=''>Info</Link>
         <MobileDivider />
         <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className=''>Resume</a>
       </section>

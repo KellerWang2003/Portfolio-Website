@@ -1,5 +1,5 @@
 import ContentWrapper from "@/components/contentWrapper";
-import AnimatedLogo from "@/components/animatedLogo";
+import HomeLanding from "@/components/homeLanding";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
 
@@ -32,17 +32,10 @@ const projects = [
 export default function Home() {
   return (
     <ContentWrapper bgColor="#F7F4EC">
-      <main className="flex flex-col gap-6">
-        {/* Introduction */}
-        <section className="w-full flex justify-between pb-16
-                    text-[#7E7E7E] text-base font-oxanium">
-          <div className="w-[530px]">HELLO, I AM <strong className="text-[#363636]">KELLER WANG</strong>, AN UI/UX DESIGNER WITH METICULOUS EYES FOR DETAIL. CURRENTLY, I'M EXPLORING AND GROWING MY CRAFT AT <strong className="text-[#363636]">ARTCENTER COLLEGE OF DESIGN.</strong>
-          </div>
-          <div className="text-right ml-12 min-w-36">Based in<br />Los Angeles, CA</div>
-        </section>
-        <section className="flex flex-col gap-8">
-          <AnimatedLogo />
-          <div className="flex flex-col gap-20">
+      <main className="flex flex-col">
+          <HomeLanding />
+          <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
+          <div className="flex flex-col gap-28 py-6 md:py-12">
             {projects.map((project, index) => (
               <ProjectCover
                 key={index}
@@ -53,10 +46,10 @@ export default function Home() {
                 tags={project.tags}
                 description={project.description}
                 link={project.link}
+                isFirst={index === 0}
               />
             ))}
           </div>
-        </section>
         <Footer />
       </main>
     </ContentWrapper>
