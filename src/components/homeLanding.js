@@ -95,8 +95,8 @@ function EyeFrame() {
 
 function AnimatedLogo() {
     return (
-        <div className='flex justify-end scale-[70%] md:scale-100
-            origin-bottom-right -mt-20 md:mt-0
+        <div className='flex justify-end scale-[65%] md:scale-100
+            origin-bottom-right -mt-32 md:mt-0
         '>
             <section>
                 <div className="hidden md:block">
@@ -125,14 +125,14 @@ function AnimatedLogo() {
 function Introduction() {
     return (
         <section className='w-full md:w-1/3
-            flex flex-col gap-12 justify-between mt-4 md:mt-0 md:pb-24
+            flex flex-col gap-4 justify-between mt-4 md:mt-0 md:pb-24
             font-oxanium text-black'>
             <h1 className='text-4xl md:text-5xl leading-[1.15]'>
                 <span>Hi there,</span>
                 <br />
                 <span className='whitespace-nowrap'>I'm Keller Wang.</span>
             </h1>
-            <div className='flex flex-col gap-6 text-sm md:text-base'>
+            <div className='flex flex-col gap-4 text-sm md:text-base'>
                 <section className='flex flex-col gap-1 text-[#404040]'>
                     <p>An UI/UX designer with meticulous eyes for detail.</p>
                     <p>Decicated to shaping intuitive experiences where technology meets human needs.</p>
