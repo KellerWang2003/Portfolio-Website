@@ -96,7 +96,7 @@ function EyeFrame() {
 function AnimatedLogo() {
     return (
         <div className='flex justify-end scale-[65%] md:scale-100
-            origin-bottom-right -mt-32 md:mt-0
+            origin-bottom-right -mt-36 md:mt-0
         '>
             <section>
                 <div className="hidden md:block">
@@ -151,7 +151,7 @@ export default function HomeLanding() {
         <>
             <div className="w-full relative 
                 flex flex-col md:flex-row md:justify-between 
-                md:pt-24 overflow-y-clip
+                md:pt-32 overflow-y-clip
             ">
                 <Introduction />
                 <AnimatedLogo />

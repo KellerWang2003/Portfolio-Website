@@ -1,9 +1,9 @@
 "use client";
-import { useContext, useState, useEffect } from 'react';
-import { MenuContext } from './layoutWrapper';
+import { useState, useEffect } from 'react';
+import { useMenu } from '@/context/menuContext';
 
 export default function ContentWrapper({ children, bgColor = "#F7F4EC", borderColor = "#6E6E6E" }) {
-    const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
+    const { isMenuOpen, setIsMenuOpen } = useMenu();
     const [startY, setStartY] = useState(0);
     const [currentY, setCurrentY] = useState(0);
 

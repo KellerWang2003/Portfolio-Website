@@ -2,6 +2,8 @@ import ContentWrapper from "@/components/contentWrapper";
 import HomeLanding from "@/components/homeLanding";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
+import Link from "next/link";
+import AnimatedUnderline from "@/components/animatedUnderline";
 
 const projects = [
   {
@@ -14,18 +16,12 @@ const projects = [
   },
   {
     cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Inclusight",
+    title: "Elevate",
     year: "2024",
     tags: ["User Research", "Market Research", "User Testing"],
-    description: "Description for another project."
+    description: "Bridging the gap between product design teams and users with disabilities",
+    link: "/projects/Elevate"
   },
-  {
-    cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Yet Another Project Title",
-    year: "2024",
-    tags: ["Tag3", "Tag4"],
-    description: "Description for yet another project."
-  }
 ];
 
 
@@ -33,23 +29,34 @@ export default function Home() {
   return (
     <ContentWrapper bgColor="#F7F4EC">
       <main className="flex flex-col">
-          <HomeLanding />
-          <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
-          <div className="flex flex-col gap-28 py-6 md:py-12">
-            {projects.map((project, index) => (
-              <ProjectCover
-                key={index}
-                number={index}
-                cover={project.cover}
-                year={project.year}
-                title={project.title}
-                tags={project.tags}
-                description={project.description}
-                link={project.link}
-                isFirst={index === 0}
-              />
-            ))}
+        <HomeLanding />
+        <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
+        <div className="flex flex-col gap-40 py-6 md:py-12">
+          {projects.map((project, index) => (
+            <ProjectCover
+              key={index}
+              number={index}
+              cover={project.cover}
+              year={project.year}
+              title={project.title}
+              tags={project.tags}
+              description={project.description}
+              link={project.link}
+              isFirst={index === 0}
+            />
+          ))}
+        </div>
+        <Link
+          href="/sandbox"
+          className="group flex gap-4 items-end text-sm mt-60 mb-8 md:text-5xl text-black font-oxanium"
+        >
+          <h2>Check out my sandbox</h2>
+          <div className="w-6 h-6 mb-3 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+            <svg width="24" height="24" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="black" />
+            </svg>
           </div>
+        </Link>
         <Footer />
       </main>
     </ContentWrapper>

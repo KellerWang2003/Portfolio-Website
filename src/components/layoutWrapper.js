@@ -1,9 +1,9 @@
 "use client";
 import Navigation from "@/components/navigation";
+import Cursor from "@/components/cursor";
 import { usePathname } from 'next/navigation';
-import { useState, createContext } from 'react';
-
-export const MenuContext = createContext();
+import { CursorProvider } from '@/context/cursorContext';
+import { MenuProvider } from '@/context/menuContext';
 
 const backgroundColors = {
     'default': '#9EA4AE',
@@ -12,18 +12,20 @@ const backgroundColors = {
 
 export default function LayoutWrapper({ children }) {
     const pathname = usePathname();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const getBgColor = () => {
         return backgroundColors[pathname] || backgroundColors.default;
     };
 
     return (
-        <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
-            <main className={`h-dvh w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
-                <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-                {children}
-            </main>
-        </MenuContext.Provider>
+        <CursorProvider>
+            <MenuProvider>
+                <main className={`h-dvh w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
+                    <Navigation />
+                    <Cursor backgroundColor={getBgColor()} />
+                    {children}
+                </main>
+            </MenuProvider>
+        </CursorProvider>
     );
 }
