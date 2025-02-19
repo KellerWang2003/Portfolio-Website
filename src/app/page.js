@@ -31,7 +31,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HomeLanding />
         <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
-        <div className="flex flex-col gap-40 py-6 md:py-12">
+        <div className="flex flex-col gap-24 md:gap-40 py-16">
           {projects.map((project, index) => (
             <ProjectCover
               key={index}
@@ -48,11 +48,11 @@ export default function Home() {
         </div>
         <Link
           href="/sandbox"
-          className="group flex gap-4 items-end text-sm mt-60 mb-8 md:text-5xl text-black font-oxanium"
+          className="group flex gap-4 items-end mt-60 mb-8 text-4xl md:text-5xl text-black font-oxanium"
         >
           <h2>Check out my sandbox</h2>
-          <div className="w-6 h-6 mb-3 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
-            <svg width="24" height="24" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-4 h-4 md:w-6 md:h-6 mb-2 md:mb-3 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+            <svg width="100%" height="100%" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="black" />
             </svg>
           </div>

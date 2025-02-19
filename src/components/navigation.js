@@ -78,7 +78,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
       style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
         
       {/* Top Bar */}
-      <button className="h-10 flex justify-end items-center w-[calc(100%-3rem)] z-50"
+      <button className="h-10 flex justify-end items-center w-fit z-50"
              onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {/* Menu */}
         <div className="-mr-3">
@@ -109,16 +109,16 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
 
       {/* Opened Section */}
       <section className={`absolute ${isMenuOpen ? 'top-10' : '-top-[3px]'} left-0 w-full h-48 
-        flex flex-col justify-around transition-[top] duration-300 ease-in-out
-        -mt-2 mb-2 px-4`}>
+        flex flex-col justify-between transition-[top] duration-300 ease-in-out
+         mb-2 px-4`}>
         <MobileDivider />
-        <Link href="/" onClick={handleLinkClick} className=''>Index</Link>
+        <Link href="/" onClick={handleLinkClick} className={`h-full flex items-center ${isMenuOpen ? 'w-full' : 'w-12'}`}>Index</Link>
         <MobileDivider />
-        <Link href="/sandbox" onClick={handleLinkClick} className=''>Sandbox</Link>
+        <Link href="/sandbox" onClick={handleLinkClick} className='h-full flex items-center'>Sandbox</Link>
         <MobileDivider />
-        <Link href="/info" onClick={handleLinkClick} className=''>Info</Link>
+        <Link href="/info" onClick={handleLinkClick} className='h-full flex items-center'>Info</Link>
         <MobileDivider />
-        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className=''>Resume</a>
+        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>Resume</a>
       </section>
     </nav>
   )
