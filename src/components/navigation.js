@@ -35,7 +35,7 @@ const NavButton = ({ href, children, textColor, onClick }) => {
 const DesktopNav = ({ colors }) => {
   return (
     <nav className="flex w-full px-8 py-3 rounded-xl
-                    font-oxanium text-base justify-between" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
+                    font-oxanium text-base justify-between items-center" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
       <div className="flex items-center gap-10">
         <NavButton href="/" textColor={colors.textColor}>Index</NavButton>
         <NavButton href="/sandbox" textColor={colors.textColor}>Sandbox</NavButton>

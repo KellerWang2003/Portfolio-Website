@@ -3,11 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Tags from "./tags";
 import FadeInAnimation from "./fadeInAnimation";
-import { useCursorHover } from '@/hooks/useCursorHover';
 
 export default function ProjectCover({ number, cover, year, title, tags, description, link, isFirst }) {
-    const cursorEvents = useCursorHover("View Project");
-
     const DesktopContent = (
         <FadeInAnimation isFirst={isFirst}>
             <div className="w-full flex gap-6 text-black font-oxanium group">
@@ -54,7 +51,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 <section className="flex flex-col gap-3">
                     <Tags tags={tags} />
                     <div className="flex justify-between items-end gap-8">
-                        <h1 className="text-4xl">{title.toUpperCase()}</h1>
+                        <h1 className="text-4xl">{title}</h1>
                         <div className="w-4 h-4 mb-2 -rotate-45">
                             <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="black" />
@@ -68,18 +65,14 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
         </FadeInAnimation>
     );
 
-    return link ? (
+    return (
         <Link 
             href={link}
-            {...cursorEvents}
+            data-cursor="true"
+            data-cursor-text="View Project"
         >
             <div className="hidden lg:block">{DesktopContent}</div>
             <div className="block lg:hidden">{MobileContent}</div>
         </Link>
-    ) : (
-        <>
-            <div className="hidden lg:block">{DesktopContent}</div>
-            <div className="block lg:hidden">{MobileContent}</div>
-        </>
     );
 }

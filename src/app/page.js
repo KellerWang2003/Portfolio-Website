@@ -1,9 +1,10 @@
+'use client'
 import ContentWrapper from "@/components/contentWrapper";
 import HomeLanding from "@/components/homeLanding";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
 import Link from "next/link";
-import AnimatedUnderline from "@/components/animatedUnderline";
+import { useCursorHover } from "@/hooks/useCursorHover";
 
 const projects = [
   {
@@ -26,6 +27,8 @@ const projects = [
 
 
 export default function Home() {
+
+  const cursorEvents = useCursorHover("");
   return (
     <ContentWrapper bgColor="#F7F4EC">
       <main className="flex flex-col">
@@ -48,10 +51,13 @@ export default function Home() {
         </div>
         <Link
           href="/sandbox"
-          className="group flex gap-4 items-end mt-60 mb-8 text-4xl md:text-5xl text-black font-oxanium"
+          data-cursor="true"
+          className="group w-fit flex gap-4 items-end mt-60 mb-8 text-4xl lg:text-5xl text-black font-oxanium"
         >
-          <h2>Check out my sandbox</h2>
-          <div className="w-4 h-4 md:w-6 md:h-6 mb-2 md:mb-3 group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+          <h2 className="w-fit">Check out my sandbox</h2>
+          <div className="w-4 h-4 lg:w-6 lg:h-6 rotate-45 lg:rotate-0
+          mb-2 lg:mb-3 
+          lg:group-hover:rotate-45 transition-transform duration-300 ease-in-out">
             <svg width="100%" height="100%" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="black" />
             </svg>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from '@/context/cursorContext';
+import { useCursorHover } from '@/hooks/useCursorHover';
 
 const cursorVariants = {
     default: {
@@ -11,10 +12,10 @@ const cursorVariants = {
         y: -8,
     },
     hover: {
-        width: 96,
-        height: 96,
-        x: -48,
-        y: -48,
+        width: 120,
+        height: 120,
+        x: -60,
+        y: -60,
     }
     // Add more variants as needed
 };
@@ -27,9 +28,10 @@ export default function Cursor({ backgroundColor }) {
     });
     const [hasMouseDevice, setHasMouseDevice] = useState(false);
     const { cursorVariant, cursorText } = useCursor();
+    
+    useCursorHover();
 
     useEffect(() => {
-        // Check if the device has hover capability
         const mediaQuery = window.matchMedia('(hover: hover)');
         setHasMouseDevice(mediaQuery.matches);
 
@@ -39,9 +41,11 @@ export default function Cursor({ backgroundColor }) {
 
         mediaQuery.addEventListener('change', updateHasMouseDevice);
 
-        // Only add mousemove listener if device has mouse
         if (mediaQuery.matches) {
             const mouseMove = (e) => {
+                // Store mouse position globally for the hook to access
+                window.mouseX = e.clientX;
+                window.mouseY = e.clientY;
                 setMousePosition({
                     x: e.clientX,
                     y: e.clientY
@@ -61,7 +65,7 @@ export default function Cursor({ backgroundColor }) {
     }, []);
 
     if (!hasMouseDevice) return null;
-
+    
     return (
         <motion.div
             className="fixed rounded-full z-50 pointer-events-none

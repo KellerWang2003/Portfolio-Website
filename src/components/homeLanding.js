@@ -1,33 +1,30 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import AnimatedLink from './animatedLink';
+import { MOUSE_POSITION_UPDATE } from '@/hooks/useCursorHover';
 
 function FramerMagnet({ children, xScale, yScale }) {
     const ref = useRef(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (!ref.current) return;  // Early return if ref not available
+    const handleMousePosition = useCallback((e) => {
+        if (!ref.current) return;
 
-            const { clientX, clientY } = e;
-            const { width, height, left, top } = ref.current.getBoundingClientRect();
-            const x = (clientX - (left + width / 2) + 300) * xScale;
-            const y = (clientY - (top + height / 2)) * yScale;
+        const { x: mouseX, y: mouseY } = e.detail;
+        const { width, height, left, top } = ref.current.getBoundingClientRect();
+        const x = (mouseX - (left + width / 2) + 300) * xScale;
+        const y = (mouseY - (top + height / 2)) * yScale;
 
-            setPosition({ x, y });
-        };
-
-        // Only add listener if we're in the browser
-        if (typeof window !== 'undefined') {
-            window.addEventListener('mousemove', handleMouseMove);
-
-            return () => {
-                window.removeEventListener('mousemove', handleMouseMove);
-            };
-        }
+        setPosition({ x, y });
     }, [xScale, yScale]);
+
+    useEffect(() => {
+        window.addEventListener(MOUSE_POSITION_UPDATE, handleMousePosition);
+        return () => {
+            window.removeEventListener(MOUSE_POSITION_UPDATE, handleMousePosition);
+        };
+    }, [handleMousePosition]);
 
     return (
         <motion.div
