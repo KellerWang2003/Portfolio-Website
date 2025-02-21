@@ -66,13 +66,23 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
     );
 
     return (
-        <Link 
-            href={link}
-            data-cursor="true"
-            data-cursor-text="View Project"
-        >
-            <div className="hidden lg:block">{DesktopContent}</div>
-            <div className="block lg:hidden">{MobileContent}</div>
-        </Link>
+        link ? (
+            <Link 
+                href={link}
+                data-cursor="hover"
+                data-cursor-text="View Project"
+            >
+                <div className="hidden lg:block">{DesktopContent}</div>
+                <div className="block lg:hidden">{MobileContent}</div>
+            </Link>
+        ) : (
+            <div 
+                data-cursor="hover"
+                data-cursor-text="Coming Soon"
+            >
+                <div className="hidden lg:block">{DesktopContent}</div>
+                <div className="block lg:hidden">{MobileContent}</div>
+            </div>
+        )
     );
 }

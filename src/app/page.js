@@ -8,6 +8,14 @@ import { useCursorHover } from "@/hooks/useCursorHover";
 
 const projects = [
   {
+    cover: "/images/Elevate/elevateCover.png",
+    title: "Elevate",
+    year: "2024",
+    tags: ["User Research", "Market Research", "User Testing"],
+    description: "Bridging the gap between product design teams and users with disabilities",
+    link: "/projects/Elevate"
+  },
+  {
     cover: "/images/Rocket/rocketEngineCatalogCover.png",
     title: "Rocket Engine Catalog",
     year: "2024",
@@ -16,12 +24,11 @@ const projects = [
     link: "/projects/RocketEngineCatalog"
   },
   {
-    cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Elevate",
-    year: "2024",
-    tags: ["User Research", "Market Research", "User Testing"],
-    description: "Bridging the gap between product design teams and users with disabilities",
-    link: "/projects/Elevate"
+    cover: "/images/DroneNet/dronenetCover.png",
+    title: "DroneNet",
+    year: "2023",
+    tags: ["Research", "UI Design", "Prototyping"],
+    description: "An app designed for the FPV (First-Person View) community to connect, share, and ensure the legality and safety of their flying locations.",
   },
 ];
 

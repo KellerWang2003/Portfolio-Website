@@ -16,6 +16,12 @@ const cursorVariants = {
         height: 120,
         x: -60,
         y: -60,
+    },
+    hoverSmall: {
+        width: 60,
+        height: 60,
+        x: -30,
+        y: -30,
     }
     // Add more variants as needed
 };
@@ -87,7 +93,7 @@ export default function Cursor({ backgroundColor }) {
                 filter: 'contrast(1)', // Slightly reduce contrast to prevent harshness
             }}
         >
-            {cursorVariant === "hover" && (
+            {(cursorVariant === "hover" || cursorVariant === "hoverSmall") && (
                 <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

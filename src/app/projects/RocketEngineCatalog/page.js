@@ -143,9 +143,9 @@ export default function RocketEngineCatalog() {
                                 </section>
                                 <section className="flex flex-col gap-4">
                                     <p>This is the start of where users can “build their own engine”, and then select existing engines based on their decisions.</p>
-                                    <div className="border-l px-4">Why “Build your engine”<br />
+                                    {/* <div className="border-l px-4">Why “Build your engine”<br />
                                         Why not just an organized table, or filters?</div>
-                                    <p>Throughout ideation and testing, users struggled to grasp the website's purpose at first glance. By presenting it as an interactive engine factory where users can customize builds, the concept becomes more intuitive and allows natural exploration of of these complicated concepts.</p>
+                                    <p>Throughout ideation and testing, users struggled to grasp the website's purpose at first glance. By presenting it as an interactive engine factory where users can customize builds, the concept becomes more intuitive and allows natural exploration of of these complicated concepts.</p> */}
                                 </section>
                             </div>}
                         rightChild={
