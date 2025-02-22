@@ -1,5 +1,5 @@
 "use client"
-import AnimatedLink from "./animatedLink"
+import AnimatedLink from "./animation/animatedLink"
 
 export default function Footer({ color = "black" }) {
     return (

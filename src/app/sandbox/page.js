@@ -1,7 +1,7 @@
 import ContentWrapper from "@/components/contentWrapper";
 import Image from "next/image";
 import Footer from "@/components/footer";
-import FadeInAnimation from "@/components/fadeInAnimation";
+import FadeInAnimation from "@/components/animation/fadeInAnimation";
 
 function ProjectCard({ title, children }) {
     return (

@@ -70,8 +70,8 @@ export default function ProgressBar({ type = "desktop", bgColor, content }) {
 
     const DesktopProgressBar = ({ className }) => (
         <div className={`sticky -top-8 flex flex-col font-oxanium ${className}`}>
-            <div className='absolute w-full h-px bg-black blur-sm z-10'></div>
-            <div className='w-full h-px bg-black z-10'></div>
+            {/* <div className='absolute w-full h-px bg-black blur-sm z-10'></div>
+            <div className='w-full h-px bg-black z-10'></div> */}
             <div className="w-full flex gap-2">
                 {content.map((section, sectionIndex) => (
                     <ProgressItem

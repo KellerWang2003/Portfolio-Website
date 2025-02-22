@@ -1,0 +1,83 @@
+"use client"
+import Image from "next/image";
+import { useInView, useAnimation } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+
+
+function Title({ children, onInView }) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {margin: "-50% 0px -50% 0px"});
+
+    useEffect(() => {
+        onInView(isInView);
+    }, [isInView, onInView]);
+
+    return (
+        <h1 ref={ref} className={`w-full text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-bold' : 'opacity-30'}`}>
+            {children}
+        </h1>
+    )
+}
+
+function Card({ children }) {
+    return (
+        <div className="absolute w-full rounded-2xl overflow-hidden border border-gray-300">
+            {children}
+        </div>
+    )
+}
+
+export default function ScrollingImages({ content }) {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const onTitleInView = (index, inView) => {
+        if (inView) {
+            setActiveIndex(index);
+        }
+    };
+
+    return (
+        <>
+            {/* Desktop */}
+            <div className="hidden md:flex w-full items-start font-oxanium text-black -mt-[10vh]">
+                <section className="w-2/5 flex flex-col gap-8 py-[50vh]">
+                    {content.map((item, index) => (
+                        <Title 
+                            key={item.key}
+                            onInView={(inView) => onTitleInView(index, inView)}
+                        >
+                            {item.title}
+                        </Title>
+                    ))}
+                </section>
+                <section className="w-3/5 sticky -top-12 h-screen flex items-center">
+                    {content.map((item, index) => (
+                        <Card key={item.key}>
+                            <Image
+                                src={item.src}
+                                alt={item.title}
+                                width={2880}
+                                height={2050}
+                                className={`transition-opacity duration-300 ${
+                                    index <= activeIndex ? 'opacity-100' : 'opacity-0'
+                                }`}
+                            />
+                        </Card>
+                    ))}
+                </section>
+            </div>
+
+            {/* Mobile */}
+            <div className="flex flex-col md:hidden">
+                <section className="w-full h-[60dvh]">
+
+                </section>
+                <section className="w-full h-[40dvh]">
+
+                </section>
+            </div>
+
+        </>
+    )
+}

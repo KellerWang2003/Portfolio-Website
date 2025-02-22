@@ -6,22 +6,17 @@ import { useCursor } from '@/context/cursorContext';
 const MOUSE_POSITION_EVENT = 'mousePositionUpdate';
 
 export function useCursorHover() {
-    // Get cursor control functions from context
-    const { setCursorVariant, setCursorText } = useCursor();
+    const { setCursorVariant, setCursorText, setHoveredElement } = useCursor();
 
-    // Function to check what element is under the cursor and update cursor state
     const checkElementUnderCursor = useCallback(() => {
-        // Get the element at current mouse coordinates
         const element = document.elementFromPoint(
             window.mouseX || 0,
             window.mouseY || 0
         );
         
         if (element) {
-            // Traverse up the DOM tree to find the nearest ancestor with cursor data
             let currentElement = element;
             while (currentElement) {
-                // If element has data-cursor attribute, update cursor state
                 const cursorType = currentElement.getAttribute('data-cursor');
                 if (cursorType) {
                     if (cursorType === 'hoverSmall') {
@@ -31,15 +26,22 @@ export function useCursorHover() {
                     }
                     const cursorText = currentElement.getAttribute('data-cursor-text') || '';
                     setCursorText(cursorText);
+                    
+                    // Only set hoveredElement if it has a project index
+                    if (currentElement.hasAttribute('data-project-index')) {
+                        setHoveredElement(currentElement);
+                    } else {
+                        setHoveredElement(null);
+                    }
                     return;
                 }
                 currentElement = currentElement.parentElement;
             }
-            // If no cursor data found, reset to default state
             setCursorVariant('default');
             setCursorText('');
+            setHoveredElement(null);
         }
-    }, [setCursorVariant, setCursorText]);
+    }, [setCursorVariant, setCursorText, setHoveredElement]);
 
     useEffect(() => {
         // Setup animation frame tracking

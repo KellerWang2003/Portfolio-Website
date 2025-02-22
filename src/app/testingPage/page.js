@@ -6,17 +6,8 @@ import Footer from "@/components/footer";
 import { Divide as Hamburger } from 'hamburger-react'
 import { useState } from "react";
 import TiltedCard from "@/blocks/Components/TiltedCard/TiltedCard";
-
-const desktopImages = [
-    "/images/Rocket/Desktop/HomeDesktop.png",
-    "/images/Rocket/Desktop/LandingDesktop.png",
-    "/images/Rocket/Desktop/LandingDesktop1.png",
-    "/images/Rocket/Desktop/LandingDesktop2.png",
-    "/images/Rocket/Desktop/LandingDesktop3.png",
-    "/images/Rocket/Desktop/LandingDesktop4.png",
-    "/images/Rocket/Desktop/DetailsDesktop.png",
-    "/images/Rocket/Desktop/DetailsDesktop1.png",
-];
+import Image from "next/image";
+import ScrollingImages from "@/components/projectPages/scrollingImages";
 
 
 export default function TestingPage() {
@@ -29,32 +20,24 @@ export default function TestingPage() {
                 <div className="w-full h-[2px] bg-gray-700"></div>
             </header>
             {/* Testing Area */}
-            <TiltedCard
-                imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-                altText="Kendrick Lamar - GNX Album Cover"
-                captionText="Kendrick Lamar - GNX"
-                containerHeight="300px"
-                containerWidth="300px"
-                imageHeight="300px"
-                imageWidth="300px"
-                rotateAmplitude={30}
-                scaleOnHover={1.2}
-                showMobileWarning={false}
-                showTooltip={true}
-                displayOverlayContent={true}
-                overlayContent={
-                    <p className="text-black px-8 pt-8">
-                        Kendrick Lamar - GNX
-                    </p>
-                }
-            />
+            <div className="h-[65dvh] w-2/3 mx-auto text-center text-3xl font-oxanium grid place-items-center text-black">
+                <h1>
+                    <span>Create</span>
+                    <span className="text-blue-500"> a continuous feedback loop </span>
+                    <span>where user experiences shape accessibility scores and drive better design.</span>
+                </h1>
+            </div>
+            <ScrollingImages />
+            <div className="h-[65dvh] w-2/3 mx-auto text-center text-3xl font-oxanium grid place-items-center">
+                <h1>
+                    But... <br />
+                    What is this feedback loop and accessibility score? <br />
+                    How does it work? <br />
+                    And why do we need it?
+                </h1>
+            </div>
+            <Footer />
         </ContentWrapper>
-
-
-
-
-
-
 
     )
 }

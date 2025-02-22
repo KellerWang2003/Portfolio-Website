@@ -12,7 +12,7 @@ const projects = [
     title: "Elevate",
     year: "2024",
     tags: ["User Research", "Market Research", "User Testing"],
-    description: "Bridging the gap between product design teams and users with disabilities",
+    description: "Bridging the gap between product design teams and users with disabilities.",
     link: "/projects/Elevate"
   },
   {
@@ -41,7 +41,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HomeLanding />
         <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
-        <div className="flex flex-col gap-24 md:gap-40 py-16">
+        <div className="flex flex-col gap-24 md:gap-64 py-16">
           {projects.map((project, index) => (
             <ProjectCover
               key={index}

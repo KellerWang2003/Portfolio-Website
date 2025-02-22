@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import AnimatedUnderline from './animatedUnderline';
+import AnimatedUnderline from './animation/animatedUnderline';
 import { Divide as Hamburger } from 'hamburger-react';
 import { useContext } from 'react';
 import { MenuContext } from './layoutWrapper';

@@ -6,12 +6,15 @@ const CursorContext = createContext();
 export function CursorProvider({ children }) {
     const [cursorVariant, setCursorVariant] = useState("default");
     const [cursorText, setCursorText] = useState("");
+    const [hoveredElement, setHoveredElement] = useState(null);
 
     const value = {
         cursorVariant,
         setCursorVariant,
         cursorText,
-        setCursorText
+        setCursorText,
+        hoveredElement,
+        setHoveredElement
     };
 
     return (

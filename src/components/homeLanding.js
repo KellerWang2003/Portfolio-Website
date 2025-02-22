@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState, useRef, useEffect, useCallback } from 'react';
-import AnimatedLink from './animatedLink';
+import AnimatedLink from './animation/animatedLink';
 import { MOUSE_POSITION_UPDATE } from '@/hooks/useCursorHover';
 
 function FramerMagnet({ children, xScale, yScale }) {
