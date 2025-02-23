@@ -1,20 +1,22 @@
 "use client"
 import Image from "next/image";
-import { useInView, useAnimation } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 
 
-function Title({ children, onInView }) {
+function Title({ children, onInView, margin = "-50%" }) {
     const ref = useRef(null);
-    const isInView = useInView(ref, {margin: "-50% 0px -50% 0px"});
+    const isInView = useInView(ref, {
+        margin: `${margin}`
+    });
 
     useEffect(() => {
         onInView(isInView);
     }, [isInView, onInView]);
 
     return (
-        <h1 ref={ref} className={`w-full text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-bold' : 'opacity-30'}`}>
+        <h1 ref={ref} className={`w-full text-center md:text-left text-2xl md:text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-bold' : 'opacity-30'}`}>
             {children}
         </h1>
     )
@@ -22,7 +24,7 @@ function Title({ children, onInView }) {
 
 function Card({ children }) {
     return (
-        <div className="absolute w-full rounded-2xl overflow-hidden border border-gray-300">
+        <div className="absolute w-full rounded-md md:rounded-2xl overflow-hidden border border-gray-300">
             {children}
         </div>
     )
@@ -46,6 +48,7 @@ export default function ScrollingImages({ content }) {
                         <Title 
                             key={item.key}
                             onInView={(inView) => onTitleInView(index, inView)}
+                            margin="-50% 0px -50% 0px"
                         >
                             {item.title}
                         </Title>
@@ -69,12 +72,32 @@ export default function ScrollingImages({ content }) {
             </div>
 
             {/* Mobile */}
-            <div className="flex flex-col md:hidden">
-                <section className="w-full h-[60dvh]">
-
+            <div className="relative flex flex-col md:hidden">
+                <section className="sticky top-0 mb-36 w-full h-[300px] z-10">
+                    {content.map((item, index) => (
+                        <Card key={item.key}>
+                            <Image
+                                src={item.src}
+                                alt={item.title}
+                                width={2880}
+                                height={2050}
+                                className={`transition-opacity duration-300 ${
+                                    index <= activeIndex ? 'opacity-100' : 'opacity-0'
+                                }`}
+                            />
+                        </Card>
+                    ))}
                 </section>
-                <section className="w-full h-[40dvh]">
-
+                <section className="w-full h-full">
+                    {content.map((item, index) => (
+                        <Title 
+                            key={item.key}
+                            onInView={(inView) => onTitleInView(index, inView)}
+                            margin="-70% 0px -30% 0px"
+                        >
+                            {item.title}
+                        </Title>
+                    ))}
                 </section>
             </div>
 
