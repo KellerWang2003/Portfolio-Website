@@ -535,26 +535,27 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <div className="w-full h-[330px] lg:h-[400px] flex text-xs md:text-base">
+                            <div className="w-full h-[250px] md:h-[330px] lg:h-[400px] flex text-xs md:text-base">
 
-                                <section className="w-1/4 h-full flex flex-col gap-8">
-                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tickets</div>
+                                <section className="relative w-1/4 h-full flex flex-col gap-4 md:gap-8">
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tickets</div>
                                     <Arrow />
-                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Survey Result</div>
+                                    <Arrow orientation="horizontal" className={"w-[58%] sm:w-[80%] absolute top-1/2 -translate-y-1/2 left-1/2 rotate-180"}/>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Survey Result</div>
                                 </section>
 
-                                <section className="relative w-1/2 h-full flex flex-col justify-between items-center py-5 px-8">
-                                    <Arrow orientation="horizontal" />
-                                    <div className="absolute top-1/2 -translate-y-1/2 p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl whitespace-nowrap">Accessibility Score</div>
+                                <section className="relative w-1/2 h-full flex flex-col justify-between items-center py-5 px-4 md:px-8">
+                                    <Arrow orientation="horizontal" className={"rotate-180"} />
+                                    <div className="absolute top-1/2 -translate-y-1/2 p-3 md:p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl whitespace-nowrap">Accessibility Score</div>
                                     <Arrow orientation="horizontal" />
                                 </section>
 
-                                <section className="w-1/4 h-full flex flex-col justify-between gap-8">
-                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tasks</div>
+                                <section className="w-1/4 h-full flex flex-col justify-between gap-4 md:gap-8">
+                                    <div className=" py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tasks</div>
                                     <Arrow className={ "rotate-180" } />
-                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Sprints</div>
+                                    <div className=" py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Sprints</div>
                                     <Arrow className={ "rotate-180" } />
-                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Improvement</div>
+                                    <div className=" py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Improvement</div>
                                 </section>
                             </div>
                         }
