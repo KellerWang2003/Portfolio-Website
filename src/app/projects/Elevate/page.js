@@ -1,8 +1,15 @@
+"use client"
 import ContentWrapper from "@/components/contentWrapper";
 import ProjectLanding from "@/components/projectPages/projectLanding";
 import Footer from "@/components/footer";
 import ProgressBar from "@/components/projectPages/progressBar";
 import ScrollingImages from "@/components/projectPages/scrollingImages";
+import ProjectContent from "@/components/projectPages/projectContent";
+import SectionWrapper from "@/components/projectPages/sectionWrapper";
+import Title from "@/components/projectPages/title";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
+import Image from "next/image";
+
 const cover = "/images/Elevate/elevateCoverFull.png";
 
 const content = [
@@ -45,23 +52,59 @@ const content = [
 
 const progressBarContent = [
     {
+        key: 1,
         title: "Feature Overview",
         items: []
     }, {
+        key: 2,
         title: "Research",
         items: ["The Problem", "Primary Research", "Why & How"]
     }, {
+        key: 3,
         title: "The Solution",
         items: ["Accessibility Score", "Feedback Loop"]
     }
 ];
 
-function Title({ title }) {
+export default function Elevate() {
+    const { currentSection, handleSectionInView } = useScrollProgress(1);
+
     return (
-        <h1 className="w-full text-3xl font-oxanium border-b border-current pb-2">
-            {title}
-        </h1>
-    )
+        <ContentWrapper>
+            <main className="flex flex-col gap-10 pb-12 text-black font-oxanium">
+                <ProjectLanding
+                    title="Elevate"
+                    tags={["User Research", "Market Research", "User Testing"]}
+                    description="Elevate is a data-driven platform that bridges the gap between product teams and users with disabilities through a dynamic accessibility scoring system, transforming traditional compliance-based testing into continuous, actionable feedback that drives both business value and meaningful inclusion."
+                    images1={cover}
+                />
+                <ProgressBar 
+                    bgColor="#EDEAE3" 
+                    content={progressBarContent} 
+                    currentStep={currentSection}
+                />
+                {/* Only render SectionWrappers on desktop */}
+                <div className="hidden md:flex flex-col gap-36">
+                    <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
+                        <FeatureOverview />
+                    </SectionWrapper>
+                    <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
+                        <Research />
+                    </SectionWrapper>
+                    <SectionWrapper sectionKey={3} onSectionInView={handleSectionInView}>
+                        <TheSolution />
+                    </SectionWrapper>
+                </div>
+                {/* Always render content on mobile */}
+                <div className="md:hidden flex flex-col gap-36">
+                    <FeatureOverview />
+                    <Research />
+                    <TheSolution />
+                </div>
+            </main>
+            <Footer />
+        </ContentWrapper>
+    );
 }
 
 const FeatureOverview = () => {
@@ -143,14 +186,14 @@ const Research = () => {
                     <div className="w-full sm:w-4/5 h-fit mx-auto flex flex-col gap-8 justify-center items-center">
                         <h2 className="font-bold">Insight 1</h2>
                         <p className="w-5/6 lg:w-2/3">
-                            More than 2/3 of the people we interviewed stress the importance of ongoing accessibility collaboration and feedback, but resource constraints and sensitivity concerns frequently limit this process to just the initial interactions.
+                            More than 2/3 of the people we interviewed stress the importance of <strong> ongoing accessibility collaboration and feedback </strong>, but resource constraints and sensitivity concerns frequently limit this process to <strong> just the initial interactions </strong>.
                         </p>
                         <div className="flex flex-col lg:flex-row gap-4 pt-4 border-t border-[#BFBFBF]">
                             <div className="w-full h-full p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                “It's a missed opportunity, really, that we don't get to do more of that type of stuff (accessibility audits). Because I think in general we would learn a lot more by doing it regularly.”
+                                "It's a missed opportunity, really, that we don't get to do more of that type of stuff (accessibility audits). Because I think in general we would learn a lot more by doing it regularly."
                             </div>
                             <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                “To better understand and accommodate my needs, ongoing dialogue is essential. “
+                                "To better understand and accommodate my needs, ongoing dialogue is essential."
                             </div>
 
                         </div>
@@ -159,17 +202,17 @@ const Research = () => {
                     <div className="w-full sm:w-4/5 h-fit mx-auto flex flex-col gap-8 justify-center items-center">
                         <h2 className="font-bold">Insight 2</h2>
                         <p className="w-5/6 lg:w-2/3">
-                            While experts emphasize leadership-driven accessibility and team-wide disability awareness, only 36% of companies have secured genuine top-down commitment to digital accessibility.
+                            While experts emphasize <strong> leadership-driven accessibility </strong> and <strong> team-wide disability awareness </strong>, only 36% of companies have secured genuine top-down commitment to digital accessibility.
                         </p>
                         <div className="flex flex-col lg:flex-row  gap-4 pt-4 border-t border-[#BFBFBF]">
                             <div className="w-full h-full p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                “When leadership is involved, it empowers everyone to be more considerate and proactive, making sure accessibility isn't just an afterthought.”
+                                "When leadership is involved, it empowers everyone to be more considerate and proactive, making sure accessibility isn't just an afterthought."
                             </div>
                             <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                “When leadership prioritizes accessibility, it sets the tone for the entire organization.”
+                                "When leadership prioritizes accessibility, it sets the tone for the entire organization."
                             </div>
                             <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                “It's empowering when professionals view me as a partner in the process of enhancing accessibility, acknowledging the expertise.”
+                                "It's empowering when professionals view me as a partner in the process of enhancing accessibility, acknowledging the expertise."
                             </div>
                         </div>
                     </div>
@@ -184,42 +227,12 @@ const Research = () => {
                         Basically it comes down to these two issues:
                     </p>
                     <div className="flex flex-col md:flex-row gap-10 md:gap-4">
+
                         {/* Issue 1 */}
                         <h2 className="font-bold md:hidden">Issue 1</h2>
-                        <section className="w-full grow-1 p-6 -mt-6 md:mt-0 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                            <h2 className="w-full mx-auto text-center font-bold border-b border-[#BFBFBF] pb-4">Lack of ongoing collaboration</h2>
-                            <ul className="list-disc pl-4 pt-6">
-                                <li>
-                                    <p>
-                                        Difficult to find the means and resources
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Subject sensitivity
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Unintentional barriers between the design team and individuals with disabilities
-                                    </p>
-                                </li>
-                            </ul>
-                        </section>
-                        <section className="md:hidden w-full flex flex-col gap-4">
-                            <p className="px-6"><strong>HMW</strong> support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?</p>
-                            <div className="w-full pt-4 border-t border-[#BFBFBF]">
-                                <p className="w-full p-6 font-oxanium font-bold text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                                    A CONTINUOUS FEEDBACK LOOP
-                                </p>
-                            </div>
-                        </section>
-
-                        {/* Issue 2 */}
-                        <h2 className="font-bold md:hidden mt-20 md:mt-0">Issue 2</h2>
                         <section className="w-full h-fit p-6 -mt-6 md:mt-0 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
-                            <h2 className="w-full mx-auto text-center font-bold border-b border-[#BFBFBF] pb-4">Accessibility is never the priority</h2>
-                            <ul className="list-disc pl-4 pt-6">
+                            <h2 className="w-full mx-auto text-center font-bold border-b border-[#BFBFBF] pb-4">Lack of accessibility awareness</h2>
+                            <ul className="list-disc pl-4 pt-6 flex flex-col gap-2">
                                 <li>
                                     <p>
                                         Functionality of a product always comes first
@@ -245,30 +258,64 @@ const Research = () => {
                         <section className="md:hidden w-full flex flex-col gap-4 justify-between">
                             <p className="px-6"><strong>HMW</strong> make accessibility impact measurable and visible to both product teams and the public to drive awareness of its importance?</p>
                             <div className="w-full pt-4 border-t border-[#BFBFBF]">
-                                <p className="w-full p-6 font-oxanium font-bold text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
+                                <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-2xl">
                                     ACCESSIBILITY SCORE
                                 </p>
                             </div>
                         </section>
-                    </div>
-                    {/* desktop excess */}
-                    <div className="hidden md:flex gap-4 mt-10">
-                        <section className="w-full flex flex-col gap-4">
+
+                        {/* Issue 2 */}
+                        <h2 className="font-bold md:hidden mt-20 md:mt-0">Issue 2</h2>
+                        <section className="w-full grow-1 p-6 -mt-6 md:mt-0 bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
+                            <h2 className="w-full mx-auto text-center font-bold border-b border-[#BFBFBF] pb-4">Lack of ongoing collaboration</h2>
+                            <ul className="list-disc pl-4 pt-6 flex flex-col gap-2">
+                                <li>
+                                    <p>
+                                        Difficult to find the means and resources
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Subject sensitivity
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Unintentional barriers between the design team and individuals with disabilities
+                                    </p>
+                                </li>
+                            </ul>
+                        </section>
+                        <section className="md:hidden w-full flex flex-col gap-4">
                             <p className="px-6"><strong>HMW</strong> support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?</p>
                             <div className="w-full pt-4 border-t border-[#BFBFBF]">
-                                <p className="w-full p-6 font-oxanium font-bold text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
+                                <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-2xl">
                                     A CONTINUOUS FEEDBACK LOOP
                                 </p>
                             </div>
                         </section>
+
+
+                    </div>
+                    {/* desktop excess */}
+                    <div className="hidden md:flex gap-4 mt-10">
                         <section className="w-full grow-1 flex flex-col gap-4 justify-between">
                             <p className="px-6"><strong>HMW</strong> make accessibility impact measurable and visible to both product teams and the public to drive awareness of its importance?</p>
                             <div className="w-full pt-4 border-t border-[#BFBFBF]">
-                                <p className="w-full p-6 font-oxanium font-bold text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">
+                                <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-2xl">
                                     ACCESSIBILITY SCORE
                                 </p>
                             </div>
                         </section>
+                        <section className="w-full flex flex-col gap-4">
+                            <p className="px-6"><strong>HMW</strong> support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?</p>
+                            <div className="w-full pt-4 border-t border-[#BFBFBF]">
+                                <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-2xl">
+                                    A CONTINUOUS FEEDBACK LOOP
+                                </p>
+                            </div>
+                        </section>
+
                     </div>
                 </div>
             </section>
@@ -277,34 +324,252 @@ const Research = () => {
 }
 
 const TheSolution = () => {
+
+    const Arrow = ({ className, orientation = "vertical" }) => {
+        return (
+            <div className={`w-full flex ${orientation === 'horizontal' ? 'flex-row' : 'flex-col h-full'} justify-center items-center ${className}`}>
+                <div className={`w-4 h-4 border-t-2 border-l-2 border-[#BFBFBF] ${orientation === 'horizontal' ? '-rotate-45' : 'rotate-45'}`}></div>
+                <div className={`${orientation === 'horizontal' ? 'w-full h-[2px]' : 'h-full w-[2px]'} bg-[#BFBFBF] ${orientation === 'horizontal' ? '-ml-4' : '-mt-4'}`}></div>
+            </div>
+        )
+    }
+
     return (
-        <section className="flex flex-col gap-36 md:px-16">
+        <section className="flex flex-col gap-36 md:px-16 pb-36 text-sm md:text-base">
             <Title title="The Solution" />
+
+            {/* Accessibility Score */}
+            <section className="w-full flex flex-col gap-10 -mt-24">
+                <h1 className="text-3xl font-oxanium">Accessibility Score</h1>
+                <div className="flex flex-col gap-32">
+                    <ProjectContent
+                        order=""
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Score Dashboard</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>The accessibility score dashboard displays a comprehensive score derived from three preliminary metrics:</p>
+                                    <ul className="list-disc pl-4 font-bold">
+                                        <li>
+                                            <p>
+                                                Active Improvements
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                User Feedback
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>User Engagement</p>
+                                        </li>
+
+                                    </ul>
+                                    <p >( Measuring methods will be explained in the next section )</p>
+                                    <p>The combination of these metrics provides a holistic measure of a product's accessibility performance.</p>
+                                </div>
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/AccessibilityScore.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+                    <ProjectContent
+                        order=""
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Main Dashboard</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>The <strong>"Embed Score"</strong> feature allows teams to showcase their accessibility commitment across platforms, raising public awareness while celebrating inclusive design.</p>
+                                </div>
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/Dashboard.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+                </div>
+            </section>
+
+            {/* Feedback Loop */}
+            <section className="w-full flex flex-col gap-10">
+                <h1 className="text-3xl font-oxanium">The Feedback Loop</h1>
+                <div className="flex flex-col gap-32">
+                    {/* Product Ambassador */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Product Ambassador</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>The platform maintains a network of Product Ambassadors - primarily users with disabilities, but open to all users who can provide valuable accessibility feedback</p>
+                                    <p>The method of becoming a product ambassador will be a separate design initiative.</p>
+                                </div>
+
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/ProductAmbassador.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+
+                    {/* Tickets */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Tickets</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>The Tickets Dashboard tracks all incoming accessibility improvement requests. </p>
+                                    <p>While Product Ambassadors form our core testing network providing regular, consistent feedback, any user can submit tickets to enhance product accessibility.</p>
+                                </div>
+
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/Tickets1.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+
+                    {/* Sprint Manager */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Sprint Manager</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>Tickets transform into tasks, and fall under a sprint, with potential Jira API integration to streamline workflow.  </p>
+                                    <p>
+                                        However, these specialized sprints uniquely measure both task completion and user-verified accessibility impact.</p>
+                                </div>
+
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/Sprint.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+
+                    {/* Roadmap */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Roadmap</h2>
+                                <div className="flex flex-col gap-8">
+                                    <p>Elavate sprints extend beyond traditional completion through five key stages:</p>
+
+                                    <div className="flex gap-2 text-sm">
+                                        <section className="w-full flex flex-col gap-2 items-center">
+                                            <div className="w-full h-4 bg-[#faea8f] rounded-full"></div>
+                                            <p>Ongoing</p>
+                                        </section>
+                                        <section className="w-full flex flex-col gap-2 items-center">
+                                            <div className="w-full h-4 bg-[#FECC76] rounded-full"></div>
+                                            <p>Fixed</p>
+                                        </section>
+                                        <section className="w-full flex flex-col gap-2 items-center">
+                                            <div className="w-full h-4 bg-[#6691f4] rounded-full"></div>
+                                            <p>Survey Sent</p>
+                                        </section>
+                                        <section className="w-full flex flex-col gap-2 items-center">
+                                            <div className="w-full h-4 bg-[#a499ec] rounded-full"></div>
+                                            <p>Evaluation</p>
+                                        </section>
+                                        <section className="w-full flex flex-col gap-2 items-center">
+                                            <div className="w-full h-4 bg-[#87DEA8] rounded-full"></div>
+                                            <p>Completed</p>
+                                        </section>
+                                    </div>
+
+                                    <p>After changes are implemented, affected users receive surveys to assess the improvements. Their feedback not only updates the product's accessibility score but can also generate new improvement tickets - <strong>creating a continuous cycle where each solution's effectiveness is verified and refined by actual user experience.</strong></p>
+                                </div>
+
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/Roadmap2.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+
+                    {/* Survey */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-between gap-4">
+                                <h2 className="font-bold ">Survey</h2>
+                                <div className="flex flex-col gap-4">
+                                    <p>The Survey Dashboard displays active sprints and prompts available actions.</p>
+                                    <p>Positive responses enhance the product's accessibility score, while all feedback contributes to continuous improvement through potential new tickets.</p>
+                                </div>
+
+                            </div>
+                        }
+                        rightChild={
+                            <Image src="/images/Elevate/Screen/Survey.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                        }
+                    />
+
+                    {/* Feedback Loop */}
+                    <ProjectContent
+                        order="reverse"
+                        leftChild={
+                            <div className="w-full h-full flex flex-col justify-end gap-4">
+                                <p>In this way, a feedback loop is created</p>
+                                <ul className="list-disc pl-4 flex flex-col gap-2">
+                                    <li>
+                                        <p>
+                                            Forms sustainable connections between product teams and users, breaking down communication barriers
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Enables teams to adapt to evolving user needs through continuous validation
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Bridges the gap between technical compliance and real user experience
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Transforms sporadic accessibility testing into continuous improvement
+                                        </p>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        }
+                        rightChild={
+                            <div className="w-full h-[330px] lg:h-[400px] flex text-xs md:text-base">
+
+                                <section className="w-1/4 h-full flex flex-col gap-8">
+                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tickets</div>
+                                    <Arrow />
+                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Survey Result</div>
+                                </section>
+
+                                <section className="relative w-1/2 h-full flex flex-col justify-between items-center py-5 px-8">
+                                    <Arrow orientation="horizontal" />
+                                    <div className="absolute top-1/2 -translate-y-1/2 p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl whitespace-nowrap">Accessibility Score</div>
+                                    <Arrow orientation="horizontal" />
+                                </section>
+
+                                <section className="w-1/4 h-full flex flex-col justify-between gap-8">
+                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Tasks</div>
+                                    <Arrow className={ "rotate-180" } />
+                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Sprints</div>
+                                    <Arrow className={ "rotate-180" } />
+                                    <div className=" py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">Improvement</div>
+                                </section>
+                            </div>
+                        }
+                    />
+                </div>
+            </section>
         </section>
     )
 }
 
-export default function Elevate() {
-    return (
-        <ContentWrapper>
-            <main className="flex flex-col gap-10 pb-12 text-black font-oxanium">
-                <ProjectLanding
-                    title="Elevate"
-                    tags={["User Research", "Market Research", "User Testing"]}
-                    description="Elevate is a data-driven platform that bridges the gap between product teams and users with disabilities through a dynamic accessibility scoring system, transforming traditional compliance-based testing into continuous, actionable feedback that drives both business value and meaningful inclusion."
-                    images1={cover}
-                />
-                <ProgressBar bgColor="#EDEAE3" content={progressBarContent} />
-                <div className="flex flex-col gap-36">
-                    {/* Feature Overview */}
-                    <FeatureOverview />
-                    {/* Research */}
-                    <Research />
-                    {/* The Solution */}
-                    <TheSolution />
-                </div>
-            </main>
-            <Footer />
-        </ContentWrapper>
-    );
-}
+

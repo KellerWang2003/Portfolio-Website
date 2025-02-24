@@ -1,7 +1,7 @@
-export default function ProjectContent({ order = "", leftChild, rightChild }) {
+export default function ProjectContent({ order = "", leftChild, rightChild, className }) {
 
     const MobileContent = (
-        <div className="w-full flex flex-col gap-8 justify-between">
+        <div className={`w-full flex flex-col gap-8 justify-between ${className}`}>
             {leftChild}
             {rightChild}
         </div>
@@ -9,7 +9,7 @@ export default function ProjectContent({ order = "", leftChild, rightChild }) {
 
 
     const DesktopContent = (
-        <div className="w-full flex font-oxanium">
+        <div className={`w-full flex font-oxanium ${className}`}>
             {order === 'reverse' ? (
                 <>
                     <div className="w-3/5">

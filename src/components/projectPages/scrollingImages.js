@@ -16,7 +16,7 @@ function Title({ children, onInView, margin = "-50%" }) {
     }, [isInView, onInView]);
 
     return (
-        <h1 ref={ref} className={`w-full text-center md:text-left text-2xl md:text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-bold' : 'opacity-30'}`}>
+        <h1 ref={ref} className={`w-full text-center lg:text-left text-2xl lg:text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-semibold' : 'opacity-30'}`}>
             {children}
         </h1>
     )
@@ -42,7 +42,7 @@ export default function ScrollingImages({ content }) {
     return (
         <>
             {/* Desktop */}
-            <div className="hidden md:flex w-full items-start font-oxanium text-black -mt-[10vh]">
+            <div className="hidden lg:flex w-full items-start font-oxanium text-black -mt-[10vh]">
                 <section className="w-2/5 flex flex-col gap-8 py-[50vh]">
                     {content.map((item, index) => (
                         <Title 
@@ -72,8 +72,8 @@ export default function ScrollingImages({ content }) {
             </div>
 
             {/* Mobile */}
-            <div className="relative flex flex-col md:hidden">
-                <section className="sticky top-0 mb-36 w-full h-[300px] z-10">
+            <div className="relative flex flex-col lg:hidden">
+                <section className="sticky top-0 md:top-8 mb-36 w-full h-[300px] z-10">
                     {content.map((item, index) => (
                         <Card key={item.key}>
                             <Image
@@ -93,7 +93,7 @@ export default function ScrollingImages({ content }) {
                         <Title 
                             key={item.key}
                             onInView={(inView) => onTitleInView(index, inView)}
-                            margin="-70% 0px -30% 0px"
+                            margin="-75% 0px -25% 0px"
                         >
                             {item.title}
                         </Title>

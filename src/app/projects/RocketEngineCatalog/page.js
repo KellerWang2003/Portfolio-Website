@@ -1,8 +1,12 @@
+"use client"
 import ContentWrapper from "@/components/contentWrapper";
 import ProjectLanding from "@/components/projectPages/projectLanding";
 import Footer from "@/components/footer";
 import ProgressBar from "@/components/projectPages/progressBar";
 import ProjectContent from "@/components/projectPages/projectContent";
+import SectionWrapper from "@/components/projectPages/sectionWrapper";
+import Title from "@/components/projectPages/title";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
 import Image from "next/image";
 
 const VIDEO_SOURCES = {
@@ -62,31 +66,18 @@ const mobileImages = [
 
 //Progress Bar Content
 const content = [{
-    title: "Design/Prototype",
+    key: 1,
+    title: "Design & Prototype",
     items: ["Engine Factory", "Fabrication Shop", "Hanger Bay", "Future Plans", "Mobile Gallery"]
 }, {
+    key: 2,
     title: "Research",
     items: ["The Database", "User Archetypes", "Visual Language"]
 }];
 
-
-export default function RocketEngineCatalog() {
-
+const Design = () => {
     return (
-        <ContentWrapper bgColor="#181818" borderColor="#565F68">
-            <main className="relative flex flex-col gap-10">
-                <ProjectLanding
-                    textColor="#EAEAEA"
-                    title="Rocket Engine Catalog"
-                    tags={["Visual Development", "Interaction Design"]}
-                    description="This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.
-                The interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components."
-                    images1={desktopImages}
-                    images2={mobileImages}
-                />
-                <ProgressBar bgColor="#2E2E2E" content={content} />
-                {/* Design */}
-                <div className="flex flex-col gap-56 pt-12 md:px-16 text-sm md:text-base text-[#EAEAEA]">
+        <div className="flex flex-col gap-56 pt-12 md:px-16 text-sm md:text-base text-[#EAEAEA]">
                     {/* Engine Factory */}
                     <ProjectContent
                         leftChild={
@@ -435,8 +426,50 @@ export default function RocketEngineCatalog() {
                         }
                     />
                 </div>
-                {/* Research */}
-                <div className="flex flex-col gap-48"></div>
+    )
+}
+
+const Research = () => {
+    return (
+        <div className="flex flex-col gap-48 h-[20vh]">
+            <Title title="Research coming soon" />
+        </div>
+    )
+}
+
+
+export default function RocketEngineCatalog() {
+    const { currentSection, handleSectionInView } = useScrollProgress(1);
+
+    return (
+        <ContentWrapper bgColor="#181818" borderColor="#565F68">
+            <main className="relative flex flex-col gap-10">
+                <ProjectLanding
+                    textColor="#EAEAEA"
+                    title="Rocket Engine Catalog"
+                    tags={["Visual Development", "Interaction Design"]}
+                    description="This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.
+                The interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components."
+                    images1={desktopImages}
+                    images2={mobileImages}
+                />
+                <ProgressBar 
+                    bgColor="#2E2E2E" 
+                    content={content} 
+                    currentStep={currentSection}
+                />
+                <div className="hidden md:flex flex-col gap-36">
+                    <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
+                        <Design />
+                    </SectionWrapper>
+                <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
+                    <Research />
+                    </SectionWrapper>
+                </div>
+                <div className="md:hidden flex flex-col gap-36">
+                    <Design />
+                    <Research />
+                </div>
                 <Footer color="#EAEAEA" backgroundColor="#181818" />
             </main>
         </ContentWrapper>

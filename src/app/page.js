@@ -29,6 +29,7 @@ const projects = [
     year: "2023",
     tags: ["Research", "UI Design", "Prototyping"],
     description: "An app designed for the FPV (First-Person View) community to connect, share, and ensure the legality and safety of their flying locations.",
+    link: "/projects/DroneNet"
   },
 ];
 
