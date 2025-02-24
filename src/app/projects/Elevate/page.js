@@ -371,7 +371,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/AccessibilityScore.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[1].src} alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
                     <ProjectContent
@@ -385,7 +385,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/Dashboard.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[0].src} alt="Dashboard" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
                 </div>
@@ -409,7 +409,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/ProductAmbassador.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[5].src} alt="Product Ambassador" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
 
@@ -427,7 +427,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/Tickets1.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[4].src} alt="Tickets" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
 
@@ -446,7 +446,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/Sprint.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[3].src} alt="Sprint Manager" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
 
@@ -488,7 +488,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/Roadmap2.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[2].src} alt="Roadmap" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
 
@@ -506,7 +506,7 @@ const TheSolution = () => {
                             </div>
                         }
                         rightChild={
-                            <Image src="/images/Elevate/Screen/Survey.png" alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
+                            <Image src={content[6].src} alt="Survey" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
                         }
                     />
 
