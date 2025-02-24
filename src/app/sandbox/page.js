@@ -171,6 +171,7 @@ export default function Sandbox() {
                     <ProjectCard title="Dune Teaser">
                         <video
                             src="/images/Sandbox/Animations/DuneTeaser.mp4"
+                            preload="metadata"
                             controls
                             loop
                             autoPlay

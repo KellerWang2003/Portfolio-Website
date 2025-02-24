@@ -83,8 +83,7 @@ export default function Elevate() {
                     content={progressBarContent} 
                     currentStep={currentSection}
                 />
-                {/* Only render SectionWrappers on desktop */}
-                <div className="hidden md:flex flex-col gap-36">
+                <div className="flex flex-col gap-36">
                     <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
                         <FeatureOverview />
                     </SectionWrapper>
@@ -94,12 +93,6 @@ export default function Elevate() {
                     <SectionWrapper sectionKey={3} onSectionInView={handleSectionInView}>
                         <TheSolution />
                     </SectionWrapper>
-                </div>
-                {/* Always render content on mobile */}
-                <div className="md:hidden flex flex-col gap-36">
-                    <FeatureOverview />
-                    <Research />
-                    <TheSolution />
                 </div>
             </main>
             <Footer />

@@ -458,17 +458,13 @@ export default function RocketEngineCatalog() {
                     content={content} 
                     currentStep={currentSection}
                 />
-                <div className="hidden md:flex flex-col gap-36">
+                <div className="flex flex-col gap-36">
                     <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
                         <Design />
                     </SectionWrapper>
                 <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
                     <Research />
                     </SectionWrapper>
-                </div>
-                <div className="md:hidden flex flex-col gap-36">
-                    <Design />
-                    <Research />
                 </div>
                 <Footer color="#EAEAEA" backgroundColor="#181818" />
             </main>

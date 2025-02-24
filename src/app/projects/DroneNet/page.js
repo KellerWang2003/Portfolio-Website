@@ -1,5 +1,7 @@
 import ContentWrapper from "@/components/contentWrapper";
 import ProjectLanding from "@/components/projectPages/projectLanding";
+import ProjectContent from "@/components/projectPages/projectContent";
+
 
 
 export default function DroneNet() {

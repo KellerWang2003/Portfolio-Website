@@ -56,7 +56,7 @@ const ProgressItem = ({
                         }}
                     >
                         {section.items.map((item, index) => (
-                            <li key={index} className="text-center whitespace-nowrap opacity-30">
+                            <li key={index} className="text-center whitespace-nowrap opacity-60">
                                 {item}
                             </li>
                         ))}
