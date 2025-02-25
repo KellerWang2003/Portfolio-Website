@@ -51,12 +51,11 @@ const DesktopNav = ({ colors }) => {
       </Link>
       <div className="flex items-center gap-10">
         <NavButton href="/info" textColor={colors.textColor}>Info</NavButton>
-        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
-           className="">
+        <Link href="/resume" className="">
           <AnimatedUnderline lineColor={colors.textColor}>
             Resume
           </AnimatedUnderline>
-        </a>
+        </Link>
       </div>
     </nav>
   );
@@ -118,7 +117,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
         <MobileDivider />
         <Link href="/info" onClick={handleLinkClick} className='h-full flex items-center'>Info</Link>
         <MobileDivider />
-        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>Resume</a>
+        <Link href="/resume" onClick={handleLinkClick} className='h-full flex items-center'>Resume</Link>
       </section>
     </nav>
   )
