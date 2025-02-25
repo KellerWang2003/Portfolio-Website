@@ -1,5 +1,6 @@
 import Tags from "../tags"
 import ScrollingCarousel from "./scrollingCarousel"
+import Image from "next/image";
 
 export default function ProjectLanding({ textColor = "#000", title, tags, description, images1, images2 }) {
 
@@ -13,11 +14,13 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                         <ScrollingCarousel scrollSpeed={80} images={images1} orientation="horizontal" direction="right"/>
                     </>
                 ) : (
-                    <img 
-                        src={images1} 
-                        alt={title} 
-                        className="w-full h-full rounded -mt-6 object-cover"
-                    />
+                    <Image 
+                            src={images1}
+                            alt={title}
+                            width={1920}
+                            height={1300}
+                            className="w-full h-full object-cover rounded"
+                        />
                 )}
             </section>
             <section className="w-full flex flex-col gap-3">
@@ -43,16 +46,18 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                     {Array.isArray(images1) ? (
                         <ScrollingCarousel scrollSpeed={120} images={images1} />
                     ) : (
-                        <img 
-                            src={images1} 
-                            alt={title} 
+                        <Image 
+                            src={images1}
+                            alt={title}
+                            width={1920}
+                            height={1300}
                             className="w-full h-full object-cover rounded"
                         />
                     )}
                 </div>
                 {images2 && (
                     <div className="w-1/4">
-                        <ScrollingCarousel scrollSpeed={180} images={images2} direction="up" />
+                        <ScrollingCarousel scrollSpeed={180} images={images2} direction="up" landscape={false} />
                     </div>
                 )}
             </section>

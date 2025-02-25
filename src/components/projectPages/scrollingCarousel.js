@@ -9,11 +9,12 @@ export default function ScrollingCarousel({
     scrollSpeed = 50,
     direction,
     images = [],
+    landscape,
     orientation = 'vertical'
 }) {
 
     if (orientation === 'vertical') {
-        return <VerticalScrollingCarousel scrollSpeed={scrollSpeed} direction={direction} images={images} />;
+        return <VerticalScrollingCarousel scrollSpeed={scrollSpeed} direction={direction} images={images} landscape={landscape} />;
     }
 
     return <HorizontalScrollingCarousel scrollSpeed={scrollSpeed} direction={direction} images={images} />;
@@ -22,7 +23,7 @@ export default function ScrollingCarousel({
 function HorizontalScrollingCarousel({
     scrollSpeed = 50,
     direction = 'left',
-    images = []
+    images = [],
 }) {
 
     let [ref, { width }] = useMeasure();
@@ -60,11 +61,10 @@ function HorizontalScrollingCarousel({
                 {[...images, ...images].map((image, index) => (
                     <Image
                         key={index}
-
                         src={image}
                         alt={`Rocket Engine Catalog Screenshot ${(index % images.length) + 1}`}
-                        width={700}
-                        height={400}
+                        width={1920}
+                        height={1080} 
                         className="object-contain h-full w-fit"
                     />
                 ))}
@@ -77,7 +77,8 @@ function HorizontalScrollingCarousel({
 function VerticalScrollingCarousel({
     scrollSpeed = 50,
     direction = 'down',
-    images = []
+    images = [],
+    landscape = true
 }) {
 
     let [ref, { height }] = useMeasure();
@@ -116,8 +117,8 @@ function VerticalScrollingCarousel({
                         key={index}
                         src={image}
                         alt={`Rocket Engine Catalog Screenshot ${(index % images.length) + 1}`}
-                        width={800}
-                        height={400}
+                        width={landscape ? 1920 : 786}
+                        height={landscape ? 1080 : 1650} 
                         className="object-contain w-full"
                     />
                 ))}

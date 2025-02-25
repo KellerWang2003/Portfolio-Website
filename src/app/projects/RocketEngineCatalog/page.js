@@ -51,16 +51,12 @@ const desktopImages = [
     "/images/Rocket/Desktop/DetailsDesktop1.png",
 ];
 
-const mobileImages = [
+const mobileImagesLanding = [
     "/images/Rocket/Mobile/HomeMobile.png",
     "/images/Rocket/Mobile/LandingMobile.png",
-    "/images/Rocket/Mobile/LandingMobile1.png",
     "/images/Rocket/Mobile/LandingMobile2.png",
     "/images/Rocket/Mobile/LandingMobile3.png",
-    "/images/Rocket/Mobile/LandingMobile4.png",
-    "/images/Rocket/Mobile/LandingMobile5.png",
     "/images/Rocket/Mobile/LandingMobile6.png",
-    "/images/Rocket/Mobile/LandingMobile7.png",
     "/images/Rocket/Mobile/DetailsMobile.png",
 ];
 
@@ -74,6 +70,40 @@ const content = [{
     title: "Research",
     items: ["The Database", "User Archetypes", "Visual Language"]
 }];
+
+export default function RocketEngineCatalog() {
+    const { currentSection, handleSectionInView } = useScrollProgress(1);
+
+    return (
+        <ContentWrapper bgColor="#181818" borderColor="#565F68">
+            <main className="relative flex flex-col gap-10">
+                <ProjectLanding
+                    textColor="#EAEAEA"
+                    title="Rocket Engine Catalog"
+                    tags={["Visual Development", "Interaction Design"]}
+                    description="This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.
+                The interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components."
+                    images1={desktopImages}
+                    images2={mobileImagesLanding}
+                />
+                <ProgressBar 
+                    bgColor="#2E2E2E" 
+                    content={content} 
+                    currentStep={currentSection}
+                />
+                <div className="flex flex-col gap-36">
+                    <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
+                        <Design />
+                    </SectionWrapper>
+                <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
+                    <Research />
+                    </SectionWrapper>
+                </div>
+                <Footer color="#EAEAEA" backgroundColor="#181818" />
+            </main>
+        </ContentWrapper>
+    )
+}
 
 const Design = () => {
     return (
@@ -111,16 +141,7 @@ const Design = () => {
                                 </section>
                             </div>}
                         rightChild={
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            >
-                                <source src={VIDEO_SOURCES.home.src} type={VIDEO_SOURCES.home.type} />
-                                Your browser does not support the video tag.
-                            </video>
+                            <Image src={desktopImages[0]} alt="Future Plans" width={960} height={540} />
                         }
                     />
                     {/* Fabrication Shop */}
@@ -140,16 +161,19 @@ const Design = () => {
                                 </section>
                             </div>}
                         rightChild={
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            >
-                                <source src={VIDEO_SOURCES.landing1.src} type={VIDEO_SOURCES.home.type} />
-                                Your browser does not support the video tag.
-                            </video>
+
+                            <Image src={desktopImages[1]} alt="Fabrication Shop" width={960} height={540} />
+                        
+                            // <video
+                            //     autoPlay
+                            //     loop
+                            //     muted
+                            //     playsInline
+                            //     className="w-full h-full object-cover"
+                            // >
+                            //     <source src={VIDEO_SOURCES.landing1.src} type={VIDEO_SOURCES.home.type} />
+                            //     Your browser does not support the video tag.
+                            // </video>
                         }
                     />
                     {/* Part 1 - Building the engine */}
@@ -188,20 +212,20 @@ const Design = () => {
                                 <section className="flex flex-col gap-4">
                                     <p>After all three has been selected, the user will be shown a summary of all their selections and further configure their engine.</p>
                                     <p>After they are happy with their build, they can proceed to the selection area.</p>
-                                    <p>The user can also select "Reconfigure" option to return to summary page and modify configuration.</p>
                                 </section>
                             </div>}
                         rightChild={
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            >
-                                <source src={VIDEO_SOURCES.landing3.src} type={VIDEO_SOURCES.home.type} />
-                                Your browser does not support the video tag.
-                            </video>
+                            <Image src={desktopImages[4]} alt="Build Summary" width={960} height={540} />
+                            // <video
+                            //     autoPlay
+                            //     loop
+                            //     muted
+                            //     playsInline
+                            //     className="w-full h-full object-cover"
+                            // >
+                            //     <source src={VIDEO_SOURCES.landing3.src} type={VIDEO_SOURCES.home.type} />
+                            //     Your browser does not support the video tag.
+                            // </video>
                         }
                     />
                     {/* Part 2 - Selecting your engine */}
@@ -315,7 +339,7 @@ const Design = () => {
                     {/* Mobile Gallery */}
                     <ProjectContent
                         leftChild={
-                            <div className="h-full flex flex-col gap-[350px]">
+                            <div className="h-full flex flex-col gap-4 lg:gap-[350px]">
                                 <section className="flex flex-col gap-2">
                                     <h2 className="text-4xl">MOBILE GALLERY</h2>
                                 </section>
@@ -437,37 +461,3 @@ const Research = () => {
     )
 }
 
-
-export default function RocketEngineCatalog() {
-    const { currentSection, handleSectionInView } = useScrollProgress(1);
-
-    return (
-        <ContentWrapper bgColor="#181818" borderColor="#565F68">
-            <main className="relative flex flex-col gap-10">
-                <ProjectLanding
-                    textColor="#EAEAEA"
-                    title="Rocket Engine Catalog"
-                    tags={["Visual Development", "Interaction Design"]}
-                    description="This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.
-                The interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components."
-                    images1={desktopImages}
-                    images2={mobileImages}
-                />
-                <ProgressBar 
-                    bgColor="#2E2E2E" 
-                    content={content} 
-                    currentStep={currentSection}
-                />
-                <div className="flex flex-col gap-36">
-                    <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
-                        <Design />
-                    </SectionWrapper>
-                <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
-                    <Research />
-                    </SectionWrapper>
-                </div>
-                <Footer color="#EAEAEA" backgroundColor="#181818" />
-            </main>
-        </ContentWrapper>
-    )
-}
