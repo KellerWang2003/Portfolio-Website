@@ -3,45 +3,53 @@ import ContentWrapper from "@/components/contentWrapper";
 import HomeLanding from "@/components/homeLanding";
 import ProjectCover from "@/components/projectCover";
 import Footer from "@/components/footer";
-import Link from "next/link";
 import { useCursorHover } from "@/hooks/useCursorHover";
 
-const projects = [
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/routing';
+
+
+
+export default function Index() {
+  const cursorEvents = useCursorHover("");
+
+  const t = useTranslations('Index');
+
+  const projects = [
   {
     cover: "/images/Elevate/elevateCover.png",
-    title: "Elevate",
+    title: t('projects.elevate.title'),
     year: "2024",
     tags: ["User Research", "Market Research", "User Testing"],
-    description: "Bridging the gap between product design teams and users with disabilities.",
+    description: t('projects.elevate.description'),
     link: "/projects/Elevate"
   },
   {
     cover: "/images/Rocket/rocketEngineCatalogCover.png",
-    title: "Rocket Engine Catalog",
+    title: t('projects.rocketEngine.title'),
     year: "2024",
     tags: ["Visual Development", "Interaction Design"],
-    description: "An interface that eliminates the barrier between everyday people and the complex world of rocket engines.",
+    description: t('projects.rocketEngine.description'),
     link: "/projects/RocketEngineCatalog"
   },
   {
     cover: "/images/DroneNet/dronenetCover.png",
-    title: "DroneNet",
+    title: t('projects.droneNet.title'),
     year: "2023",
     tags: ["Research", "UI Design", "Prototyping"],
-    description: "An app designed for the FPV (First-Person View) community to connect, share, and ensure the legality and safety of their flying locations.",
+    description: t('projects.droneNet.description'),
     link: "/projects/DroneNet"
   },
 ];
 
-
-export default function Home() {
-
-  const cursorEvents = useCursorHover("");
+  
   return (
     <ContentWrapper bgColor="#F7F4EC">
       <main className="flex flex-col">
         <HomeLanding />
-        <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">SELECTED WORKS</h2>
+        <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">
+          {t('selectedWorks')}
+        </h2>
         <div className="flex flex-col gap-24 md:gap-64 py-16">
           {projects.map((project, index) => (
             <ProjectCover
@@ -62,7 +70,7 @@ export default function Home() {
           data-cursor="true"
           className="group w-fit flex gap-4 items-end mt-60 mb-8 text-4xl lg:text-5xl text-black font-oxanium"
         >
-          <h2 className="w-fit">Check out my sandbox</h2>
+          <h2 className="w-fit">{t('sandboxLink')}</h2>
           <div className="w-4 h-4 lg:w-6 lg:h-6 rotate-45 lg:rotate-0
           mb-2 lg:mb-3 
           lg:group-hover:rotate-45 transition-transform duration-300 ease-in-out">

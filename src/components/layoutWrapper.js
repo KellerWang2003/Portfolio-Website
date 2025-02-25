@@ -7,7 +7,8 @@ import { MenuProvider } from '@/context/menuContext';
 
 const backgroundColors = {
     'default': '#9EA4AE',
-    '/projects/RocketEngineCatalog': '#353535'
+    '/projects/RocketEngineCatalog': '#353535',
+    '/zh/projects/RocketEngineCatalog': '#353535'
 };
 
 export default function LayoutWrapper({ children }) {

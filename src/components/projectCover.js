@@ -1,10 +1,11 @@
 "use client"
 import Image from "next/image";
-import Link from "next/link";
 import Tags from "./tags";
 import FadeInAnimation from "./animation/fadeInAnimation";
 import { useCursor } from '@/context/cursorContext';
 import AnimatedTextReveal from "./animation/animatedTextReveal";
+import { Link } from "@/i18n/routing";
+
 
 export default function ProjectCover({ number, cover, year, title, tags, description, link, isFirst }) {
     const { cursorVariant, hoveredElement } = useCursor();

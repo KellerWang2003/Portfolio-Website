@@ -1,31 +1,31 @@
 "use client";
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AnimatedUnderline from './animation/animatedUnderline';
 import { Divide as Hamburger } from 'hamburger-react';
-import { useContext } from 'react';
-import { MenuContext } from './layoutWrapper';
 import { useMenu } from '@/context/menuContext';
-
+import { useTranslations } from 'next-intl';
+import {Link} from '@/i18n/routing';
 // Color configurations for different pages
 const PAGE_COLORS = {
   '/projects/RocketEngineCatalog': {
     bgColor: '#4F5458',
     textColor: '#EAEAEA'
   },
-  '/projects/Inclusight': {  // Example for another project
-    bgColor: '#F5F5F5',
-    textColor: '#1A1A1A'
+  '/zh/projects/RocketEngineCatalog': {
+    bgColor: '#4F5458',
+    textColor: '#EAEAEA'
   }
   // Add more page-specific colors as needed
 };
 
-const NavButton = ({ href, children, textColor, onClick }) => {
+const NavButton = ({ href, children, textColor, onClick, translationKey }) => {
+  const t = useTranslations('Navigation');
+  
   if (href) {
     return (
       <Link href={href} className="">
         <AnimatedUnderline lineColor={textColor}>
-          {children}
+          {translationKey ? t(translationKey) : children}
         </AnimatedUnderline>
       </Link>
     );
@@ -37,8 +37,8 @@ const DesktopNav = ({ colors }) => {
     <nav className="flex w-full px-8 py-3 rounded-xl
                     font-oxanium text-base justify-between items-center" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
       <div className="flex items-center gap-10">
-        <NavButton href="/" textColor={colors.textColor}>Index</NavButton>
-        <NavButton href="/sandbox" textColor={colors.textColor}>Sandbox</NavButton>
+        <NavButton href="/" textColor={colors.textColor} translationKey="index" />
+        <NavButton href="/sandbox" textColor={colors.textColor} translationKey="sandbox" />
       </div>
       {/* Logo */}
       <Link href="/" className="w-6 h-6 absolute left-1/2 transform -translate-x-1/2">
@@ -50,18 +50,15 @@ const DesktopNav = ({ colors }) => {
         </svg>
       </Link>
       <div className="flex items-center gap-10">
-        <NavButton href="/info" textColor={colors.textColor}>Info</NavButton>
-        <Link href="/resume" className="">
-          <AnimatedUnderline lineColor={colors.textColor}>
-            Resume
-          </AnimatedUnderline>
-        </Link>
+        <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
+        <NavButton href="/resume" textColor={colors.textColor} translationKey="resume" />
       </div>
     </nav>
   );
 };
 
 const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
+  const t = useTranslations('Navigation');
 
   const MobileDivider = () => {
     return (
@@ -111,13 +108,21 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
         flex flex-col justify-between transition-[top] duration-300 ease-in-out
          mb-2 px-4`}>
         <MobileDivider />
-        <Link href="/" onClick={handleLinkClick} className={`h-full flex items-center ${isMenuOpen ? 'w-full' : 'w-12'}`}>Index</Link>
+        <Link href="/" onClick={handleLinkClick} className={`h-full flex items-center ${isMenuOpen ? 'w-full' : 'w-12'}`}>
+          {t('index')}
+        </Link>
         <MobileDivider />
-        <Link href="/sandbox" onClick={handleLinkClick} className='h-full flex items-center'>Sandbox</Link>
+        <Link href="/sandbox" onClick={handleLinkClick} className='h-full flex items-center'>
+          {t('sandbox')}
+        </Link>
         <MobileDivider />
-        <Link href="/info" onClick={handleLinkClick} className='h-full flex items-center'>Info</Link>
+        <Link href="/info" onClick={handleLinkClick} className='h-full flex items-center'>
+          {t('info')}
+        </Link>
         <MobileDivider />
-        <Link href="/resume" onClick={handleLinkClick} className='h-full flex items-center'>Resume</Link>
+        <Link href="/resume" onClick={handleLinkClick} className='h-full flex items-center'>
+          {t('resume')}
+        </Link>
       </section>
     </nav>
   )

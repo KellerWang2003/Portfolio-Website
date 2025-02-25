@@ -4,6 +4,11 @@ import LayoutWrapper from "@/components/layoutWrapper";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
+
 const oxanium = Oxanium({ 
   subsets: ['latin'],
 });
@@ -57,15 +62,28 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export default async function LocaleLayout({
+  children,
+  params,
+}) {
+  const { locale } = await params;
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${oxanium.variable} overscroll-none`}>
-        <LayoutWrapper>
-          {children}
-          <SpeedInsights />
-          <Analytics />
-        </LayoutWrapper>
+        <NextIntlClientProvider messages={messages}>
+          <LayoutWrapper>
+            {children}
+            <SpeedInsights />
+            <Analytics />
+          </LayoutWrapper>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

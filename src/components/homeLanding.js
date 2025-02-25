@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import AnimatedLink from './animation/animatedLink';
 import { MOUSE_POSITION_UPDATE } from '@/hooks/useCursorHover';
+import { useTranslations } from 'next-intl';
 
 function FramerMagnet({ children, xScale, yScale }) {
     const ref = useRef(null);
@@ -120,23 +121,28 @@ function AnimatedLogo() {
 }
 
 function Introduction() {
+    const t = useTranslations('Index.landing');
+    
     return (
         <section className='w-full md:w-1/3
             flex flex-col gap-4 justify-between mt-4 md:mt-0 md:pb-24
             font-oxanium text-black'>
-            <h1 className='text-4xl md:text-5xl leading-[1.15]'>
-                <span>Hi there,</span>
-                <br />
-                <span className='whitespace-nowrap'>I'm Keller Wang.</span>
+            <h1 className='text-4xl md:text-5xl flex flex-col gap-3'>
+                <span>{t('greeting')}</span>
+                <span className='whitespace-nowrap'>{t('name')}</span>
             </h1>
             <div className='flex flex-col gap-4 text-sm md:text-base'>
                 <section className='flex flex-col gap-1 text-[#404040]'>
-                    <p>An UI/UX designer with meticulous eyes for detail.</p>
-                    <p>Decicated to shaping intuitive experiences where technology meets human needs.</p>
+                    <p>{t('description.line1')}</p>
+                    <p>{t('description.line2')}</p>
                 </section>
                 <section className='flex gap-8'>
-                    <AnimatedLink href='https://www.linkedin.com/in/keller-wang-996474227' color='black'>LinkedIn</AnimatedLink>
-                    <AnimatedLink href='mailto:kellerwang2003@gmail.com' color='black'>Email</AnimatedLink>
+                    <AnimatedLink href='https://www.linkedin.com/in/keller-wang-996474227' color='black'>
+                        {t('links.linkedin')}
+                    </AnimatedLink>
+                    <AnimatedLink href='mailto:kellerwang2003@gmail.com' color='black'>
+                        {t('links.email')}
+                    </AnimatedLink>
                 </section>
             </div>
         </section>

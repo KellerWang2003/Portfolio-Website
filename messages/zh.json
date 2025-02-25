@@ -1,0 +1,72 @@
+{
+    "Navigation": {
+    "index": "主页",
+    "sandbox": "沙盒",
+    "info": "信息",
+    "resume": "简历"
+  },
+  "Index": {
+    "landing": {
+      "greeting": "Hi there,",
+      "name": "我是王云天",
+      "description": {
+        "line1": "一个注重细节的UI/UX设计师。",
+        "line2": "致力于创造直观体验，让技术与人类需求相融合。"
+      },
+      "links": {
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      }
+    },
+    "selectedWorks": "精选作品",
+    "sandboxLink": "去我的沙盒看看吧",
+    "projects": {
+      "elevate": {
+        "title": "Elevate",
+        "description": "为产品设计团队与残障用户之间搭建沟通的桥梁。"
+      },
+      "rocketEngine": {
+        "title": "Rocket Engine Catalog",
+        "description": "An interface that eliminates the barrier between everyday people and the complex world of rocket engines."
+      },
+      "droneNet": {
+        "title": "DroneNet",
+        "description": "专为第一人称视角(FPV)爱好者设计的应用，帮助他们互相连接、分享经验，并确保飞行地点的合法性与安全性。"
+      }
+    }
+  },
+  "Sandbox": {
+    "header": "THIS IS WHERE I EXPLORE A BIT......",
+    "sections": {
+      "graphicDesign": {
+        "title": "平面设计",
+        "posters": {
+          "title": "Posters",
+          "lostInTranslation": "Lost In Translation Poster",
+          "tdc": "TDC Poster"
+        },
+        "specimenBook": {
+          "title": "Specimen Book",
+          "coverSmallWrap": "Cover with Small Wrap",
+          "smallWrapOpened": "Small Wrap Opened",
+          "mockup": "Mockup"
+        }
+      },
+      "motionDesign": {
+        "title": "动态设计",
+        "logoAnimation": {
+          "title": "Logo Animation"
+        },
+        "duneTeaser": {
+          "title": "Dune Teaser"
+        }
+      },
+      "productDesign": {
+        "title": "产品设计",
+        "nothingProducts": {
+          "title": "Nothing Products"
+        }
+      }
+    }
+  }
+}
