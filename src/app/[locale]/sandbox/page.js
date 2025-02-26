@@ -4,9 +4,14 @@ import Footer from "@/components/footer";
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
 import { useTranslations } from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
+import React from 'react';
 
-export default function Sandbox() {
+export default function Sandbox({params}) {
 
+const { locale } = React.use(params);
+  
+  //enable static rendering
+  setRequestLocale(locale);
     const t = useTranslations('Sandbox');
 
     return (

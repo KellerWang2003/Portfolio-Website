@@ -1,3 +1,4 @@
+import React from 'react';
 import ContentWrapper from "@/components/contentWrapper";
 import HomeLanding from "@/components/homeLanding";
 import Footer from "@/components/footer";
@@ -6,8 +7,12 @@ import ProjectsList from "@/components/ProjectsList";
 import {useTranslations} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 
-export default function Index() {
-
+export default function Index({params}) {
+  // Unwrap params using React.use()
+  const { locale } = React.use(params);
+  
+  //enable static rendering
+  setRequestLocale(locale);
   const t = useTranslations('Index');
 
   const projects = [
