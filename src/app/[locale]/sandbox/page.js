@@ -1,15 +1,18 @@
+import React from 'react';
 import ContentWrapper from "@/components/contentWrapper";
 import Image from "next/image";
 import Footer from "@/components/footer";
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
 import { useTranslations } from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
-import React from 'react';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function Sandbox({params: {locale}}) {
-  
-  //enable static rendering
-  setRequestLocale(locale);
+export default function Sandbox({params}) {
+
+    const { locale } = React.use(params);
+
+    //enable static rendering
+    setRequestLocale(locale);
+
     const t = useTranslations('Sandbox');
 
     return (

@@ -18,7 +18,7 @@ const oxanium = Oxanium({
 });
 
 export async function generateMetadata({params}) {
-  const { locale } = params;
+  const { locale } = await params;
   if (!routing.locales.includes(locale)) {
     notFound();
   }

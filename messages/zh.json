@@ -1,16 +1,16 @@
 {
-    "Metadata": {
-    "title": "王云天 | 交互设计师",
-    "description": "王云天的作品集 - 专注于数字体验和用户界面设计的交互设计师。探索我的项目、技能和创意作品。",
-    "ogTitle": "王云天 | 交互设计师",
-    "ogDescription": "王云天的作品集 - 专注于数字体验和用户界面设计的交互设计师。",
-    "siteName": "王云天作品集",
-    "ogImageAlt": "王云天作品集预览"
+  "Metadata": {
+    "title": "Keller Wang | Interaction Designer",
+    "description": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design. Explore my projects, skills, and creative work.",
+    "ogTitle": "Keller Wang | Interaction Designer",
+    "ogDescription": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design.",
+    "siteName": "Keller Wang Portfolio",
+    "ogImageAlt": "Keller Wang Portfolio Preview"
   },
   "Navigation": {
     "index": "主页",
-    "sandbox": "沙盒",
-    "info": "信息",
+    "sandbox": "视觉实验",
+    "info": "关于我",
     "resume": "简历"
   },
   "Index": {
@@ -27,15 +27,15 @@
       }
     },
     "selectedWorks": "精选作品",
-    "sandboxLink": "去我的沙盒看看吧",
+    "sandboxLink": "去我的视觉实验室看看吧",
     "projects": {
       "elevate": {
         "title": "Elevate",
         "description": "为产品设计团队与残障用户之间搭建沟通的桥梁。"
       },
       "rocketEngine": {
-        "title": "Rocket Engine Catalog",
-        "description": "An interface that eliminates the barrier between everyday people and the complex world of rocket engines."
+        "title": "火箭发动机目录",
+        "description": "打破壁垒，让复杂的火箭引擎知识变得触手可及。"
       },
       "droneNet": {
         "title": "DroneNet",
@@ -44,7 +44,7 @@
     }
   },
   "Sandbox": {
-    "header": "THIS IS WHERE I EXPLORE A BIT......",
+    "header": "这里是我探索的开始......",
     "sections": {
       "graphicDesign": {
         "title": "平面设计",
@@ -78,6 +78,6 @@
     }
   },
   "Info": {
-    "comingSoon": "Coming soon!"
+    "comingSoon": "敬请期待！"
   }
 }
