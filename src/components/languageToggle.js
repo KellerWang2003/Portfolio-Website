@@ -14,14 +14,8 @@ export default function LanguageToggle() {
     // Check if the user is on the Chinese domain
     const isChineseDomain = window.location.hostname === 'cn.kellerwang.com';
     
-    // Check if the user's browser language is Chinese
-    const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
-    const hasChineseBrowserLanguage = browserLanguages.some(lang => 
-      lang.startsWith('zh') || lang.startsWith('zh-')
-    );
-    
-    // Show the toggle if either condition is met
-    setShouldShow(isChineseDomain || hasChineseBrowserLanguage);
+    // Only show the toggle on the Chinese domain
+    setShouldShow(isChineseDomain);
   }, []);
 
   // Handle language change
