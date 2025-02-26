@@ -4,8 +4,11 @@ import Footer from "@/components/footer";
 import ProjectsList from "@/components/ProjectsList";
 
 import {useTranslations} from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
 
-export default function Index() {
+export default function Index({params: {locale}}) {
+  //enable static rendering
+  setRequestLocale(locale);
   const t = useTranslations('Index');
 
   const projects = [
