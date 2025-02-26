@@ -5,7 +5,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 
@@ -67,12 +66,17 @@ export default async function LocaleLayout({
   params,
 }) {
   const { locale } = await params;
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
+  // Dynamically import only the needed language file
+  const messages = await import(`../../../messages/${locale}.json`)
+    .then(module => module.default)
+    .catch(() => {
+      console.error(`Failed to load messages for locale: ${locale}`);
+      notFound();
+    });
 
   return (
     <html lang={locale}>
