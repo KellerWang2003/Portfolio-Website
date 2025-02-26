@@ -3,36 +3,12 @@ import Image from "next/image";
 import Footer from "@/components/footer";
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
 import { useTranslations } from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
 
-function ProjectCard({ title, children }) {
-    return (
-        <div className="w-full h-full flex flex-col gap-4">
-            <h2 className="font-bold">{title}</h2>
-            <div className="w-full h-full flex flex-col gap-2 md:gap-4 text-sm">
-                {children}
-            </div>
-        </div>
-    )
-}
+export default function Sandbox({params: {locale}}) {
 
-
-function ProjectSection({ title, children, isFirst = false }) {
-    return (
-        <FadeInAnimation isFirst={isFirst}>
-            <div className="w-full flex flex-col items-end gap-12">
-                <div className="w-full flex flex-col gap-2">
-                    <h2 className="text-3xl">{title}</h2>
-                    <div className="w-full h-px bg-black"></div>
-                </div>
-                <div className="flex flex-col gap-12 w-full md:w-4/5">
-                    {children}
-                </div>
-            </div>
-        </FadeInAnimation>
-    )
-}
-
-export default function Sandbox() {
+    //enable static rendering
+    setRequestLocale(locale);
     const t = useTranslations('Sandbox');
 
     return (
@@ -220,4 +196,32 @@ export default function Sandbox() {
             <Footer />
         </ContentWrapper>
     );
+}
+
+
+function ProjectCard({ title, children }) {
+    return (
+        <div className="w-full h-full flex flex-col gap-4">
+            <h2 className="font-bold">{title}</h2>
+            <div className="w-full h-full flex flex-col gap-2 md:gap-4 text-sm">
+                {children}
+            </div>
+        </div>
+    )
+}
+
+function ProjectSection({ title, children, isFirst = false }) {
+    return (
+        <FadeInAnimation isFirst={isFirst}>
+            <div className="w-full flex flex-col items-end gap-12">
+                <div className="w-full flex flex-col gap-2">
+                    <h2 className="text-3xl">{title}</h2>
+                    <div className="w-full h-px bg-black"></div>
+                </div>
+                <div className="flex flex-col gap-12 w-full md:w-4/5">
+                    {children}
+                </div>
+            </div>
+        </FadeInAnimation>
+    )
 }

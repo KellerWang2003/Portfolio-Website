@@ -5,17 +5,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 
 import {NextIntlClientProvider} from 'next-intl';
+import {getMessages, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-
-// Import messages directly
-import en from '../../../messages/en.json';
-import zh from '../../../messages/zh.json';
-
-const messages = {
-  en,
-  zh
-};
 
 const oxanium = Oxanium({ 
   subsets: ['latin'],
@@ -70,20 +62,28 @@ export const metadata = {
   },
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}) {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({children, params}) {
+  // Await the params object before accessing locale
   const { locale } = await params;
+  
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
+ 
+  // Enable static rendering
+  setRequestLocale(locale);
+  // Pass the locale explicitly to getMessages
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body className={`${oxanium.variable} overscroll-none`}>
-        <NextIntlClientProvider messages={messages[locale]}>
+        <NextIntlClientProvider messages={messages}>
           <LayoutWrapper>
             {children}
             <SpeedInsights />
