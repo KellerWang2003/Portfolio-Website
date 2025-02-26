@@ -79,5 +79,328 @@
   },
   "Info": {
     "comingSoon": "Coming soon!"
+  },
+  "Elevate": {
+    "title": "Elevate",
+    "description": "Elevate is a data-driven platform that bridges the gap between product teams and users with disabilities through a dynamic accessibility scoring system, transforming traditional compliance-based testing into continuous, actionable feedback that drives both business value and meaningful inclusion.",
+    "progressBar": {
+      "featureOverview": "Feature Overview",
+      "research": "Research",
+      "theSolution": "The Solution",
+      "researchItems": {
+        "theProblem": "The Problem",
+        "primaryResearch": "Primary Research",
+        "whyAndHow": "Why & How"
+      },
+      "solutionItems": {
+        "accessibilityScore": "Accessibility Score",
+        "feedbackLoop": "Feedback Loop"
+      }
+    },
+    "featureOverview": {
+      "title": "Feature Overview",
+      "intro": {
+        "part1": "Create",
+        "part2": "a continuous feedback loop",
+        "part3": "where user experiences shape accessibility scores and drive better design."
+      },
+      "questions": {
+        "intro": "But...",
+        "question1": "What is this accessibility score and feedback loop?",
+        "question2": "How does it work?",
+        "question3": "And why do we need it?"
+      }
+    },
+    "research": {
+      "title": "Research",
+      "theProblem": {
+        "title": "The Problem",
+        "description": "Despite our best effort in trying to improve accessibility practices, users with disabilities continue to face barriers that compliance alone fails to address.",
+        "theGood": "The good",
+        "theNotSoGood": "The not so good",
+        "pills": {
+          "wcag": "guidelines & technical standards (WCAG)",
+          "training": "accessibility training",
+          "audits": "accessibility audits",
+          "assistive": "assistive technologies",
+          "awareness": "disability awareness",
+          "collaboration": "lack of ongoing collaboration",
+          "leadership": "leadership prioritization",
+          "sensitivity": "subject sensitivety",
+          "barriers": "unintentional barriers"
+        }
+      },
+      "primaryResearch": {
+        "title": "Primary Research",
+        "description": "We interviewed 4 industry professionals, 2 caretakers, and 3 from the users perspective using synthetic users, and here is what we have learned.",
+        "insight1": {
+          "title": "Insight 1",
+          "description": "More than 2/3 of the people we interviewed stress the importance of <strong> ongoing accessibility collaboration and feedback </strong>, but resource constraints and sensitivity concerns frequently limit this process to just <strong> the initial interactions </strong>.",
+          "quote1": "It's a missed opportunity, really, that we don't get to do more of that type of stuff (accessibility audits). Because I think in general we would learn a lot more by doing it regularly.",
+          "quote2": "To better understand and accommodate my needs, ongoing dialogue is essential."
+        },
+        "insight2": {
+          "title": "Insight 2",
+          "description": "While experts emphasize <strong> leadership-driven accessibility and team-wide disability awareness </strong>, only 36% of companies have secured genuine top-down commitment to digital accessibility.",
+          "quote1": "When leadership is involved, it empowers everyone to be more considerate and proactive, making sure accessibility isn't just an afterthought.",
+          "quote2": "When leadership prioritizes accessibility, it sets the tone for the entire organization.",
+          "quote3": "It's empowering when professionals view me as a partner in the process of enhancing accessibility, acknowledging the expertise."
+        }
+      },
+      "whyAndHow": {
+        "title": "Why & How",
+        "intro": "Basically it comes down to these two issues:",
+        "issue1": {
+          "title": "Lack of accessibility awareness",
+          "points": [
+            "Functionality of a product always comes first",
+            "Low accessibility awareness from both product leaders and the design team",
+            "Misconception that accessibility features only benefit a small percentage of users",
+            "False belief that accessibility can be \"added later\" rather than built from the start"
+          ],
+          "hmw": "make accessibility impact measurable and visible to both product teams and the public to drive awareness of its importance?",
+          "solution": "ACCESSIBILITY SCORE"
+        },
+        "issue2": {
+          "title": "Lack of ongoing collaboration",
+          "points": [
+            "Difficult to find the means and resources",
+            "Subject sensitivity",
+            "Unintentional barriers between the design team and individuals with disabilities"
+          ],
+          "hmw": "support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?",
+          "solution": "A CONTINUOUS FEEDBACK LOOP"
+        }
+      }
+    },
+    "theSolution": {
+      "title": "The Solution",
+      "accessibilityScore": {
+        "title": "Accessibility Score",
+        "scoreDashboard": {
+          "title": "Score Dashboard",
+          "description": "The accessibility score dashboard displays a comprehensive score derived from three preliminary metrics:",
+          "metrics": [
+            "Active Improvements",
+            "User Feedback",
+            "User Engagement"
+          ],
+          "note": "( Measuring methods will be explained in the next section )",
+          "conclusion": "The combination of these metrics provides a holistic measure of a product's accessibility performance."
+        },
+        "mainDashboard": {
+          "title": "Main Dashboard",
+          "description": "The \"Embed Score\" feature allows teams to showcase their accessibility commitment across platforms, raising public awareness while celebrating inclusive design."
+        }
+      },
+      "feedbackLoop": {
+        "title": "The Feedback Loop",
+        "productAmbassador": {
+          "title": "Product Ambassador",
+          "description1": "The platform maintains a network of Product Ambassadors - primarily users with disabilities, but open to all users who can provide valuable accessibility feedback",
+          "description2": "The method of becoming a product ambassador will be a separate design initiative."
+        },
+        "tickets": {
+          "title": "Tickets",
+          "description1": "The Tickets Dashboard tracks all incoming accessibility improvement requests.",
+          "description2": "While Product Ambassadors form our core testing network providing regular, consistent feedback, any user can submit tickets to enhance product accessibility."
+        },
+        "sprintManager": {
+          "title": "Sprint Manager",
+          "description1": "Tickets transform into tasks, and fall under a sprint, with potential Jira API integration to streamline workflow.",
+          "description2": "However, these specialized sprints uniquely measure both task completion and user-verified accessibility impact."
+        },
+        "roadmap": {
+          "title": "Roadmap",
+          "description": "Elavate sprints extend beyond traditional completion through five key stages:",
+          "stages": {
+            "ongoing": "Ongoing",
+            "fixed": "Fixed",
+            "surveySent": "Survey Sent",
+            "evaluation": "Evaluation",
+            "completed": "Completed"
+          },
+          "conclusion": "After changes are implemented, affected users receive surveys to assess the improvements. Their feedback not only updates the product's accessibility score but can also generate new improvement tickets - creating a continuous cycle where each solution's effectiveness is verified and refined by actual user experience."
+        },
+        "survey": {
+          "title": "Survey",
+          "description1": "The Survey Dashboard displays active sprints and prompts available actions.",
+          "description2": "Positive responses enhance the product's accessibility score, while all feedback contributes to continuous improvement through potential new tickets."
+        },
+        "loop": {
+          "intro": "In this way, a feedback loop is created",
+          "benefits": [
+            "Forms sustainable connections between product teams and users, breaking down communication barriers",
+            "Enables teams to adapt to evolving user needs through continuous validation",
+            "Bridges the gap between technical compliance and real user experience",
+            "Transforms sporadic accessibility testing into continuous improvement"
+          ],
+          "flowItems": {
+            "tickets": "Tickets",
+            "surveyResult": "Survey Result",
+            "accessibilityScore": "Accessibility Score",
+            "tasks": "Tasks",
+            "sprints": "Sprints",
+            "improvement": "Improvement"
+          }
+        }
+      }
+    }
+  },
+  "RocketEngineCatalog": {
+    "title": "Rocket Engine Catalog",
+    "tags": {
+      "visualDevelopment": "Visual Development",
+      "interactionDesign": "Interaction Design"
+    },
+    "description": "This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.\nThe interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components.",
+    "progressBar": {
+      "designPrototype": "Design & Prototype",
+      "research": "Research",
+      "designItems": {
+        "engineFactory": "Engine Factory",
+        "fabricationShop": "Fabrication Shop",
+        "hangerBay": "Hanger Bay",
+        "futurePlans": "Future Plans",
+        "mobileGallery": "Mobile Gallery"
+      },
+      "researchItems": {
+        "database": "The Database",
+        "userArchetypes": "User Archetypes",
+        "visualLanguage": "Visual Language"
+      }
+    },
+    "design": {
+      "engineFactory": {
+        "title": "ENGINE FACTORY",
+        "subtitle": "Home Page",
+        "pageHierarchy": "PAGE HIERARCHY",
+        "homePage": "Home Page",
+        "landingPage": "Landing Page",
+        "detailsPage": "Details Page",
+        "engineFactoryLabel": "Engine Factory",
+        "fabricationShopLabel": "Fabrication Shop",
+        "hangerBayLabel": "Hanger Bay",
+        "trainingNote": "(For training, refer to future plans)",
+        "centralHub": "Home page is the central hub that leads to other levels"
+      },
+      "fabricationShop": {
+        "title": "FABRICATION SHOP",
+        "subtitle": "Landing Page",
+        "description": "This is the start of where users can \"build their own engine\", and then select existing engines based on their decisions."
+      },
+      "buildingEngine": {
+        "title": "Part 1 - Building the engine",
+        "description1": "Users can start from either one of the three main options that makes up a rocket engine.",
+        "description2": "The interface will then guide the user to complete all three before continuing to further customizations."
+      },
+      "buildSummary": {
+        "description1": "After all three has been selected, the user will be shown a summary of all their selections and further configure their engine.",
+        "description2": "After they are happy with their build, they can proceed to the selection area."
+      },
+      "selectingEngine": {
+        "title": "Part 2 - Selecting your engine",
+        "description1": "Based on the user's selected configuration, the system will display a list of existing engines that match their requirements.",
+        "description2": "Once the user has identified an engine they are interested in, they can proceed to the Hangar Bay (Details Page) to view more information about that specific engine."
+      },
+      "hangerBay": {
+        "title": "HANGER BAY",
+        "subtitle": "Details Page",
+        "description1": "Selections the user have made that lead to this result",
+        "description2": "More detailed information about the engine, as well as the rocket it serves",
+        "description3": "Upcoming launches of this engine",
+        "description4": "Featured engines that leads you to other parts of the Hanger Bay."
+      },
+      "futurePlans": {
+        "title": "FUTURE PLANS",
+        "subtitle": "Hanger Bay",
+        "description1": "In my plan, Hanger Bay is like a library, but for rocket engines. That is why all the details of any engine leads you to this page.",
+        "description2": "But it does not have to be just a boring library. It could include -",
+        "features": {
+          "item1": "Engine I built",
+          "item2": "Featured engines",
+          "item3": "Community",
+          "item4": "And more!"
+        },
+        "training": "Training",
+        "trainingDescription1": "Training is an area on the map that provides users with additional information on more complicated concepts when they become interested in these topics after using the site.",
+        "trainingDescription2": "Progression system that incentivize users to do these trainings and be more educated on rocket engines and how they work"
+      },
+      "mobileGallery": {
+        "title": "MOBILE GALLERY",
+        "considerations": "Special considerations for mobile -",
+        "features": {
+          "item1": "Horizontal ---> Vertical",
+          "item2": "Hamburger for basic navigation",
+          "item3": "Swipe support for switching between parts of the build",
+          "item4": "And more!"
+        },
+        "labels": {
+          "home": "Home",
+          "landing": "Landing",
+          "configuring": "Configuring your engine --->",
+          "summary": "Summary",
+          "selecting": "Selecting your engine",
+          "details": "Details"
+        }
+      }
+    },
+    "research": {
+      "comingSoon": "Research coming soon"
+    }
+  },
+  "DroneNet": {
+    "title": "DroneNet",
+    "tags": {
+      "research": "Research",
+      "uiDesign": "UI Design",
+      "prototyping": "Prototyping"
+    },
+    "description": "DroneNet is an app designed for FPV (First-Person View) drone pilots to connect, share, and ensure the legality and safety of their flying locations. This platform addresses the unique challenges faced by FPV enthusiasts, providing a community-driven space where pilots can confidently explore new spots and share their experiences",
+    "progressBar": {
+      "design": "Design",
+      "research": "Research",
+      "designItems": {
+        "homePage": "Home Page",
+        "community": "Community",
+        "profile": "Profile"
+      }
+    },
+    "design": {
+      "title": "Design",
+      "homePage": {
+        "title": "Home Page",
+        "homePageSection": {
+          "title": "Home Page",
+          "description1": "The spot map shows all locations a pilot has flown at and posted about. These locations can be viewed both on the map and in an expandable list that includes detailed information.",
+          "description2": "Map indicators show whether pilots encountered issues when flying at each location, based on user-reported data."
+        },
+        "createPost": {
+          "title": "Create Post",
+          "description": "When uploading, users can add location and gear details that display with their video. An optional survey presented during preview determines the location's indicator bar."
+        }
+      },
+      "community": {
+        "title": "Community",
+        "communityPostsAndPeople": {
+          "title": "Community Posts and People",
+          "description": "Community space displaying other pilots' posts in a list view. Check out pilot profiles and view the gear they used, which may lead to item sales for a similar gear."
+        },
+        "itemSales": {
+          "title": "Item Sales",
+          "description": "Local gear sales encourage pilot connections by facilitating meetups with fellow enthusiasts in the area."
+        }
+      },
+      "profile": {
+        "title": "Profile",
+        "userProfile": {
+          "title": "User Profile",
+          "description": "In your profile, you can view personal information, tags, followers, posts, managing gear presets and spots you plan to visit."
+        }
+      }
+    },
+    "research": {
+      "comingSoon": "Research coming soon"
+    }
   }
 }

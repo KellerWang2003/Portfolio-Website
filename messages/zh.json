@@ -1,11 +1,12 @@
+
 {
   "Metadata": {
-    "title": "Keller Wang | Interaction Designer",
-    "description": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design. Explore my projects, skills, and creative work.",
-    "ogTitle": "Keller Wang | Interaction Designer",
-    "ogDescription": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design.",
-    "siteName": "Keller Wang Portfolio",
-    "ogImageAlt": "Keller Wang Portfolio Preview"
+    "title": "Keller Wang | 交互设计师",
+    "description": "Keller Wang 的作品集 - 专注于数字体验和用户界面设计的交互设计师。探索我的项目、技能和创意作品。",
+    "ogTitle": "Keller Wang | 交互设计师",
+    "ogDescription": "Keller Wang 的作品集 - 专注于数字体验和用户界面设计的交互设计师。",
+    "siteName": "Keller Wang 作品集",
+    "ogImageAlt": "Keller Wang 作品集预览"
   },
   "Navigation": {
     "index": "主页",
@@ -15,7 +16,7 @@
   },
   "Index": {
     "landing": {
-      "greeting": "Hi there,",
+      "greeting": "你好，",
       "name": "我是王云天",
       "description": {
         "line1": "一个注重细节的UI/UX设计师。",
@@ -49,35 +50,358 @@
       "graphicDesign": {
         "title": "平面设计",
         "posters": {
-          "title": "Posters",
-          "lostInTranslation": "Lost In Translation Poster",
-          "tdc": "TDC Poster"
+          "title": "海报",
+          "lostInTranslation": "迷失东京海报",
+          "tdc": "TDC海报"
         },
         "specimenBook": {
-          "title": "Specimen Book",
-          "coverSmallWrap": "Cover with Small Wrap",
-          "smallWrapOpened": "Small Wrap Opened",
-          "mockup": "Mockup"
+          "title": "样本册",
+          "coverSmallWrap": "带小包裹的封面",
+          "smallWrapOpened": "小包裹打开",
+          "mockup": "模型"
         }
       },
       "motionDesign": {
         "title": "动态设计",
         "logoAnimation": {
-          "title": "Logo Animation"
+          "title": "Logo动画"
         },
         "duneTeaser": {
-          "title": "Dune Teaser"
+          "title": "沙丘预告片"
         }
       },
       "productDesign": {
         "title": "产品设计",
         "nothingProducts": {
-          "title": "Nothing Products"
+          "title": "Nothing产品"
         }
       }
     }
   },
   "Info": {
     "comingSoon": "敬请期待！"
+  },
+  "Elevate": {
+    "title": "Elevate",
+    "description": "Elevate 是一个数据驱动的平台，通过动态的无障碍评分系统，弥合产品团队与残障用户之间的差距，将传统的基于合规性的测试转变为持续的、可操作的反馈，推动商业价值和有意义的包容性。",
+    "progressBar": {
+      "featureOverview": "功能概览",
+      "research": "研究",
+      "theSolution": "解决方案",
+      "researchItems": {
+        "theProblem": "问题",
+        "primaryResearch": "初步研究",
+        "whyAndHow": "为什么 & 如何"
+      },
+      "solutionItems": {
+        "accessibilityScore": "无障碍评分",
+        "feedbackLoop": "反馈循环"
+      }
+    },
+    "featureOverview": {
+      "title": "功能概览",
+      "intro": {
+        "part1": "创建",
+        "part2": "一个持续的反馈循环",
+        "part3": "用户体验塑造了无障碍评分，推动更好的设计。"
+      },
+      "questions": {
+        "intro": "但是...",
+        "question1": "什么是这个无障碍评分和反馈循环？",
+        "question2": "它是如何工作的？",
+        "question3": "为什么我们需要它？"
+      }
+    },
+    "research": {
+      "title": "研究",
+      "theProblem": {
+        "title": "问题",
+        "description": "尽管我们尽力改进无障碍实践，残障用户仍然面临仅靠合规性无法解决的障碍。",
+        "theGood": "好的方面",
+        "theNotSoGood": "不太好的方面",
+        "pills": {
+          "wcag": "指南和技术标准 (WCAG)",
+          "training": "无障碍培训",
+          "audits": "无障碍审计",
+          "assistive": "辅助技术",
+          "awareness": "残障意识",
+          "collaboration": "缺乏持续合作",
+          "leadership": "领导层优先事项",
+          "sensitivity": "主题敏感性",
+          "barriers": "无意的障碍"
+        }
+      },
+      "primaryResearch": {
+        "title": "初步研究",
+        "description": "我们采访了4位行业专业人士、2位护理人员和3位用户视角的合成用户，以下是我们的发现。",
+        "insight1": {
+          "title": "洞察1",
+          "description": "超过三分之二的受访者强调了持续无障碍合作和反馈的重要性，但资源限制和敏感性担忧通常将这一过程限制在最初的互动中。",
+          "quote1": "这真的是一个错失的机会，我们没有做更多这种类型的无障碍审计。因为我认为通过定期进行，我们会学到更多。",
+          "quote2": "为了更好地理解和满足我的需求，持续的对话是必不可少的。"
+        },
+        "insight2": {
+          "title": "洞察2",
+          "description": "虽然专家强调领导驱动的无障碍和团队范围内的残障意识，但只有36%的公司真正获得了自上而下的数字无障碍承诺。",
+          "quote1": "当领导层参与时，它赋予每个人更多的考虑和主动性，确保无障碍不仅仅是一个事后的想法。",
+          "quote2": "当领导层优先考虑无障碍时，它为整个组织定下了基调。",
+          "quote3": "当专业人士将我看作是增强无障碍过程中的合作伙伴时，这是非常鼓舞人心的，他们承认了我的专业知识。"
+        }
+      },
+      "whyAndHow": {
+        "title": "为什么 & 如何",
+        "intro": "基本上归结为这两个问题：",
+        "issue1": {
+          "title": "缺乏无障碍意识",
+          "points": [
+            "产品的功能性总是排在第一位",
+            "产品领导和设计团队的无障碍意识较低",
+            "误解无障碍功能只对一小部分用户有益",
+            "错误地认为无障碍可以“稍后添加”，而不是从一开始就构建"
+          ],
+          "hmw": "我们如何使无障碍影响对产品团队和公众可见且可衡量，以推动其重要性的意识？",
+          "solution": "无障碍评分"
+        },
+        "issue2": {
+          "title": "缺乏持续合作",
+          "points": [
+            "难以找到手段和资源",
+            "主题敏感性",
+            "设计团队与残障用户之间的无意障碍"
+          ],
+          "hmw": "我们如何支持设计团队和残障用户在整个产品生命周期中建立可持续的、加强的关系？",
+          "solution": "持续的反馈循环"
+        }
+      }
+    },
+    "theSolution": {
+      "title": "解决方案",
+      "accessibilityScore": {
+        "title": "无障碍评分",
+        "scoreDashboard": {
+          "title": "评分仪表板",
+          "description": "无障碍评分仪表板显示了一个综合评分，该评分来自三个初步指标：",
+          "metrics": [
+            "积极改进",
+            "用户反馈",
+            "用户参与"
+          ],
+          "note": "（测量方法将在下一节中解释）",
+          "conclusion": "这些指标的结合提供了产品无障碍性能的整体衡量标准。"
+        },
+        "mainDashboard": {
+          "title": "主仪表板",
+          "description": "“嵌入评分”功能允许团队在各个平台上展示他们的无障碍承诺，提高公众意识，同时庆祝包容性设计。"
+        }
+      },
+      "feedbackLoop": {
+        "title": "反馈循环",
+        "productAmbassador": {
+          "title": "产品大使",
+          "description1": "平台维护了一个产品大使网络 - 主要是残障用户，但也对所有能够提供宝贵无障碍反馈的用户开放",
+          "description2": "成为产品大使的方法将是一个单独的设计计划。"
+        },
+        "tickets": {
+          "title": "工单",
+          "description1": "工单仪表板跟踪所有传入的无障碍改进请求。",
+          "description2": "虽然产品大使构成了我们的核心测试网络，提供定期、一致的反馈，但任何用户都可以提交工单以增强产品的无障碍性。"
+        },
+        "sprintManager": {
+          "title": "冲刺管理器",
+          "description1": "工单转化为任务，并纳入冲刺，可能集成Jira API以简化工作流程。",
+          "description2": "然而，这些专门的冲刺独特地衡量任务完成情况和用户验证的无障碍影响。"
+        },
+        "roadmap": {
+          "title": "路线图",
+          "description": "Elevate冲刺超越了传统的完成，通过五个关键阶段：",
+          "stages": {
+            "ongoing": "进行中",
+            "fixed": "已修复",
+            "surveySent": "调查已发送",
+            "evaluation": "评估",
+            "completed": "已完成"
+          },
+          "conclusion": "在实施更改后，受影响的用户会收到调查以评估改进。他们的反馈不仅更新产品的无障碍评分，还可能生成新的改进工单 - 创建一个持续的循环，每个解决方案的有效性都通过实际用户体验进行验证和优化。"
+        },
+        "survey": {
+          "title": "调查",
+          "description1": "调查仪表板显示活跃的冲刺并提示可用的操作。",
+          "description2": "积极的响应会提高产品的无障碍评分，而所有反馈都通过潜在的新工单推动持续改进。"
+        },
+        "loop": {
+          "intro": "通过这种方式，创建了一个反馈循环",
+          "benefits": [
+            "在产品团队和用户之间建立可持续的联系，打破沟通障碍",
+            "通过持续验证使团队能够适应用户不断变化的需求",
+            "弥合技术合规性与实际用户体验之间的差距",
+            "将零星的无障碍测试转变为持续改进"
+          ],
+          "flowItems": {
+            "tickets": "工单",
+            "surveyResult": "调查结果",
+            "accessibilityScore": "无障碍评分",
+            "tasks": "任务",
+            "sprints": "冲刺",
+            "improvement": "改进"
+          }
+        }
+      }
+    }
+  },
+  "RocketEngineCatalog": {
+    "title": "火箭发动机目录",
+    "tags": {
+      "visualDevelopment": "视觉开发",
+      "interactionDesign": "交互设计"
+    },
+    "description": "该项目专注于为火箭发动机数据库设计一个用户友好的界面，使复杂的技术信息对普通公众更具吸引力和易于理解。\n界面采用清晰的视觉风格和直观的流程，邀请用户玩耍、探索和发现不同类型的发动机、规格和组件。",
+    "progressBar": {
+      "designPrototype": "设计与原型",
+      "research": "研究",
+      "designItems": {
+        "engineFactory": "发动机工厂",
+        "fabricationShop": "制造车间",
+        "hangerBay": "机库",
+        "futurePlans": "未来计划",
+        "mobileGallery": "移动画廊"
+      },
+      "researchItems": {
+        "database": "数据库",
+        "userArchetypes": "用户原型",
+        "visualLanguage": "视觉语言"
+      }
+    },
+    "design": {
+      "engineFactory": {
+        "title": "发动机工厂",
+        "subtitle": "主页",
+        "pageHierarchy": "页面层次结构",
+        "homePage": "主页",
+        "landingPage": "登陆页",
+        "detailsPage": "详情页",
+        "engineFactoryLabel": "发动机工厂",
+        "fabricationShopLabel": "制造车间",
+        "hangerBayLabel": "机库",
+        "trainingNote": "（培训请参考未来计划）",
+        "centralHub": "主页是通往其他层级的中心枢纽"
+      },
+      "fabricationShop": {
+        "title": "制造车间",
+        "subtitle": "登陆页",
+        "description": "这是用户开始“构建自己的发动机”的地方，然后根据他们的选择选择现有的发动机。"
+      },
+      "buildingEngine": {
+        "title": "第1部分 - 构建发动机",
+        "description1": "用户可以从构成火箭发动机的三个主要选项中的任何一个开始。",
+        "description2": "界面将引导用户完成所有三个选项，然后继续进一步的定制。"
+      },
+      "buildSummary": {
+        "description1": "在选择完所有三个选项后，用户将看到他们所有选择的摘要，并进一步配置他们的发动机。",
+        "description2": "当他们对自己的构建满意时，可以继续到选择区域。"
+      },
+      "selectingEngine": {
+        "title": "第2部分 - 选择你的发动机",
+        "description1": "根据用户选择的配置，系统将显示符合他们要求的现有发动机列表。",
+        "description2": "一旦用户确定了他们感兴趣的发动机，他们可以继续到机库（详情页）查看有关该发动机的更多信息。"
+      },
+      "hangerBay": {
+        "title": "机库",
+        "subtitle": "详情页",
+        "description1": "用户的选择导致了这个结果",
+        "description2": "有关发动机及其服务的火箭的更多详细信息",
+        "description3": "该发动机的即将发射",
+        "description4": "特色发动机引导你到机库的其他部分。"
+      },
+      "futurePlans": {
+        "title": "未来计划",
+        "subtitle": "机库",
+        "description1": "在我的计划中，机库就像一个图书馆，但用于火箭发动机。这就是为什么任何发动机的详细信息都会引导你到这个页面。",
+        "description2": "但它不必只是一个无聊的图书馆。它可以包括 -",
+        "features": {
+          "item1": "我构建的发动机",
+          "item2": "特色发动机",
+          "item3": "社区",
+          "item4": "还有更多！"
+        },
+        "training": "培训",
+        "trainingDescription1": "培训是地图上的一个区域，当用户在使用网站后对这些主题感兴趣时，提供有关更复杂概念的额外信息。",
+        "trainingDescription2": "激励用户进行这些培训并更多地了解火箭发动机及其工作原理的进度系统"
+      },
+      "mobileGallery": {
+        "title": "移动画廊",
+        "considerations": "移动端的特殊考虑 -",
+        "features": {
+          "item1": "水平 ---> 垂直",
+          "item2": "汉堡菜单用于基本导航",
+          "item3": "滑动支持以切换构建部分",
+          "item4": "还有更多！"
+        },
+        "labels": {
+          "home": "主页",
+          "landing": "登陆页",
+          "configuring": "配置你的发动机 --->",
+          "summary": "摘要",
+          "selecting": "选择你的发动机",
+          "details": "详情"
+        }
+      }
+    },
+    "research": {
+      "comingSoon": "研究即将推出"
+    }
+  },
+  "DroneNet": {
+    "title": "DroneNet",
+    "tags": {
+      "research": "研究",
+      "uiDesign": "UI设计",
+      "prototyping": "原型设计"
+    },
+    "description": "DroneNet 是一款为FPV（第一人称视角）无人机飞行员设计的应用程序，帮助他们连接、分享并确保飞行地点的合法性和安全性。该平台解决了FPV爱好者面临的独特挑战，提供了一个社区驱动的空间，飞行员可以自信地探索新地点并分享他们的经验。",
+    "progressBar": {
+      "design": "设计",
+      "research": "研究",
+      "designItems": {
+        "homePage": "主页",
+        "community": "社区",
+        "profile": "个人资料"
+      }
+    },
+    "design": {
+      "title": "设计",
+      "homePage": {
+        "title": "主页",
+        "homePageSection": {
+          "title": "主页",
+          "description1": "地点地图显示飞行员飞行并发布的所有位置。这些位置可以在地图上查看，也可以在一个可扩展的列表中查看，列表中包含详细信息。",
+          "description2": "地图指示器显示飞行员在每个地点飞行时是否遇到问题，基于用户报告的数据。"
+        },
+        "createPost": {
+          "title": "创建帖子",
+          "description": "上传时，用户可以添加位置和装备详细信息，这些信息会与他们的视频一起显示。预览期间提供的可选调查决定了地点的指示器条。"
+        }
+      },
+      "community": {
+        "title": "社区",
+        "communityPostsAndPeople": {
+          "title": "社区帖子和人",
+          "description": "社区空间以列表视图显示其他飞行员的帖子。查看飞行员个人资料和他们使用的装备，可能会引导到类似装备的销售。"
+        },
+        "itemSales": {
+          "title": "装备销售",
+          "description": "本地装备销售通过促进与当地爱好者的见面，鼓励飞行员之间的联系。"
+        }
+      },
+      "profile": {
+        "title": "个人资料",
+        "userProfile": {
+          "title": "用户个人资料",
+          "description": "在你的个人资料中，你可以查看个人信息、标签、关注者、帖子、管理装备预设和你计划访问的地点。"
+        }
+      }
+    },
+    "research": {
+      "comingSoon": "研究即将推出"
+    }
   }
 }
