@@ -5,6 +5,8 @@ import { Divide as Hamburger } from 'hamburger-react';
 import { useMenu } from '@/context/menuContext';
 import { useTranslations } from 'next-intl';
 import {Link} from '@/i18n/routing';
+import LanguageToggle from './languageToggle';
+
 // Color configurations for different pages
 const PAGE_COLORS = {
   '/projects/RocketEngineCatalog': {
@@ -50,8 +52,10 @@ const DesktopNav = ({ colors }) => {
         </svg>
       </Link>
       <div className="flex items-center gap-10">
+        
         <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
         <NavButton href="/resume" textColor={colors.textColor} translationKey="resume" />
+        <LanguageToggle />
       </div>
     </nav>
   );
@@ -74,10 +78,11 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
       style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
         
       {/* Top Bar */}
-      <button className="h-10 flex justify-end items-center w-fit z-50"
-             onClick={() => setIsMenuOpen(!isMenuOpen)}>
+
+      <button className="h-10 flex gap-2 justify-end items-center w-fit z-50">
         {/* Menu */}
-        <div className="-mr-3">
+       <LanguageToggle />
+        <div className="-mr-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Hamburger
             toggled={isMenuOpen}
             toggle={() => {}}  // Empty function since button handles toggle
