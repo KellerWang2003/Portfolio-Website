@@ -25,9 +25,8 @@ export const metadata = {
     apple: [
       { url: '/Icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ],
-    other: [
-      { rel: 'manifest', url: '/Icons/site.webmanifest' }
-    ]
+    shortcut: { url: '/Icons/favicon.svg' },
+    manifest: '/site.webmanifest'
   },
   openGraph: {
     title: 'Keller Wang | Interaction Designer',
