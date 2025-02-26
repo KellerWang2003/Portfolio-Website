@@ -5,10 +5,8 @@ import FadeInAnimation from "@/components/animation/fadeInAnimation";
 import { useTranslations } from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 
-export default function Sandbox({params: {locale}}) {
+export default function Sandbox() {
 
-    //enable static rendering
-    setRequestLocale(locale);
     const t = useTranslations('Sandbox');
 
     return (
