@@ -8,6 +8,15 @@ import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 
+// Import messages directly
+import en from '../../../messages/en.json';
+import zh from '../../../messages/zh.json';
+
+const messages = {
+  en,
+  zh
+};
+
 const oxanium = Oxanium({ 
   subsets: ['latin'],
 });
@@ -66,22 +75,15 @@ export default async function LocaleLayout({
   params,
 }) {
   const { locale } = await params;
+  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Dynamically import only the needed language file
-  const messages = await import(`../../../messages/${locale}.json`)
-    .then(module => module.default)
-    .catch(() => {
-      console.error(`Failed to load messages for locale: ${locale}`);
-      notFound();
-    });
-
   return (
     <html lang={locale}>
       <body className={`${oxanium.variable} overscroll-none`}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages[locale]}>
           <LayoutWrapper>
             {children}
             <SpeedInsights />
