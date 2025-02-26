@@ -1,0 +1,83 @@
+{
+  "Metadata": {
+    "title": "Keller Wang | Interaction Designer",
+    "description": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design. Explore my projects, skills, and creative work.",
+    "ogTitle": "Keller Wang | Interaction Designer",
+    "ogDescription": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design.",
+    "siteName": "Keller Wang Portfolio",
+    "ogImageAlt": "Keller Wang Portfolio Preview"
+  },
+  "Navigation": {
+    "index": "Index",
+    "sandbox": "Sandbox",
+    "info": "Info",
+    "resume": "Resume"
+  },
+  "Index": {
+    "landing": {
+      "greeting": "Hi there,",
+      "name": "I'm Keller Wang.",
+      "description": {
+        "line1": "An UI/UX designer with meticulous eyes for detail.",
+        "line2": "Decicated to shaping intuitive experiences where technology meets human needs."
+      },
+      "links": {
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      }
+    },
+    "selectedWorks": "SELECTED WORKS",
+    "sandboxLink": "Check out my sandbox",
+    "projects": {
+      "elevate": {
+        "title": "Elevate",
+        "description": "Bridging the gap between product design teams and users with disabilities."
+      },
+      "rocketEngine": {
+        "title": "Rocket Engine Catalog",
+        "description": "An interface that eliminates the barrier between everyday people and the complex world of rocket engines."
+      },
+      "droneNet": {
+        "title": "DroneNet",
+        "description": "An app designed for the FPV (First-Person View) community to connect, share, and ensure the legality and safety of their flying locations."
+      }
+    }
+  },
+  "Sandbox": {
+    "header": "THIS IS WHERE I EXPLORE A BIT......",
+    "sections": {
+      "graphicDesign": {
+        "title": "Graphic Design",
+        "posters": {
+          "title": "Posters",
+          "lostInTranslation": "Lost In Translation Poster",
+          "tdc": "TDC Poster"
+        },
+        "specimenBook": {
+          "title": "Specimen Book",
+          "coverSmallWrap": "Cover with Small Wrap",
+          "smallWrapOpened": "Small Wrap Opened",
+          "mockup": "Mockup"
+        }
+      },
+      "motionDesign": {
+        "title": "Motion Design",
+        "logoAnimation": {
+          "title": "Logo Animation"
+        },
+        "duneTeaser": {
+          "title": "Dune Teaser"
+        }
+      },
+      "productDesign": {
+        "title": "Product Design",
+        "nothingProducts": {
+          "title": "Nothing Products"
+        }
+      }
+    }
+  },
+  "Info": {
+    "comingSoon": "Coming soon!"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "Metadata": {
+    "title": "Keller Wang | Interaction Designer",
+    "description": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design. Explore my projects, skills, and creative work.",
+    "ogTitle": "Keller Wang | Interaction Designer",
+    "ogDescription": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design.",
+    "siteName": "Keller Wang Portfolio",
+    "ogImageAlt": "Keller Wang Portfolio Preview"
+  },
+  "Navigation": {
+    "index": "主页",
+    "sandbox": "视觉实验",
+    "info": "关于我",
+    "resume": "简历"
+  },
+  "Index": {
+    "landing": {
+      "greeting": "Hi there,",
+      "name": "我是王云天",
+      "description": {
+        "line1": "一个注重细节的UI/UX设计师。",
+        "line2": "致力于创造直观体验，让技术与人类需求相融合。"
+      },
+      "links": {
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      }
+    },
+    "selectedWorks": "精选作品",
+    "sandboxLink": "去我的视觉实验室看看吧",
+    "projects": {
+      "elevate": {
+        "title": "Elevate",
+        "description": "为产品设计团队与残障用户之间搭建沟通的桥梁。"
+      },
+      "rocketEngine": {
+        "title": "火箭发动机目录",
+        "description": "打破壁垒，让复杂的火箭引擎知识变得触手可及。"
+      },
+      "droneNet": {
+        "title": "DroneNet",
+        "description": "专为第一人称视角(FPV)爱好者设计的应用，帮助他们互相连接、分享经验，并确保飞行地点的合法性与安全性。"
+      }
+    }
+  },
+  "Sandbox": {
+    "header": "这里是我探索的开始......",
+    "sections": {
+      "graphicDesign": {
+        "title": "平面设计",
+        "posters": {
+          "title": "Posters",
+          "lostInTranslation": "Lost In Translation Poster",
+          "tdc": "TDC Poster"
+        },
+        "specimenBook": {
+          "title": "Specimen Book",
+          "coverSmallWrap": "Cover with Small Wrap",
+          "smallWrapOpened": "Small Wrap Opened",
+          "mockup": "Mockup"
+        }
+      },
+      "motionDesign": {
+        "title": "动态设计",
+        "logoAnimation": {
+          "title": "Logo Animation"
+        },
+        "duneTeaser": {
+          "title": "Dune Teaser"
+        }
+      },
+      "productDesign": {
+        "title": "产品设计",
+        "nothingProducts": {
+          "title": "Nothing Products"
+        }
+      }
+    }
+  },
+  "Info": {
+    "comingSoon": "敬请期待！"
+  }
+}
