@@ -12,7 +12,7 @@ export default function LanguageToggle() {
 
   useEffect(() => {
     // Check if the user is on the Chinese domain
-    const isChineseDomain = window.location.hostname === 'cn.domain.com';
+    const isChineseDomain = window.location.hostname === 'cn.kellerwang.com';
     
     // Check if the user's browser language is Chinese
     const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
