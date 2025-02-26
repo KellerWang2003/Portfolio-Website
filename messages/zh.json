@@ -1,5 +1,13 @@
 {
-    "Navigation": {
+    "Metadata": {
+    "title": "王云天 | 交互设计师",
+    "description": "王云天的作品集 - 专注于数字体验和用户界面设计的交互设计师。探索我的项目、技能和创意作品。",
+    "ogTitle": "王云天 | 交互设计师",
+    "ogDescription": "王云天的作品集 - 专注于数字体验和用户界面设计的交互设计师。",
+    "siteName": "王云天作品集",
+    "ogImageAlt": "王云天作品集预览"
+  },
+  "Navigation": {
     "index": "主页",
     "sandbox": "沙盒",
     "info": "信息",

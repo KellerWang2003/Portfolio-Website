@@ -1,1 +1,19 @@
- 
+{
+  "name": "Keller Wang Portfolio",
+  "short_name": "Keller Wang",
+  "icons": [
+    {
+      "src": "/Icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+} 

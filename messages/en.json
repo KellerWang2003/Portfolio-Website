@@ -1,4 +1,12 @@
 {
+  "Metadata": {
+    "title": "Keller Wang | Interaction Designer",
+    "description": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design. Explore my projects, skills, and creative work.",
+    "ogTitle": "Keller Wang | Interaction Designer",
+    "ogDescription": "Portfolio of Keller Wang - Interaction Designer specializing in digital experiences and user interface design.",
+    "siteName": "Keller Wang Portfolio",
+    "ogImageAlt": "Keller Wang Portfolio Preview"
+  },
   "Navigation": {
     "index": "Index",
     "sandbox": "Sandbox",
