@@ -17,15 +17,19 @@ export default function ResumePage() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
-    // Navigate back
-    router.back();
+
+    // Add a delay before navigation to ensure PDF opens
+    const timer = setTimeout(() => {
+      router.back();
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, [router]);
 
   return (
     <ContentWrapper>
       <div className="flex items-center justify-center min-h-[50vh]">
-        redirecting...
+        Redirecting...
       </div>
     </ContentWrapper>
   );
