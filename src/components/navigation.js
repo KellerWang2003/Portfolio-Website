@@ -35,6 +35,7 @@ const NavButton = ({ href, children, textColor, onClick, translationKey }) => {
 };
 
 const DesktopNav = ({ colors }) => {
+  const t = useTranslations('Navigation');
   return (
     <nav className="flex w-full px-8 py-3 rounded-xl
                     font-oxanium text-base justify-between items-center" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
@@ -54,7 +55,12 @@ const DesktopNav = ({ colors }) => {
       <div className="flex items-center gap-10">
         
         <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
-        <NavButton href="/resume" textColor={colors.textColor} translationKey="resume" />
+        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
+           className="">
+          <AnimatedUnderline lineColor={colors.textColor}>
+            {t('resume')}
+          </AnimatedUnderline>
+        </a>
         <LanguageToggle />
       </div>
     </nav>
@@ -125,7 +131,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
           {t('info')}
         </Link>
         <MobileDivider />
-        <Link href="/resume" onClick={handleLinkClick} className='h-full flex items-center'>
+        <Link href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>
           {t('resume')}
         </Link>
       </section>
