@@ -50,7 +50,7 @@ export default function LanguageToggle() {
   return (
     <button 
       onClick={toggleLanguage}
-      className="-ml-2 px-1 aspect-square flex items-center justify-center border border-current rounded text-xs cursor-none"
+      className={`-ml-2 h-6 aspect-square ${locale === 'en' ? 'pt-px' : ''} flex items-center justify-center border border-current rounded text-xs cursor-none`}
       aria-label={`Switch to ${locale === 'en' ? 'Chinese' : 'English'}`}
     >
       {getLanguageDisplayName(locale)}

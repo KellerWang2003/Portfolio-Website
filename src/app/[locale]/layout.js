@@ -28,6 +28,8 @@ export async function generateMetadata({params}) {
   return {
     title: t('title'),
     description: t('description'),
+    themeColor: '#ffffff',
+    colorScheme: 'only light',
     icons: {
       icon: [
         { url: '/Icons/favicon.svg', type: 'image/svg+xml' },
@@ -90,6 +92,10 @@ export default async function LocaleLayout({children, params}) {
 
   return (
     <html lang={locale}>
+      <head>
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="color-scheme" content="only light" />
+      </head>
       <body className={`${oxanium.variable} overscroll-none`}>
         <NextIntlClientProvider messages={messages}>
           <LayoutWrapper>

@@ -69,7 +69,7 @@ const ProgressItem = ({
 
 export default function ProgressBar({ bgColor, content, currentStep }) {
     return (
-        <div className="hidden sticky -top-[33px] md:flex flex-col gap-4 font-oxanium z-20">
+        <div className="hidden sticky -top-[33px] md:flex flex-col gap-4 font-oxanium z-20 text-current">
             <div className="w-full flex gap-2">
                 {content.map((section, sectionIndex) => (
                     <ProgressItem

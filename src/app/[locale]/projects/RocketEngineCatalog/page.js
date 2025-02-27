@@ -38,7 +38,7 @@ export default function RocketEngineCatalog({params}) {
 
     return (
         <ContentWrapper bgColor="#181818" borderColor="#565F68">
-            <main className="relative flex flex-col gap-10">
+            <main className="relative flex flex-col gap-10 text-[#EAEAEA]">
                 <ProjectLanding
                     textColor="#EAEAEA"
                     title={t('title')}

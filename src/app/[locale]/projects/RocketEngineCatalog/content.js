@@ -132,7 +132,7 @@ const Design = () => {
                         </section>
                     </div>}
                 rightChild={
-                    <Image src={desktopImages[0]} alt="Future Plans" width={960} height={540} />
+                    <Image src={desktopImages[0]} alt="Future Plans" width={960} height={540} priority />
                 }
             />
             {/* Fabrication Shop */}
@@ -152,7 +152,7 @@ const Design = () => {
                         </section>
                     </div>}
                 rightChild={
-                    <Image src={desktopImages[1]} alt="Fabrication Shop" width={960} height={540} />
+                    <Image src={desktopImages[1]} alt="Fabrication Shop" width={960} height={540} priority/>
                 }
             />
             {/* Part 1 - Building the engine */}
@@ -194,7 +194,7 @@ const Design = () => {
                         </section>
                     </div>}
                 rightChild={
-                    <Image src={desktopImages[4]} alt="Build Summary" width={960} height={540} />
+                    <Image src={desktopImages[4]} alt="Build Summary" width={960} height={540} priority/>
                 }
             />
             {/* Part 2 - Selecting your engine */}

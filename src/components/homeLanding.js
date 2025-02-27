@@ -127,7 +127,7 @@ function Introduction() {
         <section className='w-full md:w-1/3
             flex flex-col gap-4 justify-between mt-4 md:mt-0 md:pb-24
             font-oxanium text-black'>
-            <h1 className='text-4xl md:text-5xl flex flex-col gap-3'>
+            <h1 className='text-4xl md:text-5xl flex flex-col gap-2'>
                 <span>{t('greeting')}</span>
                 <span className='whitespace-nowrap'>{t('name')}</span>
             </h1>
