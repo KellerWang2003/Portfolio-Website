@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import AnimatedLink from './animation/animatedLink';
 import { MOUSE_POSITION_UPDATE } from '@/hooks/useCursorHover';
 import { useTranslations } from 'next-intl';
+import FadeInAnimation from './animation/fadeInAnimation';
 
 function FramerMagnet({ children, xScale, yScale }) {
     const ref = useRef(null);
@@ -103,7 +104,7 @@ function AnimatedLogo() {
                     </FramerMagnet>
                 </div>
                 <div className="block md:hidden">
-                    <EyeFrame/>
+                    <EyeFrame />
                 </div>
             </section>
             <section className="absolute z-20 pr-[162px] pt-[202px]">
@@ -122,29 +123,33 @@ function AnimatedLogo() {
 
 function Introduction() {
     const t = useTranslations('Index.landing');
-    
+
     return (
-        <section className='w-full md:w-1/3
+        <section className='w-full md:w-3/5
             flex flex-col gap-4 justify-between mt-4 md:mt-0 md:pb-24
             font-oxanium text-black'>
-            <h1 className='text-4xl md:text-5xl flex flex-col gap-2'>
-                <span>{t('greeting')}</span>
-                <span className='whitespace-nowrap'>{t('name')}</span>
-            </h1>
-            <div className='flex flex-col gap-4 text-sm md:text-base'>
-                <section className='flex flex-col gap-1 text-[#404040]'>
-                    <p>{t('description.line1')}</p>
-                    <p>{t('description.line2')}</p>
-                </section>
-                <section className='flex gap-8'>
-                    <AnimatedLink href='https://www.linkedin.com/in/keller-wang-996474227' color='black'>
-                        {t('links.linkedin')}
-                    </AnimatedLink>
-                    <AnimatedLink href='mailto:kellerwang2003@gmail.com' color='black'>
-                        {t('links.email')}
-                    </AnimatedLink>
-                </section>
-            </div>
+            <FadeInAnimation delay={0}>
+                <h1 className='text-4xl md:text-5xl flex flex-col gap-2'>
+                    <span>{t('greeting')}</span>
+                    <span className='whitespace-nowrap'>{t('name')}</span>
+                </h1>
+            </FadeInAnimation>
+            <FadeInAnimation delay={0.25}>
+                <div className='flex flex-col gap-4 text-sm md:text-base'>
+                    <section className='flex flex-col gap-1 text-[#404040]'>
+                        <p>{t('description.line1')}</p>
+                        <p>{t('description.line2')}</p>
+                    </section>
+                    <section className='flex gap-8'>
+                        <AnimatedLink href='https://www.linkedin.com/in/keller-wang-996474227' color='black'>
+                            {t('links.linkedin')}
+                        </AnimatedLink>
+                        <AnimatedLink href='mailto:kellerwang2003@gmail.com' color='black'>
+                            {t('links.email')}
+                        </AnimatedLink>
+                    </section>
+                </div>
+            </FadeInAnimation>
         </section>
     )
 }
@@ -157,14 +162,22 @@ export default function HomeLanding() {
                 md:pt-32 overflow-y-clip
             ">
                 <Introduction />
-                <AnimatedLogo />
-                {/* the text */}
-                <section className="md:absolute w-full bottom-0 left-0 flex flex-col">
-                    <div className="w-full h-[1px] bg-black"></div>
-                    <div className="w-full h-8 flex gap-2">
-                        <div className='w-full h-full bg-[#F7F4EC]'></div>
-                    </div>
-                </section>
+                <FadeInAnimation delay={0.5}>
+                    <AnimatedLogo />
+                </FadeInAnimation>
+                    {/* the text */}
+                    <section className="md:absolute w-full bottom-0 left-0 flex flex-col">
+                        <motion.div 
+                            initial={{ width: 0 }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.5 }}
+                            className="h-[1px] bg-black z-10"
+                        ></motion.div>
+                        <div className="w-full h-8 flex gap-2 z-10">
+                            <div className='w-full h-full bg-[#F7F4EC]'></div>
+                        </div>
+                    </section>
+
             </div>
         </>
     )

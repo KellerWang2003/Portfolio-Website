@@ -208,7 +208,7 @@ function ProjectCard({ title, children }) {
 
 function ProjectSection({ title, children, isFirst = false }) {
     return (
-        <FadeInAnimation isFirst={isFirst}>
+        <FadeInAnimation isFirst={isFirst} delay={0}>
             <div className="w-full flex flex-col items-end gap-12">
                 <div className="w-full flex flex-col gap-2">
                     <h2 className="text-3xl">{title}</h2>

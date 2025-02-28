@@ -3,6 +3,7 @@ import ContentWrapper from "@/components/contentWrapper";
 import HomeLanding from "@/components/homeLanding";
 import Footer from "@/components/footer";
 import ProjectsList from "@/components/ProjectsList";
+import FadeInAnimation from "@/components/animation/fadeInAnimation";
 
 import {useTranslations} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
@@ -46,9 +47,11 @@ export default function Index({params}) {
     <ContentWrapper bgColor="#F7F4EC">
       <main className="flex flex-col">
         <HomeLanding />
-        <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6 z-10">
-          {t('selectedWorks')}
-        </h2>
+        <FadeInAnimation delay={1.25} isFirst={true} className="z-10">
+          <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6">
+            {t('selectedWorks')}
+          </h2>
+        </FadeInAnimation>
         <ProjectsList 
           projects={projects}
           sandboxLinkText={t('sandboxLink')}

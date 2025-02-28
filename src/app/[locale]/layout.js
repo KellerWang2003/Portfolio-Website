@@ -28,8 +28,6 @@ export async function generateMetadata({params}) {
   return {
     title: t('title'),
     description: t('description'),
-    themeColor: '#ffffff',
-    colorScheme: 'only light',
     icons: {
       icon: [
         { url: '/Icons/favicon.svg', type: 'image/svg+xml' },
