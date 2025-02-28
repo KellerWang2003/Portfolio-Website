@@ -10,7 +10,7 @@ export default function FadeInAnimation({ children, isFirst, delay, className = 
             whileInView={!isFirst ? { opacity: 1, y: 0 } : undefined}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ 
-                duration: 0.6, 
+                duration: 0.8, 
                 ease: [0.4, 0, 0.2, 1],
                 delay: delay !== undefined ? delay : (isFirst ? 1.25 : delay) 
             }}
