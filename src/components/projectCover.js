@@ -53,7 +53,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
     );
 
     const MobileContent = (
-        <FadeInAnimation isFirst={isFirst}>
+        <FadeInAnimation>
             <div className="w-full flex flex-col gap-10 text-black font-oxanium text-sm">
                 <section className="w-full aspect-video flex flex-col gap-2">
                     <div className="flex justify-between">

@@ -170,7 +170,7 @@ const Research = () => {
             {/* Primary Research */}
             <section className="w-full flex flex-col gap-10">
                 <h1 className="text-3xl font-oxanium">{t('research.primaryResearch.title')}</h1>
-                <div className="flex flex-col gap-24 lg:gap-64">
+                <div className="flex flex-col gap-24 lg:gap-36">
                     <p className="w-full lg:w-1/2">
                         {t('research.primaryResearch.description')}
                     </p>

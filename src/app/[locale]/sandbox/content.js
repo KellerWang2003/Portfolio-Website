@@ -143,13 +143,10 @@ export default function Content() {
                     <ProjectCard title={t('sections.motionDesign.duneTeaser.title')}>
                         <video
                             src="/images/Sandbox/Animations/DuneTeaser.mp4"
-                            loading="lazy"
                             controls
-                            loop
                             muted
                             playsInline
                             className="w-full h-auto"
-                            onLoadedData={(e) => e.target.play()}
                         ></video>
                     </ProjectCard>
                 </ProjectSection>
