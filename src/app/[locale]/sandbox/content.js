@@ -144,6 +144,8 @@ export default function Content() {
                         <video
                             src="/images/Sandbox/Animations/DuneTeaser.mp4"
                             controls
+                            loop
+                            autoPlay
                             muted
                             playsInline
                             className="w-full h-auto"
