@@ -9,7 +9,6 @@ import TiltedCard from "@/blocks/Components/TiltedCard/TiltedCard";
 import Image from "next/image";
 import ScrollingImages from "@/components/projectPages/scrollingImages";
 
-
 export default function TestingPage() {
 
     const [isOpen, setOpen] = useState(false)
@@ -20,7 +19,8 @@ export default function TestingPage() {
                 <div className="w-full h-[2px] bg-gray-700"></div>
             </header>
             {/* Testing Area */}
-            <Footer />
+
+
         </ContentWrapper>
 
     )

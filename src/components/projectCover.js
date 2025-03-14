@@ -9,12 +9,12 @@ import { Link } from "@/i18n/routing";
 
 export default function ProjectCover({ number, cover, year, title, tags, description, link, isFirst }) {
     const { cursorVariant, hoveredElement } = useCursor();
-    
-    const isThisProjectHovered = 
-        cursorVariant === 'hover' && 
+
+    const isThisProjectHovered =
+        cursorVariant === 'hover' &&
         hoveredElement?.hasAttribute('data-project-index') &&
         hoveredElement?.getAttribute('data-project-index') === number.toString();
-    
+
     const DesktopContent = (
         <FadeInAnimation isFirst={isFirst}>
             <div className="w-full flex gap-6 text-black font-oxanium">
@@ -29,9 +29,10 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                     <section className="flex flex-col gap-4">
                         <Tags tags={tags} />
                         <div className="flex justify-between items-end gap-8">
-                            <AnimatedTextReveal 
-                                className="text-5xl" 
+                            <AnimatedTextReveal
+                                className="text-5xl overflow-clip"
                                 isHovered={isThisProjectHovered}
+                                
                             >
                                 {title}
                             </AnimatedTextReveal>
@@ -66,9 +67,10 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 <section className="flex flex-col gap-3">
                     <Tags tags={tags} />
                     <div className="flex justify-between items-end gap-8">
-                        <AnimatedTextReveal 
-                            className="text-4xl" 
+                        <AnimatedTextReveal
+                            className="text-4xl overflow-clip"
                             isHovered={isThisProjectHovered}
+                            
                         >
                             {title}
                         </AnimatedTextReveal>
@@ -87,7 +89,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
 
     return (
         link ? (
-            <Link 
+            <Link
                 href={link}
                 data-cursor="hover"
                 data-cursor-text="View Project"
@@ -97,7 +99,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                 <div className="block lg:hidden">{MobileContent}</div>
             </Link>
         ) : (
-            <div 
+            <div
                 data-cursor="hover"
                 data-cursor-text="Coming Soon"
                 data-project-index={number}

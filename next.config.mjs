@@ -4,7 +4,10 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone'
+    output: 'standalone',
+    experimental: {
+    viewTransition: true,
+  },
 };
 
 export default withNextIntl(nextConfig);

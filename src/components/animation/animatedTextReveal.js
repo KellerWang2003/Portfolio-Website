@@ -9,7 +9,7 @@ const AnimatedTextReveal = ({ children, className, isHovered }) => {
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: isHovered ? '100%' : 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
       >
         {children}
       </motion.div>
@@ -19,7 +19,7 @@ const AnimatedTextReveal = ({ children, className, isHovered }) => {
         className="absolute bottom-full left-0"
         initial={{ y: 0 }}
         animate={{ y: isHovered ? '100%' : 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
       >
         {children}
       </motion.div>

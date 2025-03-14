@@ -25,10 +25,8 @@ const NavButton = ({ href, children, textColor, onClick, translationKey }) => {
   
   if (href) {
     return (
-      <Link href={href} className="">
-        <AnimatedUnderline lineColor={textColor}>
+      <Link href={href} className="" data-cursor="hoverSmall">
           {translationKey ? t(translationKey) : children}
-        </AnimatedUnderline>
       </Link>
     );
   }
@@ -56,10 +54,8 @@ const DesktopNav = ({ colors }) => {
         
         <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
         <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
-           className="">
-          <AnimatedUnderline lineColor={colors.textColor}>
+           className="" data-cursor="hoverSmall">
             {t('resume')}
-          </AnimatedUnderline>
         </a>
         <LanguageToggle />
       </div>

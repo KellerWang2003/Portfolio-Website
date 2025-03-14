@@ -27,7 +27,7 @@ export default function AnimatedUnderline({ lineColor, children }) {
                 className="absolute bottom-px left-0 w-full h-px"
                 style={{ backgroundColor: lineColor }}
                 variants={underlineVariants}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
             ></motion.div>
         </motion.div>
     )
