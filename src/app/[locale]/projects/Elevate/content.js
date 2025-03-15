@@ -49,7 +49,7 @@ const content = [
 export default function Content() {
     const { currentSection, handleSectionInView } = useScrollProgress(1);
     const t = useTranslations('Elevate');
-    
+
     const progressBarContent = [
         {
             key: 1,
@@ -59,15 +59,15 @@ export default function Content() {
             key: 2,
             title: t('progressBar.research'),
             items: [
-                t('progressBar.researchItems.theProblem'), 
-                t('progressBar.researchItems.primaryResearch'), 
+                t('progressBar.researchItems.theProblem'),
+                t('progressBar.researchItems.primaryResearch'),
                 t('progressBar.researchItems.whyAndHow')
             ]
         }, {
             key: 3,
             title: t('progressBar.theSolution'),
             items: [
-                t('progressBar.solutionItems.accessibilityScore'), 
+                t('progressBar.solutionItems.accessibilityScore'),
                 t('progressBar.solutionItems.feedbackLoop')
             ]
         }
@@ -75,29 +75,33 @@ export default function Content() {
 
     return (
         <>
-        <ProgressBar 
-                    bgColor="#EDEAE3" 
-                    content={progressBarContent} 
-                    currentStep={currentSection}
-                />
-                <div className="flex flex-col gap-36">
-                    <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
-                        <FeatureOverview />
-                    </SectionWrapper>
-                    <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
-                        <Research />
-                    </SectionWrapper>
-                    <SectionWrapper sectionKey={3} onSectionInView={handleSectionInView}>
-                        <TheSolution />
-                    </SectionWrapper>
-                </div>
+            <ProgressBar
+                bgColor="#EDEAE3"
+                content={progressBarContent}
+                currentStep={currentSection}
+                onSectionClick={(sectionKey) => {
+                    const targetSection = document.querySelector(`[data-section="${sectionKey}"]`);
+                    targetSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+            />
+            <div className="flex flex-col gap-36">
+                <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
+                    <FeatureOverview />
+                </SectionWrapper>
+                <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
+                    <Research />
+                </SectionWrapper>
+                <SectionWrapper sectionKey={3} onSectionInView={handleSectionInView}>
+                    <TheSolution />
+                </SectionWrapper>
+            </div>
         </>
     )
 }
 
 const FeatureOverview = () => {
     const t = useTranslations('Elevate');
-    
+
     return (
         <section className="flex flex-col gap-10 md:px-16">
             <div className="h-[65dvh] md:w-2/3 mx-auto text-center text-xl md:text-3xl font-oxanium grid place-items-center">
@@ -123,7 +127,7 @@ const FeatureOverview = () => {
 
 const Research = () => {
     const t = useTranslations('Elevate');
-    
+
     const Pill = ({ content, className }) => {
         return (
             <div
@@ -487,7 +491,7 @@ const TheSolution = () => {
                                 <section className="relative w-1/4 h-full flex flex-col gap-4 md:gap-8">
                                     <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">{t('theSolution.feedbackLoop.loop.flowItems.tickets')}</div>
                                     <Arrow />
-                                    <Arrow orientation="horizontal" className={"w-[58%] sm:w-[80%] absolute top-1/2 -translate-y-1/2 left-1/2 rotate-180"}/>
+                                    <Arrow orientation="horizontal" className={"w-[58%] sm:w-[80%] absolute top-1/2 -translate-y-1/2 left-1/2 rotate-180"} />
                                     <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-2xl">{t('theSolution.feedbackLoop.loop.flowItems.surveyResult')}</div>
                                 </section>
 

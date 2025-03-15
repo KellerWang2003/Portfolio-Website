@@ -42,7 +42,7 @@ const DesktopNav = ({ colors }) => {
         <NavButton href="/sandbox" textColor={colors.textColor} translationKey="sandbox" />
       </div>
       {/* Logo */}
-      <Link href="/" className="w-6 h-6 absolute left-1/2 transform -translate-x-1/2">
+      <Link href="/" className="w-6 h-6 absolute left-1/2 transform -translate-x-1/2" data-cursor="hoverSmall">
         <svg width="24" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M8.17811 0.554984C8.61593 0.861549 8.72234 1.46499 8.41577 1.90281L2.25333 10.7037C1.94676 11.1415 1.34332 11.2479 0.905496 10.9414C0.467676 10.6348 0.361272 10.0313 0.667838 9.59353L6.83028 0.792642C7.13685 0.354822 7.74029 0.248418 8.17811 0.554984Z" fill={colors.textColor} />
           <path fillRule="evenodd" clipRule="evenodd" d="M14.9523 0.554984C15.3901 0.861549 15.4965 1.46499 15.19 1.90281L9.02754 10.7037C8.72097 11.1415 8.11753 11.2479 7.67971 10.9414C7.24189 10.6348 7.13549 10.0313 7.44205 9.59353L13.6045 0.792642C13.9111 0.354822 14.5145 0.248418 14.9523 0.554984Z" fill={colors.textColor} />
