@@ -36,8 +36,8 @@ export default function ContentWrapper({ children, bgColor = "#F7F4EC", borderCo
 
     return (
         <div style={{ backgroundColor: bgColor, borderColor: borderColor }} 
-             className={`flex-1 w-full rounded-xl overflow-scroll hide-scrollbar
-                        border p-3 md:p-8`}
+             className={`flex-1 w-full rounded-xl overflow-y-auto overflow-x-hidden
+                        border p-3 md:p-8 scrollbar-hide`}
              onTouchStart={handleTouchStart}
              onTouchMove={handleTouchMove}
              onTouchEnd={handleTouchEnd}

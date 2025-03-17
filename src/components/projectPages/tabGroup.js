@@ -229,24 +229,14 @@ function MobileTabs({ content }) {
         <div className="w-full max-h-[85vh] flex flex-col bg-[#F2EFE7] border border-[#BFBFBF] border-opacity-50 rounded-2xl">
             <div 
                 ref={containerRef}
-                className="w-full h-full flex p-2 md:p-4 gap-2 md:gap-4 overflow-x-auto snap-x snap-mandatory" 
-                style={{ 
-                    WebkitOverflowScrolling: 'touch',
-                    msOverflowStyle: 'none',  /* IE and Edge */
-                    scrollbarWidth: 'none'    /* Firefox */
-                }}
+                className="w-full h-full flex p-2 md:p-4 gap-2 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide" 
             >
-                <style jsx>{`
-                    div::-webkit-scrollbar {
-                        display: none; /* Chrome, Safari, Opera */
-                    }
-                `}</style>
                 {content.map((item, index) => (
                     <section
                         key={item.key}
                         ref={el => tabRefs.current[index] = el}
                         data-index={index}
-                        className="min-w-[100%] md:min-w-[70%] flex-1 p-3 flex flex-col gap-2 border border-[#BFBFBF] bg-[#F7F4EC] rounded-lg md:rounded-md snap-center scroll-mt-5 md:scroll-mt-16s"
+                        className="min-w-[100%] md:min-w-[70%] flex-1 p-2 md:p-3 flex flex-col gap-2 border border-[#BFBFBF] bg-[#F7F4EC] rounded-lg md:rounded-md snap-center scroll-mt-5 md:scroll-mt-16"
                     >
                         <Image
                             src={item.image}

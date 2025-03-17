@@ -16,11 +16,52 @@ body {
   background: var(--background);
 }
 
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-show {
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+  
+  .scrollbar-show::-webkit-scrollbar {
+    display: block;
+  }
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari and Opera */
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BFBFBF;
+  border-radius: 3px;
+  transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #BFBFBF transparent;
+}
+
+/* Remove the previous rounded-xl rule as it's not helping */
+
+

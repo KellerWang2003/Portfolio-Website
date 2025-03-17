@@ -425,11 +425,11 @@ const TheSolution = () => {
     }
 
     return (
-        <section className="flex flex-col gap-36 lg:px-12 pb-36 text-sm md:text-base">
+        <section className="flex flex-col gap-24 lg:px-12 pb-36 text-sm md:text-base">
             <Title title={t('theSolution.title')} />
 
             {/* Accessibility Score */}
-            <section className="w-full flex flex-col gap-4 -mt-24">
+            <section className="w-full flex flex-col gap-4 -mt-8">
                 <h1 className="text-2xl lg:text-3xl font-oxanium">{t('theSolution.accessibilityScore.title')}</h1>
                 <TabGroup content={accessibilityScore} />
             </section>
