@@ -16,7 +16,7 @@ function SectionWrapper({ sectionKey, children, onSectionInView }) {
     }, [isInView, sectionKey, onSectionInView]);
 
     return (
-        <div ref={ref} data-section={sectionKey} className="scroll-mt-16">
+        <div ref={ref} data-section={sectionKey} className="scroll-mt-20">
             {children}
         </div>
     );

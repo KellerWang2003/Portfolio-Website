@@ -13,7 +13,7 @@ const ProgressItem = ({
 
     return (
         <motion.section
-            className={`relative rounded backdrop-blur-sm flex items-center
+            className={`relative h-10 rounded backdrop-blur-sm flex items-center
             ${isActive ? 'grow' : 'grow-0'}`}
             style={{ 
                 backgroundColor: `${bgColor}E6`,
@@ -30,7 +30,7 @@ const ProgressItem = ({
         >
             <h2 
                 ref={ref}
-                className="text-sm font-bold whitespace-nowrap h-full py-3 px-4"
+                className="text-sm font-semibold whitespace-nowrap h-full flex items-center px-4 relative z-10"
                 onClick={() => onSectionClick(section.key)}
             >
                 {section.title}

@@ -18,10 +18,10 @@ const cursorVariants = {
         y: -60,
     },
     hoverSmall: {
-        width: 60,
-        height: 60,
-        x: -30,
-        y: -30,
+        width: 40,
+        height: 40,
+        x: -20,
+        y: -20,
     }
     // Add more variants as needed
 };

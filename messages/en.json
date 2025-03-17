@@ -159,7 +159,7 @@
             "False belief that accessibility can be \"added later\" rather than built from the start"
           ],
           "hmw": "make accessibility impact measurable and visible to both product teams and the public to drive awareness of its importance?",
-          "solution": "ACCESSIBILITY SCORE"
+          "solution": "Accessibility score"
         },
         "issue2": {
           "title": "Lack of ongoing collaboration",
@@ -169,7 +169,7 @@
             "Unintentional barriers between the design team and individuals with disabilities"
           ],
           "hmw": "support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?",
-          "solution": "A CONTINUOUS FEEDBACK LOOP"
+          "solution": "A continuous feedback loop"
         }
       }
     },
@@ -185,7 +185,6 @@
             "User Feedback",
             "User Engagement"
           ],
-          "note": "( Measuring methods will be explained in the next section )",
           "conclusion": "The combination of these metrics provides a holistic measure of a product's accessibility performance."
         },
         "mainDashboard": {
@@ -220,7 +219,7 @@
             "evaluation": "Evaluation",
             "completed": "Completed"
           },
-          "conclusion": "After changes are implemented, affected users receive surveys to assess the improvements. Their feedback not only updates the product's accessibility score but can also generate new improvement tickets - creating a continuous cycle where each solution's effectiveness is verified and refined by actual user experience."
+          "conclusion": "After making changes, we survey affected users to see if the improvements worked. Their feedback updates the accessibility score and can create new tickets for further improvements. This creates a continuous cycle where solutions are verified and refined based on real user experiences."
         },
         "survey": {
           "title": "Survey",

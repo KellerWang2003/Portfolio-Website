@@ -7,7 +7,7 @@ import Title from "@/components/projectPages/title";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-
+import TabGroup from "@/components/projectPages/tabGroup";
 const content = [
     {
         key: 1,
@@ -103,7 +103,7 @@ const FeatureOverview = () => {
     const t = useTranslations('Elevate');
 
     return (
-        <section className="flex flex-col gap-10 md:px-16">
+        <section className="flex flex-col gap-10 md:px-12">
             <div className="h-[65dvh] md:w-2/3 mx-auto text-center text-xl md:text-3xl font-oxanium grid place-items-center">
                 <h1>
                     <span>{t('featureOverview.intro.part1')}</span>
@@ -139,7 +139,7 @@ const Research = () => {
     }
 
     return (
-        <section className="flex flex-col gap-36 md:px-16 text-sm md:text-base">
+        <section className="flex flex-col gap-36 md:px-12 text-sm md:text-base">
             <Title title={t('research.title')} />
 
             {/* The Problem */}
@@ -297,6 +297,124 @@ const Research = () => {
 const TheSolution = () => {
     const t = useTranslations('Elevate');
 
+    const accessibilityScore = [
+        {
+            key: 1,
+            title: "Score Dashboard",
+            image: content[1].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.accessibilityScore.scoreDashboard.description')}</p>
+                    <ul className="list-disc pl-4 font-bold">
+                        {t.raw('theSolution.accessibilityScore.scoreDashboard.metrics').map((metric, index) => (
+                            <li key={index}>
+                                <p>{metric}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <p>{t('theSolution.accessibilityScore.scoreDashboard.conclusion')}</p>
+                </div>
+            )
+        },
+        {
+            key: 2,
+            title: "Main Dashboard",
+            image: content[0].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t.rich('theSolution.accessibilityScore.mainDashboard.description', {
+                        strong: (chunks) => <strong>{chunks}</strong>
+                    })}</p>
+                </div>
+            )
+        }
+    ];
+
+    const feedbackLoop = [
+        {
+            key: 1,
+            title: "Product Ambassador",
+            image: content[5].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.feedbackLoop.productAmbassador.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.productAmbassador.description2')}</p>
+                </div>
+            )
+        },
+        {
+            key: 2,
+            title: "Tickets",
+            image: content[4].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.feedbackLoop.tickets.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.tickets.description2')}</p>
+                </div>
+            )
+        },
+        {
+            key: 3,
+            title: "Sprint Manager",
+            image: content[3].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.feedbackLoop.sprintManager.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.sprintManager.description2')}</p>
+                </div>
+            )
+        },
+        {
+            key: 4,
+            title: "Roadmap",
+            image: content[2].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.feedbackLoop.roadmap.description')}</p>
+
+                    <div className="flex gap-2 text-sm">
+                        <section className="w-full flex flex-col gap-2 items-center">
+                            <div className="w-full h-4 bg-[#faea8f] rounded-full"></div>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.ongoing')}</p>
+                        </section>
+                        <section className="w-full flex flex-col gap-2 items-center">
+                            <div className="w-full h-4 bg-[#FECC76] rounded-full"></div>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.fixed')}</p>
+                        </section>
+                        <section className="w-full flex flex-col gap-2 items-center">
+                            <div className="w-full h-4 bg-[#6691f4] rounded-full"></div>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.surveySent')}</p>
+                        </section>
+                        <section className="w-full flex flex-col gap-2 items-center">
+                            <div className="w-full h-4 bg-[#a499ec] rounded-full"></div>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.evaluation')}</p>
+                        </section>
+                        <section className="w-full flex flex-col gap-2 items-center">
+                            <div className="w-full h-4 bg-[#87DEA8] rounded-full"></div>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.completed')}</p>
+                        </section>
+                    </div>
+
+                    <p>{t.rich('theSolution.feedbackLoop.roadmap.conclusion', {
+                        strong: (chunks) => <strong>{chunks}</strong>
+                    })}</p>
+                </div>
+            )
+        },
+        {
+            key: 5,
+            title: "Survey",
+            image: content[6].src,
+            description: (
+                <div className="flex flex-col gap-4">
+                    <p>{t('theSolution.feedbackLoop.survey.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.survey.description2')}</p>
+                </div>
+            )
+        },
+
+    ]
+
     const Arrow = ({ className, orientation = "vertical" }) => {
         return (
             <div className={`w-full flex ${orientation === 'horizontal' ? 'flex-row' : 'flex-col h-full'} justify-center items-center ${className}`}>
@@ -307,170 +425,20 @@ const TheSolution = () => {
     }
 
     return (
-        <section className="flex flex-col gap-36 md:px-16 pb-36 text-sm md:text-base">
+        <section className="flex flex-col gap-36 lg:px-12 pb-36 text-sm md:text-base">
             <Title title={t('theSolution.title')} />
 
             {/* Accessibility Score */}
-            <section className="w-full flex flex-col gap-10 -mt-24">
-                <h1 className="text-3xl font-oxanium">{t('theSolution.accessibilityScore.title')}</h1>
-                <div className="flex flex-col gap-32">
-                    <ProjectContent
-                        order=""
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.accessibilityScore.scoreDashboard.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t('theSolution.accessibilityScore.scoreDashboard.description')}</p>
-                                    <ul className="list-disc pl-4 font-bold">
-                                        {t.raw('theSolution.accessibilityScore.scoreDashboard.metrics').map((metric, index) => (
-                                            <li key={index}>
-                                                <p>{metric}</p>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <p>{t('theSolution.accessibilityScore.scoreDashboard.note')}</p>
-                                    <p>{t('theSolution.accessibilityScore.scoreDashboard.conclusion')}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[1].src} alt="Accessibility Score" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-                    <ProjectContent
-                        order=""
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.accessibilityScore.mainDashboard.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t.rich('theSolution.accessibilityScore.mainDashboard.description', {
-                                        strong: (chunks) => <strong>{chunks}</strong>
-                                    })}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[0].src} alt="Dashboard" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-                </div>
+            <section className="w-full flex flex-col gap-4 -mt-24">
+                <h1 className="text-2xl lg:text-3xl font-oxanium">{t('theSolution.accessibilityScore.title')}</h1>
+                <TabGroup content={accessibilityScore} />
             </section>
 
             {/* Feedback Loop */}
-            <section className="w-full flex flex-col gap-10">
-                <h1 className="text-3xl font-oxanium">{t('theSolution.feedbackLoop.title')}</h1>
-                <div className="flex flex-col gap-32">
-                    {/* Product Ambassador */}
-                    <ProjectContent
-                        order="reverse"
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.feedbackLoop.productAmbassador.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t('theSolution.feedbackLoop.productAmbassador.description1')}</p>
-                                    <p>{t('theSolution.feedbackLoop.productAmbassador.description2')}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[5].src} alt="Product Ambassador" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-
-                    {/* Tickets */}
-                    <ProjectContent
-                        order="reverse"
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.feedbackLoop.tickets.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t('theSolution.feedbackLoop.tickets.description1')}</p>
-                                    <p>{t('theSolution.feedbackLoop.tickets.description2')}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[4].src} alt="Tickets" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-
-                    {/* Sprint Manager */}
-                    <ProjectContent
-                        order="reverse"
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.feedbackLoop.sprintManager.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t('theSolution.feedbackLoop.sprintManager.description1')}</p>
-                                    <p>{t('theSolution.feedbackLoop.sprintManager.description2')}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[3].src} alt="Sprint Manager" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-
-                    {/* Roadmap */}
-                    <ProjectContent
-                        order="reverse"
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.feedbackLoop.roadmap.title')}</h2>
-                                <div className="flex flex-col gap-8">
-                                    <p>{t('theSolution.feedbackLoop.roadmap.description')}</p>
-
-                                    <div className="flex gap-2 text-sm">
-                                        <section className="w-full flex flex-col gap-2 items-center">
-                                            <div className="w-full h-4 bg-[#faea8f] rounded-full"></div>
-                                            <p>{t('theSolution.feedbackLoop.roadmap.stages.ongoing')}</p>
-                                        </section>
-                                        <section className="w-full flex flex-col gap-2 items-center">
-                                            <div className="w-full h-4 bg-[#FECC76] rounded-full"></div>
-                                            <p>{t('theSolution.feedbackLoop.roadmap.stages.fixed')}</p>
-                                        </section>
-                                        <section className="w-full flex flex-col gap-2 items-center">
-                                            <div className="w-full h-4 bg-[#6691f4] rounded-full"></div>
-                                            <p>{t('theSolution.feedbackLoop.roadmap.stages.surveySent')}</p>
-                                        </section>
-                                        <section className="w-full flex flex-col gap-2 items-center">
-                                            <div className="w-full h-4 bg-[#a499ec] rounded-full"></div>
-                                            <p>{t('theSolution.feedbackLoop.roadmap.stages.evaluation')}</p>
-                                        </section>
-                                        <section className="w-full flex flex-col gap-2 items-center">
-                                            <div className="w-full h-4 bg-[#87DEA8] rounded-full"></div>
-                                            <p>{t('theSolution.feedbackLoop.roadmap.stages.completed')}</p>
-                                        </section>
-                                    </div>
-
-                                    <p>{t.rich('theSolution.feedbackLoop.roadmap.conclusion', {
-                                        strong: (chunks) => <strong>{chunks}</strong>
-                                    })}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[2].src} alt="Roadmap" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-
-                    {/* Survey */}
-                    <ProjectContent
-                        order="reverse"
-                        leftChild={
-                            <div className="w-full h-full flex flex-col justify-between gap-4">
-                                <h2 className="font-bold ">{t('theSolution.feedbackLoop.survey.title')}</h2>
-                                <div className="flex flex-col gap-4">
-                                    <p>{t('theSolution.feedbackLoop.survey.description1')}</p>
-                                    <p>{t('theSolution.feedbackLoop.survey.description2')}</p>
-                                </div>
-                            </div>
-                        }
-                        rightChild={
-                            <Image src={content[6].src} alt="Survey" width={1440} height={1024} className="border border-[#BFBFBF] rounded-md md:rounded-2xl" />
-                        }
-                    />
-
+            <section className="w-full flex flex-col gap-4 ">
+                <h1 className="text-2xl lg:text-3xl font-oxanium">{t('theSolution.feedbackLoop.title')}</h1>
+                <div className="flex flex-col gap-24">
+                    <TabGroup content={feedbackLoop} />
                     {/* Feedback Loop */}
                     <ProjectContent
                         order="reverse"
