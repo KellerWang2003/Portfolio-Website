@@ -16,7 +16,7 @@ function Title({ children, onInView, margin = "-50%" }) {
     }, [isInView, onInView]);
 
     return (
-        <h1 ref={ref} className={`w-full text-center lg:text-left text-2xl lg:text-3xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-semibold' : 'opacity-30'}`}>
+        <h1 ref={ref} className={`w-full text-center lg:text-left text-lg md:text-2xl py-16 transition-all duration-300 ${isInView ? 'opacity-100 font-semibold' : 'opacity-30'}`}>
             {children}
         </h1>
     )
@@ -42,7 +42,7 @@ export default function ScrollingImages({ content }) {
     return (
         <>
             {/* Desktop */}
-            <div className="hidden lg:flex w-full items-start font-oxanium text-black -mt-[10vh]">
+            <div className="hidden lg:flex w-full items-start font-oxanium text-black bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6">
                 <section className="w-2/5 flex flex-col gap-8 py-[50vh]">
                     {content.map((item, index) => (
                         <Title 
@@ -54,7 +54,7 @@ export default function ScrollingImages({ content }) {
                         </Title>
                     ))}
                 </section>
-                <section className="w-3/5 sticky -top-12 h-screen flex items-center">
+                <section className="w-3/5 sticky top-[calc((100vh-84px-(100vw*0.55*2050/2880))/2)] h-[calc(100vh-84px)] flex items-start">
                     {content.map((item, index) => (
                         <Card key={item.key}>
                             <Image

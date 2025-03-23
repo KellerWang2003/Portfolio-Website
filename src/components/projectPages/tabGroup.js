@@ -47,17 +47,17 @@ function DesktopTabs({ content }) {
     };
 
     return (
-        <div className="w-full flex flex-col gap-4 bg-[#F2EFE7] p-3 lg:p-4 rounded-md md:rounded-2xl">
+        <div className="w-full flex flex-col gap-4 bg-[#F2EFE7] p-3 lg:p-4 rounded-md md:rounded-xl">
             <section className="w-full flex border-b border-[#BFBFBF] relative">
                 <div
-                    className="absolute transition-all duration-300 ease-in-out border border-b-0 border-[#BFBFBF] bg-[#f7f4ec] rounded-t-md"
+                    className="absolute transition-all duration-300 ease-in-out border border-b-0 border-[#BFBFBF] bg-[#f7f4ec] rounded-t"
                     style={bgStyle}
                 />
                 {content.map((item, index) => (
                     <h2
                         key={item.key}
                         ref={(el) => (tabsRef.current[item.key] = el)}
-                        className={`px-5 py-2 whitespace-nowrap rounded-t-md relative transition-all duration-300 ease-in-out font-bold ${activeIndex === index ? 'text-[#000000]' : 'text-[#666666]'}`}
+                        className={`px-5 py-2 whitespace-nowrap rounded-t-md relative transition-all duration-300 ease-in-out ${activeIndex === index ? 'text-[#000000]' : 'text-[#666666]'}`}
                         onClick={() => setActiveIndex(index)}
                     >
                         {item.title}

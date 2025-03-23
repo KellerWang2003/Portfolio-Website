@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from '@/context/cursorContext';
 import { useCursorHover } from '@/hooks/useCursorHover';
@@ -34,8 +34,31 @@ export default function Cursor({ backgroundColor }) {
     });
     const [hasMouseDevice, setHasMouseDevice] = useState(false);
     const { cursorVariant, cursorText } = useCursor();
+    const rafId = useRef(null);
+    const lastMousePosition = useRef({ x: 0, y: 0 });
     
     useCursorHover();
+
+    const updateMousePosition = useCallback(() => {
+        if (rafId.current) {
+            cancelAnimationFrame(rafId.current);
+        }
+
+        rafId.current = requestAnimationFrame(() => {
+            setMousePosition(lastMousePosition.current);
+            rafId.current = null;
+        });
+    }, []);
+
+    const handleMouseMove = useCallback((e) => {
+        lastMousePosition.current = {
+            x: e.clientX,
+            y: e.clientY
+        };
+        window.mouseX = e.clientX;
+        window.mouseY = e.clientY;
+        updateMousePosition();
+    }, [updateMousePosition]);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(hover: hover)');
@@ -48,27 +71,23 @@ export default function Cursor({ backgroundColor }) {
         mediaQuery.addEventListener('change', updateHasMouseDevice);
 
         if (mediaQuery.matches) {
-            const mouseMove = (e) => {
-                // Store mouse position globally for the hook to access
-                window.mouseX = e.clientX;
-                window.mouseY = e.clientY;
-                setMousePosition({
-                    x: e.clientX,
-                    y: e.clientY
-                });
-            };
-
-            window.addEventListener('mousemove', mouseMove);
+            window.addEventListener('mousemove', handleMouseMove);
             return () => {
-                window.removeEventListener('mousemove', mouseMove);
+                window.removeEventListener('mousemove', handleMouseMove);
                 mediaQuery.removeEventListener('change', updateHasMouseDevice);
+                if (rafId.current) {
+                    cancelAnimationFrame(rafId.current);
+                }
             };
         }
 
         return () => {
             mediaQuery.removeEventListener('change', updateHasMouseDevice);
+            if (rafId.current) {
+                cancelAnimationFrame(rafId.current);
+            }
         };
-    }, []);
+    }, [handleMouseMove]);
 
     if (!hasMouseDevice) return null;
     
@@ -82,7 +101,8 @@ export default function Cursor({ backgroundColor }) {
             transition={{
                 type: "spring",
                 damping: 30,
-                stiffness: 200
+                stiffness: 200,
+                mass: 0.5 // Added for smoother movement
             }}
             style={{
                 left: mousePosition.x,
@@ -91,6 +111,7 @@ export default function Cursor({ backgroundColor }) {
                 backgroundColor: 'rgba(128, 128, 128, 0.1)', // Neutral gray with transparency
                 backdropFilter: 'invert(1)', // Full inversion for contrast with background
                 filter: 'contrast(1)', // Slightly reduce contrast to prevent harshness
+                willChange: 'transform' // Optimize for animations
             }}
         >
             {(cursorVariant === "hover" || cursorVariant === "hoverSmall") && (
