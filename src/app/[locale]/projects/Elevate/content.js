@@ -5,46 +5,8 @@ import ProjectContent from "@/components/projectPages/projectContent";
 import SectionWrapper from "@/components/projectPages/sectionWrapper";
 import Title from "@/components/projectPages/title";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
-import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import TabGroup from "@/components/projectPages/tabGroup";
-const content = [
-    {
-        key: 1,
-        title: "Dashboard",
-        src: "/images/Elevate/Screen/Dashboard.png"
-    },
-    {
-        key: 2,
-        title: "Accessibility Score",
-        src: "/images/Elevate/Screen/AccessibilityScore.png"
-    },
-    {
-        key: 3,
-        title: "Roadmap",
-        src: "/images/Elevate/Screen/Roadmap2.png"
-    },
-    {
-        key: 4,
-        title: "Sprint Manager",
-        src: "/images/Elevate/Screen/Sprint.png"
-    },
-    {
-        key: 5,
-        title: "Tickets",
-        src: "/images/Elevate/Screen/Tickets1.png"
-    },
-    {
-        key: 6,
-        title: "Product Ambassador",
-        src: "/images/Elevate/Screen/ProductAmbassador.png"
-    },
-    {
-        key: 7,
-        title: "Survey",
-        src: "/images/Elevate/Screen/Survey.png"
-    }
-];
 
 function SubTitle({ title }) {
     return (
@@ -64,22 +26,39 @@ function Box({ children, className }) {
 
 export default function Content() {
     const { currentSection, handleSectionInView } = useScrollProgress(1);
+    const t = useTranslations('Elevate');
+
+    const content = t.raw('context.features').map((feature, index) => ({
+        key: index + 1,
+        title: feature.title,
+        src: feature.src
+    }));
 
     const progressBarContent = [
         {
             key: 1,
-            title: "Context",
-            items: ["Problem Statement", "Our Solution", "Feature Overview"]
+            title: t('progressBar.context'),
+            items: [
+                t('progressBar.contextItems.problemStatement'),
+                t('progressBar.contextItems.ourSolution'),
+                t('progressBar.contextItems.featureOverview')
+            ]
         }, {
             key: 2,
-            title: "Research",
-            items: ["Early Research", "Primary Research", "Pain Points", "User Types & User Story", "Design Thinking"]
+            title: t('progressBar.research'),
+            items: [
+                t('progressBar.researchItems.earlyResearch'),
+                t('progressBar.researchItems.primaryResearch'),
+                t('progressBar.researchItems.painPoints'),
+                t('progressBar.researchItems.userTypesAndUserStory'),
+                t('progressBar.researchItems.designThinking')
+            ]
         }, {
             key: 3,
-            title: "Final Design",
+            title: t('progressBar.finalDesign'),
             items: [
-                "Accessibility Score",
-                "Feedback Loop"
+                t('progressBar.finalDesignItems.accessibilityScore'),
+                t('progressBar.finalDesignItems.feedbackLoop')
             ]
         }
     ];
@@ -97,84 +76,57 @@ export default function Content() {
             />
             <div className="flex flex-col gap-36 md:px-12">
                 <SectionWrapper sectionKey={1} onSectionInView={handleSectionInView}>
-                    <Context />
+                    <Context content={content} />
                 </SectionWrapper>
                 <SectionWrapper sectionKey={2} onSectionInView={handleSectionInView}>
                     <Research />
                 </SectionWrapper>
                 <SectionWrapper sectionKey={3} onSectionInView={handleSectionInView}>
-                    <FinalDesign />
+                    <FinalDesign content={content} />
                 </SectionWrapper>
             </div>
         </>
     )
 }
 
-const Context = () => {
+const Context = ({ content }) => {
     const t = useTranslations('Elevate');
 
     return (
-        <section className="flex flex-col gap-36 md:pt-48">
+        <section className="flex flex-col gap-36 pt-8 md:pt-48">
             {/* <Title title="Context" /> */}
             <div className="flex flex-col gap-36 md:gap-48">
-                {/* <div className="md:min-h-[35dvh] w-full flex flex-col gap-4  md:gap-8 justify-center items-center">
-                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">
-                    Problem Statement
-                </h1>
-                <h1 className="w-full md:w-4/5 lg:w-2/3 text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg p-6">
-                    <span>Despite existing accessibility efforts,</span>
-                    <span className="text-blue-500"> the connection between product teams and users with disabilities remains difficult and inconsistent </span>
-                    <span>—compounded by varying levels of accessibility awareness among designers and the public.</span>
-                </h1>
-            </div>
-
-            <div className="md:min-h-[35dvh] w-full flex flex-col gap-4 md:gap-8 justify-center items-center">
-                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">
-                    Our Solution
-                </h1>
-                <h1 className="w-full md:w-4/5 lg:w-2/3 text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg p-6">
-                    <span>Elevate aims to create</span>
-                    <span className="text-blue-500"> a continuous feedback loop </span>
-                    <span>where real user experiences guide accessibility improvements and drive better design.</span>
-                </h1>
-            </div> */}
-
                 <ProjectContent
                     leftChild={
-                        <SubTitle title="The Problem" />
+                        <SubTitle title={t('context.problem.title')} />
                     }
                     rightChild={
                         <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
-                            <span>Despite existing accessibility efforts,</span>
-                            <span className="text-blue-500"> the connection between product teams and users with disabilities remains difficult and inconsistent </span>
-                            <span>—compounded by varying levels of accessibility awareness among designers and the public.</span>
+                            <span>{t('context.problem.description.part1')}</span>
+                            <span className="text-[#2590DC]"> {t('context.problem.description.highlight')} </span>
+                            <span>{t('context.problem.description.part2')}</span>
                         </h1>
                     }
                 />
 
                 <ProjectContent
                     leftChild={
-                        <SubTitle title="Our Solution" />
+                        <SubTitle title={t('context.solution.title')} />
                     }
                     rightChild={
                         <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
-                            <span>Elevate aims to create</span>
-                            <span className="text-blue-500"> a continuous feedback loop </span>
-                            <span>where real user experiences guide accessibility improvements and drive better design.</span>
+                            <span>{t('context.solution.description.part1')}</span>
+                            <span className="text-[#2590DC]"> {t('context.solution.description.highlight')} </span>
+                            <span>{t('context.solution.description.part2')}</span>
                         </h1>
                     }
                 />
 
                 <div className="w-full flex flex-col gap-4 md:gap-8">
-                    <SubTitle title="Feature Overview" />
+                    <SubTitle title={t('context.featureOverview.title')} />
                     <ScrollingImages content={content} />
                 </div>
-
-                {/* <div className="w-full flex flex-col justify-center items-center">
-                    <h1 className="text-lg md:text-2xl font-semibold font-oxanium">
-                        How did we get here?
-                    </h1>
-                </div> */}
+                
             </div>
         </section>
     )
@@ -194,11 +146,11 @@ const Research = () => {
     }
 
     return (
-        <section className="flex flex-col gap-36 text-sm md:text-base">
-            <Title title="Research" />
+        <section className="flex flex-col gap-48 text-sm md:text-base">
+            <Title title={t('research.title')} />
 
-            {/* Early Reserarch */}
-            <section className="w-full lg:w-4/5 flex flex-col gap-16 md:gap-36 mx-auto items-center">
+            {/* Early Research */}
+            <section className="w-full lg:w-4/5 flex flex-col gap-16 md:gap-36 mx-auto items-center -mt-24 md:mt-0">
                 <div className="flex flex-col gap-8 items-center">
                     <div className="w-8 md:w-12 aspect-square">
                         <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,26 +159,23 @@ const Research = () => {
                             <path d="M32.0007 22.6156C34.8229 22.6156 37.1107 20.3278 37.1107 17.5056C37.1107 14.6834 34.8229 12.3955 32.0007 12.3955C29.1785 12.3955 26.8906 14.6834 26.8906 17.5056C26.8906 20.3278 29.1785 22.6156 32.0007 22.6156Z" fill="#2590DC" />
                         </svg>
                     </div>
-                    <h2 className="w-full xl:w-2/3 text-center text-2xl md:text-4xl font-oxanium">Accessible design and awareness are much more important than we think.</h2>
+                    <h2 className="w-full xl:w-2/3 text-center text-2xl md:text-4xl font-oxanium">{t('research.earlyResearch.heading')}</h2>
                 </div>
                 <div className="w-full flex flex-col md:flex-row gap-4">
-                    <Box className="flex flex-1 flex-col md:gap-2">
-                        <h3 className="text-center text-2xl md:text-4xl font-oxanium text-[#2590DC]">1/6</h3>
-                        <p className="text-center text-sm md:text-base font-oxanium">of the world population live with some form of significant disability.</p>
-                    </Box>
-                    <Box className="flex flex-1 flex-col md:gap-2">
-                        <h3 className="text-center text-2xl md:text-4xl font-oxanium text-[#2590DC]">58%</h3>
-                        <p className="text-center text-sm md:text-base font-oxanium">of adults say companies somewhat consider disabled consumers' needs; 16% say they do not at all.</p>
-                    </Box>
-                    <Box className="flex flex-1 flex-col gap-2">
-                        <div className="flex gap-2 justify-center items-baseline">
-                            <p className="text-center text-sm md:text-base font-oxanium">Only</p>
-                            <h3 className="text-center text-2xl md:text-4xl font-oxanium text-[#2590DC]">19%</h3>
-                        </div>
-                        <p className="text-center text-sm md:text-base font-oxanium">of companies have adequate internal resources to test for accessibility on an ongoing basis.</p>
-                    </Box>
+                    {t.raw('research.earlyResearch.statistics').map((stat, index) => (
+                        <Box key={index} className="flex flex-1 flex-col md:gap-2">
+                            {stat.prefix ? (
+                                <div className="flex gap-2 justify-center items-baseline">
+                                    <p className="text-center text-sm md:text-base font-oxanium">{stat.prefix}</p>
+                                    <h3 className="text-center text-2xl md:text-4xl font-oxanium text-[#2590DC]">{stat.value}</h3>
+                                </div>
+                            ) : (
+                                <h3 className="text-center text-2xl md:text-4xl font-oxanium text-[#2590DC]">{stat.value}</h3>
+                            )}
+                            <p className="text-center text-sm md:text-base font-oxanium">{stat.description}</p>
+                        </Box>
+                    ))}
                 </div>
-
             </section>
 
             {/* Primary Research */}
@@ -294,42 +243,42 @@ const Research = () => {
 
             {/* Pain Points */}
             <section className="w-full flex flex-col gap-4">
-                <SubTitle title="Pain Points" />
+                <SubTitle title={t('research.painPoints.title')} />
                 <Box className="w-full flex flex-col md:flex-row">
                     <section className="w-full flex flex-col gap-8 pr-0 md:pr-6">
-                        <h2 className="md:text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">Product Design Team</h2>
+                        <h2 className="md:text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">{t('research.painPoints.productDesignTeam.title')}</h2>
                         <div className="flex flex-col gap-6">
-                            <h3 className="font-bold">Lack of ongoing collaboration</h3>
+                            <h3 className="font-bold">{t('research.painPoints.productDesignTeam.lackOfCollaboration.title')}</h3>
                             <ul className="list-disc pl-4 flex flex-col">
-                                <li>Difficult to find the means and resources</li>
-                                <li>Sensitive subject</li>
-                                <li>Unintentional barriers between the design team and individuals with disabilities</li>
+                                {t.raw('research.painPoints.productDesignTeam.lackOfCollaboration.points').map((point, index) => (
+                                    <li key={index}>{point}</li>
+                                ))}
                             </ul>
 
-                            <h3 className="font-bold mt-6">Accessibility is never the priority</h3>
+                            <h3 className="font-bold mt-6">{t('research.painPoints.productDesignTeam.neverPriority.title')}</h3>
                             <ul className="list-disc pl-4 flex flex-col">
-                                <li>Functionality of a product always comes first</li>
-                                <li>Low accessibility awareness from both product leaders and designers</li>
-                                <li>Misconception that accessibility features only benefit a small percentage of users</li>
-                                <li>False belief that accessibility can be "added later" rather than built from the start</li>
+                                {t.raw('research.painPoints.productDesignTeam.neverPriority.points').map((point, index) => (
+                                    <li key={index}>{point}</li>
+                                ))}
                             </ul>
                         </div>
                     </section>
                     <div className="hidden md:block w-px bg-[#BFBFBF]"></div>
                     <section className="w-full flex flex-col gap-8 pl-0 mt-16 md:mt-0 md:pl-6">
-                        <h2 className="md:text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">Users with Disabilities</h2>
+                        <h2 className="md:text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">{t('research.painPoints.usersWithDisabilities.title')}</h2>
                         <div className="flex flex-col gap-6">
-                            <h3 className="font-bold">Communication Barriers</h3>
+                            <h3 className="font-bold">{t('research.painPoints.usersWithDisabilities.communicationBarriers.title')}</h3>
                             <ul className="list-disc pl-6 flex flex-col">
-                                <li>Lack of accessible feedback channels to reach design teams</li>
-                                <li>Feeling unheard when feedback is provided but not implemented</li>
-                                <li>Lack of transparency about known accessibility issues or planned improvements</li>
+                                {t.raw('research.painPoints.usersWithDisabilities.communicationBarriers.points').map((point, index) => (
+                                    <li key={index}>{point}</li>
+                                ))}
                             </ul>
 
-                            <h3 className="font-bold mt-6">Evolving Needs</h3>
+                            <h3 className="font-bold mt-6">{t('research.painPoints.usersWithDisabilities.evolvingNeeds.title')}</h3>
                             <ul className="list-disc pl-6 flex flex-col">
-                                <li>Changing accommodation requirements as personal conditions progress or fluctuate</li>
-                                <li>Frustration when design teams assume accessibility needs remain static</li>
+                                {t.raw('research.painPoints.usersWithDisabilities.evolvingNeeds.points').map((point, index) => (
+                                    <li key={index}>{point}</li>
+                                ))}
                             </ul>
                         </div>
                     </section>
@@ -338,70 +287,68 @@ const Research = () => {
 
             {/* User Type and User Story*/}
             <section className="w-full flex flex-col gap-4">
-                <SubTitle title="User Type & User Story" />
+                <SubTitle title={t('research.userTypeAndStory.title')} />
                 <div className="flex flex-col gap-4">
                     {/* User Type */}
                     <div className="flex flex-col md:flex-row gap-4">
                         <Box className="w-full flex flex-col gap-6">
-                            <h2 className="text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">Elevate - B2B platform</h2>
+                            <h2 className="text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">{t('research.userTypeAndStory.userType.elevate.title')}</h2>
                             <ul className="list-disc pl-4 grid grid-cols-2">
-                                <li>Product Team Leaders</li>
-                                <li>Designers / Developers</li>
-                                <li>Accessibility Experts</li>
-                                <li>Regulatory Agencies</li>
+                                {t.raw('research.userTypeAndStory.userType.elevate.users').map((user, index) => (
+                                    <li key={index}>{user}</li>
+                                ))}
                             </ul>
                         </Box>
                         <Box className="w-full flex flex-col gap-6">
-                            <h2 className="text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">The Corresponding B2C Platform ( to be designed )</h2>
+                            <h2 className="text-center text-sm md:text-base font-oxanium border-b border-[#BFBFBF] pb-6">{t('research.userTypeAndStory.userType.b2c.title')}</h2>
                             <ul className="list-disc pl-4 flex flex-col">
-                                <li>Users with disabilities</li>
-                                <li>Regular users interested in accessibility improvements</li>
+                                {t.raw('research.userTypeAndStory.userType.b2c.users').map((user, index) => (
+                                    <li key={index}>{user}</li>
+                                ))}
                             </ul>
                         </Box>
                     </div>
                     {/* User Story */}
                     <Box className="flex flex-col gap-6">
                         <section className="flex flex-col gap-4 lg:gap-6 pb-6 border-b border-[#BFBFBF]">
-                            <h2 className="text-lg md:text-2xl font-oxanium">
-                                Claire - a novice product design leader
+                            <h2 className="text-lg md:text-2xl font-semibold md:font-normal font-oxanium">
+                                {t('research.userTypeAndStory.userStory.title')}
                             </h2>
                             <div className="flex flex-col lg:flex-row gap-8">
-                                <p className="text-sm md:text-base">3 years of UX design <br /> 1 year of product leadership</p>
+                                <p className="text-sm md:text-base">{t('research.userTypeAndStory.userStory.experience.design')} <br /> {t('research.userTypeAndStory.userStory.experience.leadership')}</p>
                                 <div className="hidden lg:block w-px bg-[#BFBFBF]"></div>
-                                <p className="hidden lg:block text-sm md:text-base">Understanding of accessibility standards <br /> Data analysis and user research</p>
+                                <p className="hidden lg:block text-sm md:text-base">{t('research.userTypeAndStory.userStory.skills.understanding')} <br /> {t('research.userTypeAndStory.userStory.skills.analysis')}</p>
                                 <div className="hidden lg:block w-px bg-[#BFBFBF]"></div>
-                                <p className="hidden lg:block text-sm md:text-base">Empathy-driven decision-making <br /> Basic team management capabilities</p>
+                                <p className="hidden lg:block text-sm md:text-base">{t('research.userTypeAndStory.userStory.capabilities.empathy')} <br /> {t('research.userTypeAndStory.userStory.capabilities.management')}</p>
                             </div>
                         </section>
                         <section className="flex flex-col lg:flex-row">
                             <div className="w-full lg:w-2/3 flex flex-col gap-12">
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-bold">User Story 1</h3>
-                                    <p>As a product leader, I want to make sure our product is accessible to people with different needs and stays accessible throughout the product's life so that we can address both common and niche accessibility requirements.</p>
+                                    <h3 className="font-bold">{t('research.userTypeAndStory.userStory.stories.story1.title')}</h3>
+                                    <p>{t('research.userTypeAndStory.userStory.stories.story1.content')}</p>
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-bold">User Story 2</h3>
-                                    <p>As a company leader, I want to assess how our organization's accessibility mission and values are being embodied in daily work so that I can identify gaps between stated intentions and actual practices.</p>
+                                    <h3 className="font-bold">{t('research.userTypeAndStory.userStory.stories.story2.title')}</h3>
+                                    <p>{t('research.userTypeAndStory.userStory.stories.story2.content')}</p>
                                 </div>
                                 <div className="flex flex-col gap-4">
-                                    <h3 className="font-bold">User Story 3</h3>
-                                    <p>As a product leader, I want to clearly understand and demonstrate how our accessibility efforts impact real users' experiences so that I can raise awareness within my team, highlight improvement efforts to users, and make data-driven decisions about future accessibility work.</p>
+                                    <h3 className="font-bold">{t('research.userTypeAndStory.userStory.stories.story3.title')}</h3>
+                                    <p>{t('research.userTypeAndStory.userStory.stories.story3.content')}</p>
                                 </div>
                             </div>
                             <div className="h-px lg:h-auto lg:w-px bg-[#BFBFBF] my-6 lg:my-0 lg:mx-6"></div>
                             <div className="w-full lg:w-1/3 flex flex-col gap-4">
-                                <h3 className="font-bold">Key Takeaways</h3>
+                                <h3 className="font-bold">{t('research.userTypeAndStory.userStory.keyTakeaways.title')}</h3>
                                 <ul className="list-disc pl-4 flex flex-col">
-                                    <li>Accessibility throughout product lifecycle</li>
-                                    <li>Creating continuous improvement</li>
-                                    <li>Building long-term relationships with users</li>
+                                    {t.raw('research.userTypeAndStory.userStory.keyTakeaways.points').slice(0, 3).map((point, index) => (
+                                        <li key={index}>{point}</li>
+                                    ))}
                                 </ul>
                                 <ul className="list-disc pl-4 flex flex-col">
-                                    <li>Raising team awareness about accessibility</li>
-                                    <li>Showcasing improvement efforts to users</li>
-                                    <li>Making data-driven decisions about accessibility work</li>
-                                    <li>Creating transparency around accessibility efforts</li>
-                                    <li>Demonstrating progress and impact</li>
+                                    {t.raw('research.userTypeAndStory.userStory.keyTakeaways.points').slice(3).map((point, index) => (
+                                        <li key={index + 3}>{point}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </section>
@@ -411,18 +358,18 @@ const Research = () => {
 
             {/* Design Thinking */}
             <section className="w-full flex flex-col gap-4">
-                <SubTitle title="Design Thinking" />
+                <SubTitle title={t('research.designThinking.title')} />
                 <div className="flex flex-col lg:flex-row gap-4">
                     <Box className="grow-1 flex flex-col gap-4 justify-between">
-                            <p className="md:px-12 py-6"><strong>HMW</strong> make accessibility impact measurable and visible to both product teams and the public to drive awareness of its importance?</p>
+                            <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.accessibilityScore.hmwPrefix')}</strong> {t('research.designThinking.accessibilityScore.hmw')}</p>
                             <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
-                                Accessibility score
+                                {t('research.designThinking.accessibilityScore.solution')}
                             </p>
                     </Box>
                     <Box className="grow-1 flex flex-col gap-4 justify-between">
-                            <p className="md:px-12 py-6"><strong>HMW</strong> support design teams and individuals with disabilities in building sustainable, strengthening relationships throughout the product lifecycle?</p>
+                            <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.feedbackLoop.hmwPrefix')}</strong> {t('research.designThinking.feedbackLoop.hmw')}</p>
                             <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
-                                A continuous feedback loop
+                                {t('research.designThinking.feedbackLoop.solution')}
                             </p>
                     </Box>
                 </div>
@@ -533,31 +480,33 @@ const Research = () => {
     )
 }
 
-const FinalDesign = () => {
+const FinalDesign = ({ content }) => {
+    const t = useTranslations('Elevate');
+    
     const accessibilityScore = [
         {
             key: 1,
-            title: "Score Dashboard",
+            title: t('theSolution.accessibilityScore.scoreDashboard.title'),
             image: content[1].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>The accessibility score dashboard displays a comprehensive score derived from three preliminary metrics:</p>
+                    <p>{t('theSolution.accessibilityScore.scoreDashboard.description')}</p>
                     <ul className="list-disc pl-4 font-bold">
-                        <li><p>Active Improvements</p></li>
-                        <li><p>User Feedback</p></li>
-                        <li><p>User Engagement</p></li>
+                        {t.raw('theSolution.accessibilityScore.scoreDashboard.metrics').map((metric, index) => (
+                            <li key={index}><p>{metric}</p></li>
+                        ))}
                     </ul>
-                    <p>The combination of these metrics provides a holistic measure of a product's accessibility performance.</p>
+                    <p>{t('theSolution.accessibilityScore.scoreDashboard.conclusion')}</p>
                 </div>
             )
         },
         {
             key: 2,
-            title: "Main Dashboard",
+            title: t('theSolution.accessibilityScore.mainDashboard.title'),
             image: content[0].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>The "Embed Score" feature allows teams to showcase their accessibility commitment across platforms, raising public awareness while celebrating inclusive design.</p>
+                    <p>{t('theSolution.accessibilityScore.mainDashboard.description')}</p>
                 </div>
             )
         }
@@ -566,85 +515,84 @@ const FinalDesign = () => {
     const feedbackLoop = [
         {
             key: 1,
-            title: "Product Ambassador",
+            title: t('theSolution.feedbackLoop.productAmbassador.title'),
             image: content[5].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>The platform maintains a network of Product Ambassadors - primarily users with disabilities, but open to all users who can provide valuable accessibility feedback</p>
-                    <p>The method of becoming a product ambassador will be a separate design initiative.</p>
+                    <p>{t('theSolution.feedbackLoop.productAmbassador.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.productAmbassador.description2')}</p>
                 </div>
             )
         },
         {
             key: 2,
-            title: "Tickets",
+            title: t('theSolution.feedbackLoop.tickets.title'),
             image: content[4].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>The Tickets Dashboard tracks all incoming accessibility improvement requests.</p>
-                    <p>While Product Ambassadors form our core testing network providing regular, consistent feedback, any user can submit tickets to enhance product accessibility.</p>
+                    <p>{t('theSolution.feedbackLoop.tickets.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.tickets.description2')}</p>
                 </div>
             )
         },
         {
             key: 3,
-            title: "Sprint Manager",
+            title: t('theSolution.feedbackLoop.sprintManager.title'),
             image: content[3].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>Tickets transform into tasks, and fall under a sprint, with potential Jira API integration to streamline workflow.</p>
-                    <p>However, these specialized sprints uniquely measure both task completion and user-verified accessibility impact.</p>
+                    <p>{t('theSolution.feedbackLoop.sprintManager.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.sprintManager.description2')}</p>
                 </div>
             )
         },
         {
             key: 4,
-            title: "Roadmap",
+            title: t('theSolution.feedbackLoop.roadmap.title'),
             image: content[2].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>Elavate sprints extend beyond traditional completion through five key stages:</p>
+                    <p>{t('theSolution.feedbackLoop.roadmap.description')}</p>
 
                     <div className="flex gap-2 text-sm">
                         <section className="w-full flex flex-col gap-2 items-center">
                             <div className="w-full h-4 bg-[#faea8f] rounded-full"></div>
-                            <p>Ongoing</p>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.ongoing')}</p>
                         </section>
                         <section className="w-full flex flex-col gap-2 items-center">
                             <div className="w-full h-4 bg-[#FECC76] rounded-full"></div>
-                            <p>Fixed</p>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.fixed')}</p>
                         </section>
                         <section className="w-full flex flex-col gap-2 items-center">
                             <div className="w-full h-4 bg-[#6691f4] rounded-full"></div>
-                            <p>Survey Sent</p>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.surveySent')}</p>
                         </section>
                         <section className="w-full flex flex-col gap-2 items-center">
                             <div className="w-full h-4 bg-[#a499ec] rounded-full"></div>
-                            <p>Evaluation</p>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.evaluation')}</p>
                         </section>
                         <section className="w-full flex flex-col gap-2 items-center">
                             <div className="w-full h-4 bg-[#87DEA8] rounded-full"></div>
-                            <p>Completed</p>
+                            <p>{t('theSolution.feedbackLoop.roadmap.stages.completed')}</p>
                         </section>
                     </div>
 
-                    <p>After making changes, we survey affected users to see if the improvements worked. Their feedback updates the accessibility score and can create new tickets for further improvements. This creates a continuous cycle where solutions are verified and refined based on real user experiences.</p>
+                    <p>{t('theSolution.feedbackLoop.roadmap.conclusion')}</p>
                 </div>
             )
         },
         {
             key: 5,
-            title: "Survey",
+            title: t('theSolution.feedbackLoop.survey.title'),
             image: content[6].src,
             description: (
                 <div className="flex flex-col gap-4">
-                    <p>The Survey Dashboard displays active sprints and prompts available actions.</p>
-                    <p>Positive responses enhance the product's accessibility score, while all feedback contributes to continuous improvement through potential new tickets.</p>
+                    <p>{t('theSolution.feedbackLoop.survey.description1')}</p>
+                    <p>{t('theSolution.feedbackLoop.survey.description2')}</p>
                 </div>
             )
         },
-
-    ]
+    ];
 
     const Arrow = ({ className, orientation = "vertical" }) => {
         return (
@@ -657,17 +605,17 @@ const FinalDesign = () => {
 
     return (
         <section className="flex flex-col gap-24 pb-36 text-sm md:text-base">
-            <Title title="Final Design" />
+            <Title title={t('progressBar.finalDesign')} />
 
             {/* Accessibility Score */}
             <section className="w-full flex flex-col gap-4 -mt-8">
-                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">Accessibility Score</h1>
+                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">{t('theSolution.accessibilityScore.title')}</h1>
                 <TabGroup content={accessibilityScore} />
             </section>
 
             {/* Feedback Loop */}
             <section className="w-full flex flex-col gap-4">
-                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">The Feedback Loop</h1>
+                <h1 className="text-lg md:text-2xl font-semibold font-oxanium">{t('theSolution.feedbackLoop.title')}</h1>
                 <div className="flex flex-col gap-24">
                     <TabGroup content={feedbackLoop} />
                     {/* Feedback Loop */}
@@ -675,36 +623,35 @@ const FinalDesign = () => {
                         order="reverse"
                         leftChild={
                             <div className="w-full h-full flex flex-col justify-end gap-4">
-                                <p>In this way, a feedback loop is created</p>
+                                <p>{t('theSolution.feedbackLoop.loop.intro')}</p>
                                 <ul className="list-disc pl-4 flex flex-col gap-2">
-                                    <li><p>Forms sustainable connections between product teams and users, breaking down communication barriers</p></li>
-                                    <li><p>Enables teams to adapt to evolving user needs through continuous validation</p></li>
-                                    <li><p>Bridges the gap between technical compliance and real user experience</p></li>
-                                    <li><p>Transforms sporadic accessibility testing into continuous improvement</p></li>
+                                    {t.raw('theSolution.feedbackLoop.loop.benefits').map((benefit, index) => (
+                                        <li key={index}><p>{benefit}</p></li>
+                                    ))}
                                 </ul>
                             </div>
                         }
                         rightChild={
                             <div className="w-full h-[250px] md:h-[330px] lg:h-[400px] flex text-xs md:text-base">
                                 <section className="relative w-1/4 h-full flex flex-col gap-4 md:gap-8">
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">Tickets</div>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tickets')}</div>
                                     <Arrow />
                                     <Arrow orientation="horizontal" className={"w-[58%] sm:w-[80%] absolute top-1/2 -translate-y-1/2 left-1/2 rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">Survey Result</div>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.surveyResult')}</div>
                                 </section>
 
                                 <section className="relative w-1/2 h-full flex flex-col justify-between items-center py-5 px-4 md:px-8">
                                     <Arrow orientation="horizontal" className={"rotate-180"} />
-                                    <div className="absolute top-1/2 -translate-y-1/2 p-3 md:p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg whitespace-nowrap">Accessibility Score</div>
+                                    <div className="absolute top-1/2 -translate-y-1/2 p-3 md:p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg whitespace-nowrap">{t('theSolution.feedbackLoop.loop.flowItems.accessibilityScore')}</div>
                                     <Arrow orientation="horizontal" />
                                 </section>
 
                                 <section className="w-1/4 h-full flex flex-col justify-between gap-4 md:gap-8">
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">Tasks</div>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tasks')}</div>
                                     <Arrow className={"rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">Sprints</div>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.sprints')}</div>
                                     <Arrow className={"rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">Improvement</div>
+                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.improvement')}</div>
                                 </section>
                             </div>
                         }

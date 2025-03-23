@@ -1,4 +1,3 @@
-
 {
   "Metadata": {
     "title": "Keller Wang | 交互设计师",
@@ -85,51 +84,97 @@
     "title": "Elevate",
     "description": "Elevate是一个以数据驱动的平台，通过动态的无障碍评分系统，连接产品团队与残障用户之间的鸿沟，将传统的合规性测试转变为持续、可行的反馈，同时推动商业价值和有意义的包容性。",
     "progressBar": {
-      "featureOverview": "功能概览",
-      "research":"调研",
-      "theSolution": "解决方案",
-      "researchItems": {
-        "theProblem": "现有的问题",
-        "primaryResearch": "初步研究",
-        "whyAndHow": "原因 & 方案"
+      "context": "背景",
+      "research": "调研",
+      "finalDesign": "最终设计",
+      "contextItems": {
+        "problemStatement": "现有的问题",
+        "ourSolution": "解决方案",
+        "featureOverview": "功能概览"
       },
-      "solutionItems": {
+      "researchItems": {
+        "earlyResearch": "前期调研",
+        "primaryResearch": "初步研究",
+        "painPoints": "痛点",
+        "userTypesAndUserStory": "用户类型&故事",
+        "designThinking": "设计思考"
+      },
+      "finalDesignItems": {
         "accessibilityScore": "无障碍评分",
         "feedbackLoop": "持续的反馈循环"
       }
     },
-    "featureOverview": {
-      "title": "功能概览",
-      "intro": {
-        "part1": "创建一个",
-        "part2": "持续的反馈循环",
-        "part3": "让真实的用户体验塑造无障碍评分，并推动更好的设计。"
+    "context": {
+      "problem": {
+        "title": "现有的问题",
+        "description": {
+          "part1": "尽管已有不少无障碍设计的努力，",
+          "highlight": "产品团队与残障用户之间的沟通仍然存在障碍且不稳定。",
+          "part2": "设计师和公众对无障碍设计的\"无知\"更加剧了这一问题。"
+        }
       },
-      "questions": {
-        "intro": "但是...",
-        "question1": "无障碍评分和反馈循环是什么？",
-        "question2": "它是如何工作的？",
-        "question3": "我们为什么需要它？"
-      }
+      "solution": {
+        "title": "解决方案",
+        "description": {
+          "part1": "Elevate 致力于创建一个",
+          "highlight": "持续的反馈循环",
+          "part2": "，让真实的用户体验塑造无障碍评分，并推动更好的设计。"
+        }
+      },
+      "featureOverview": {
+        "title": "功能概览"
+      },
+      "features": [
+        {
+          "title": "主面板",
+          "src": "/images/Elevate/Screen/Dashboard.png"
+        },
+        {
+          "title": "评分面板",
+          "src": "/images/Elevate/Screen/AccessibilityScore.png"
+        },
+        {
+          "title": "产品规划",
+          "src": "/images/Elevate/Screen/Roadmap2.png"
+        },
+        {
+          "title": "Sprint管理器",
+          "src": "/images/Elevate/Screen/Sprint.png"
+        },
+        {
+          "title": "问题反馈",
+          "src": "/images/Elevate/Screen/Tickets1.png"
+        },
+        {
+          "title": "产品大使",
+          "src": "/images/Elevate/Screen/ProductAmbassador.png"
+        },
+        {
+          "title": "调查问卷",
+          "src": "/images/Elevate/Screen/Survey.png"
+        }
+      ]
     },
     "research": {
       "title": "调研",
-      "theProblem": {
-        "title": "现有的问题",
-        "description": "尽管我们竭尽全力改进无障碍实践，残障用户仍然面临着仅靠合规无法解决的局限性。",
-        "theGood": "优点",
-        "theNotSoGood": "缺点",
-        "pills": {
-          "wcag": "技术标准 (WCAG)",
-          "training": "无障碍培训",
-          "audits": "无障碍审计",
-          "assistive": "科技辅助技术",
-          "awareness": "匮乏残障意识",
-          "collaboration": "缺乏持续合作",
-          "leadership": "领导层优先关注",
-          "sensitivity": "话题敏感性",
-          "barriers": "无意的偏见"
-        }
+      "earlyResearch": {
+        "title": "早期研究",
+        "heading": "无障碍设计和意识比我们想象的要重要得多。",
+        "statistics": [
+          {
+            "value": "1/6",
+            "description": "的世界人口患有某种形式的残疾。"
+          },
+          {
+            "value": "58%",
+            "description": "成年人认为设计公司没有很好的残障消费者的需求；16%的人认为完全没有考虑。"
+          },
+          {
+            "value": "19%",
+            "prefix": "只有",
+            "description": "的公司有足够的内部资源来持续进行无障碍测试。"
+          }
+        ]
       },
       "primaryResearch": {
         "title": "初步研究",
@@ -148,27 +193,118 @@
           "quote3": "It's empowering when professionals view me as a partner in the process of enhancing accessibility, acknowledging the expertise."
         }
       },
-      "whyAndHow": {
-        "title": "原因与方案",
-        "intro": "基本上归结为这两个问题：",
-        "issue1": {
-          "title": "缺乏无障碍意识",
-          "points": [
-            "产品的功能性总是排在第一位",
-            "产品领导和设计团队的无障碍意识较低",
-            "误解无障碍功能只对一小部分用户有益",
-            "错误地认为无障碍可以“稍后添加”，而不是从一开始就构建"
-          ],
+      "painPoints": {
+        "title": "痛点",
+        "productDesignTeam": {
+          "title": "产品设计团队",
+          "lackOfCollaboration": {
+            "title": "缺乏持续合作",
+            "points": [
+              "难以找到方法和资源",
+              "话题敏感性",
+              "设计团队与残障用户之间的无意障碍与偏见"
+            ]
+          },
+          "neverPriority": {
+            "title": "无障碍设计优先级低",
+            "points": [
+              "产品的功能性总是排在第一位",
+              "产品领导和设计团队的无障碍意识较低",
+              "误解无障碍功能只对一小部分用户有益",
+              "错误地认为无障碍可以“稍后添加”，而不是从一开始就构建"
+            ]
+          }
+        },
+        "usersWithDisabilities": {
+          "title": "残障用户",
+          "communicationBarriers": {
+            "title": "沟通障碍",
+            "points": [
+              "缺乏可以接触到设计团队的途径",
+              "提供反馈未被采纳",
+              "缺乏对已知无障碍问题或计划改进的透明度"
+            ]
+          },
+          "evolvingNeeds": {
+            "title": "需求持续变化",
+            "points": [
+              "随着个人状况的发展或波动，用户需求也在不断变化",
+              "设计团队自以为无障碍需求保持不变"
+            ]
+          }
+        }
+      },
+      "userTypeAndStory": {
+        "title": "用户类型&故事",
+        "userType": {
+          "elevate": {
+            "title": "Elevate - B端平台",
+            "users": [
+              "产品设计负责人",
+              "设计师/开发者",
+              "无障碍专家",
+              "监管机构"
+            ]
+          },
+          "b2c": {
+            "title": "对应的C端平台",
+            "users": [
+              "残障用户",
+              "对无障碍设计感兴趣的普通用户"
+            ]
+          }
+        },
+        "userStory": {
+          "title": "Claire - 新晋产品设计负责人",
+          "experience": {
+            "design": "3年UX设计经验",
+            "leadership": "1年产品领导经验"
+          },
+          "skills": {
+            "understanding": "理解无障碍标准",
+            "analysis": "数据分析和用户研究"
+          },
+          "capabilities": {
+            "empathy": "拥有用户同理心",
+            "management": "基本团队管理能力"
+          },
+          "stories": {
+            "story1": {
+              "title": "用户故事 1",
+              "content": "作为产品负责人，我希望确保我们的产品能满足不同需求的用户，并在整个产品生命周期中保持无障碍特性。这样我们才能同时解决常见和特殊的无障碍需求。"
+            },
+            "story2": {
+              "title": "用户故事 2",
+              "content": "作为公司管理层，我需要评估公司的无障碍使命和价值观是否真正落实到日常工作中，从而找出我们承诺与实际行动之间存在的差距。"
+            },
+            "story3": {
+              "title": "用户故事 3",
+              "content": "作为产品负责人，我希望清楚地了解并展示我们的无障碍工作如何影响真实用户体验。这样我才能提高团队意识，向用户展示改进努力，并基于数据做出关于未来无障碍工作的决策。"
+            }
+          },
+          "keyTakeaways": {
+            "title": "关键要点",
+            "points": [
+              "产品全生命周期的无障碍设计",
+              "持续改进机制",
+              "与用户建立长期关系",
+              "提高团队对无障碍设计的认识",
+              "向用户展示改进成果",
+              "基于数据做出无障碍工作决策",
+              "增加无障碍工作的透明度"
+            ]
+          }
+        }
+      },
+      "designThinking": {
+        "title": "设计思考",
+        "accessibilityScore": {
+          "hmwPrefix": "",
           "hmw": "我们如何让无障碍设计的成效变得可量化且高度可见，让产品团队和公众都能认识到它的重要性？",
           "solution": "无障碍评分"
         },
-        "issue2": {
-          "title": "缺乏可持续性的合作",
-          "points": [
-            "难以找到方法和资源",
-            "话题敏感性",
-            "设计团队与残障用户之间的无意障碍与偏见"
-          ],
+        "feedbackLoop": {
+          "hmwPrefix": "",
           "hmw": "我们如何支持设计团队和残障个体，在产品整个生命周期中建立可持续、不断加强的合作关系？",
           "solution": "持续的反馈循环"
         }
