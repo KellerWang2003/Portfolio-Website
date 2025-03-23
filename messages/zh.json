@@ -83,52 +83,167 @@
   },
   "Elevate": {
     "title": "Elevate",
-    "tags": {
-      "accessibilityDesign": "Accessibility Design",
-      "productDesign": "Product Design",
-      "userResearch": "User Research"
-    },
-    "description": "Elevate is a project designed to bridge the gap between product design teams and users with disabilities, creating a continuous feedback loop where real user experiences guide accessibility improvements.",
+    "description": "Elevate是一个以数据驱动的平台，通过动态的无障碍评分系统，连接产品团队与残障用户之间的鸿沟，将传统的合规性测试转变为持续、可行的反馈，同时推动商业价值和有意义的包容性。",
     "progressBar": {
-      "context": "Context",
-      "research": "Research",
-      "finalDesign": "Final Design",
-      "contextItems": {
-        "problemStatement": "Problem Statement",
-        "ourSolution": "Our Solution",
-        "featureOverview": "Feature Overview"
-      },
+      "featureOverview": "功能概览",
+      "research":"调研",
+      "theSolution": "解决方案",
       "researchItems": {
-        "earlyResearch": "Early Research",
-        "primaryResearch": "Primary Research",
-        "painPoints": "Pain Points",
-        "userTypes": "User Types & User Story",
-        "designThinking": "Design Thinking"
+        "theProblem": "现有的问题",
+        "primaryResearch": "初步研究",
+        "whyAndHow": "原因 & 方案"
       },
-      "finalDesignItems": {
-        "accessibilityScore": "Accessibility Score",
-        "feedbackLoop": "Feedback Loop"
+      "solutionItems": {
+        "accessibilityScore": "无障碍评分",
+        "feedbackLoop": "持续的反馈循环"
       }
     },
-    "context": {
-      "problem": {
-        "title": "The Problem",
-        "description": "Despite existing accessibility efforts, the connection between product teams and users with disabilities remains difficult and inconsistent —compounded by varying levels of accessibility awareness among designers and the public."
+    "featureOverview": {
+      "title": "功能概览",
+      "intro": {
+        "part1": "创建一个",
+        "part2": "持续的反馈循环",
+        "part3": "让真实的用户体验塑造无障碍评分，并推动更好的设计。"
       },
-      "solution": {
-        "title": "Our Solution",
-        "description": "Elevate aims to create a continuous feedback loop where real user experiences guide accessibility improvements and drive better design."
+      "questions": {
+        "intro": "但是...",
+        "question1": "无障碍评分和反馈循环是什么？",
+        "question2": "它是如何工作的？",
+        "question3": "我们为什么需要它？"
+      }
+    },
+    "research": {
+      "title": "调研",
+      "theProblem": {
+        "title": "现有的问题",
+        "description": "尽管我们竭尽全力改进无障碍实践，残障用户仍然面临着仅靠合规无法解决的局限性。",
+        "theGood": "优点",
+        "theNotSoGood": "缺点",
+        "pills": {
+          "wcag": "技术标准 (WCAG)",
+          "training": "无障碍培训",
+          "audits": "无障碍审计",
+          "assistive": "科技辅助技术",
+          "awareness": "匮乏残障意识",
+          "collaboration": "缺乏持续合作",
+          "leadership": "领导层优先关注",
+          "sensitivity": "话题敏感性",
+          "barriers": "无意的偏见"
+        }
       },
-      "featureOverview": {
-        "title": "Feature Overview",
-        "features": {
-          "dashboard": "Dashboard",
-          "accessibilityScore": "无障碍评分",
-          "roadmap": "Roadmap",
-          "sprintManager": "Sprint Manager",
-          "tickets": "Tickets",
-          "productAmbassador": "Product Ambassador",
-          "survey": "Survey"
+      "primaryResearch": {
+        "title": "初步研究",
+        "description": "我们采访了4位行业专业人士、2位护理人员和3位以残障用户视角的 Synthetic Users，以下是我们的发现。",
+        "insight1": {
+          "title": "见解1",
+          "description": "超过三分之二的受访者强调 <strong>持续无障碍合作和反馈的重要性</strong>，但资源限制和敏感性担忧通常将这一过程限制 <strong>单次互动</strong>。",
+          "quote1": "It's a missed opportunity, really, that we don't get to do more of that type of stuff (accessibility audits). Because I think in general we would learn a lot more by doing it regularly.",
+          "quote2": "To better understand and accommodate my needs, ongoing dialogue is essential."
+        },
+        "insight2": {
+          "title": "见解2",
+          "description": "虽然专家强调 <strong>领导层驱动的无障碍设计和团队范围内的残障意识</strong> 的重要性，但仅有36%的公司真正获得了自上而下对数字无障碍的全力支持。",
+          "quote1": "When leadership is involved, it empowers everyone to be more considerate and proactive, making sure accessibility isn't just an afterthought.",
+          "quote2": "When leadership prioritizes accessibility, it sets the tone for the entire organization.",
+          "quote3": "It's empowering when professionals view me as a partner in the process of enhancing accessibility, acknowledging the expertise."
+        }
+      },
+      "whyAndHow": {
+        "title": "原因与方案",
+        "intro": "基本上归结为这两个问题：",
+        "issue1": {
+          "title": "缺乏无障碍意识",
+          "points": [
+            "产品的功能性总是排在第一位",
+            "产品领导和设计团队的无障碍意识较低",
+            "误解无障碍功能只对一小部分用户有益",
+            "错误地认为无障碍可以“稍后添加”，而不是从一开始就构建"
+          ],
+          "hmw": "我们如何让无障碍设计的成效变得可量化且高度可见，让产品团队和公众都能认识到它的重要性？",
+          "solution": "无障碍评分"
+        },
+        "issue2": {
+          "title": "缺乏可持续性的合作",
+          "points": [
+            "难以找到方法和资源",
+            "话题敏感性",
+            "设计团队与残障用户之间的无意障碍与偏见"
+          ],
+          "hmw": "我们如何支持设计团队和残障个体，在产品整个生命周期中建立可持续、不断加强的合作关系？",
+          "solution": "持续的反馈循环"
+        }
+      }
+    },
+    "theSolution": {
+      "title": "解决方案",
+      "accessibilityScore": {
+        "title": "无障碍评分",
+        "scoreDashboard": {
+          "title": "评分面板",
+          "description": "无障碍评分面板显示了一个综合评分，该评分来自三个初步指标：",
+          "metrics": [
+            "主动改进",
+            "用户反馈",
+            "用户参与度"
+          ],
+          "note": "（测量方法将在下一节中解释）",
+          "conclusion": "这些指标的组合提供了对产品无障碍性能的全面衡量。"
+        },
+        "mainDashboard": {
+          "title": "主面板",
+          "description": "“嵌入评分”功能让团队能在各个平台上展示他们在无障碍设计上的努力，既提高了公众关注度，又让优秀的包容性设计得到应有的赞赏。"
+        }
+      },
+      "feedbackLoop": {
+        "title": "持续的反馈循环",
+        "productAmbassador": {
+          "title": "产品大使",
+          "description1": "",
+          "description2": "平台维护了一个产品大使网络 - 主要是残障用户，但也向所有能提供有价值的无障碍反馈的用户开放。"
+        },
+        "tickets": {
+          "title": "问题反馈",
+          "description1": "",
+          "description2": "问题跟踪面板记录所有收到的无障碍改进请求。"
+        },
+        "sprintManager": {
+          "title": "Sprint管理器",
+          "description1": "反馈问题转化为任务，并纳入相关Sprint计划，未来可能会与使用Jira API以简化工作流程。",
+          "description2": "这些特殊的Sprint不仅衡量任务完成情况，还衡量用户验证的无障碍改进效果。"
+        },
+        "roadmap": {
+          "title": "产品规划",
+          "description": "Elevate冲刺超越传统的完成概念，延伸至五个关键阶段：",
+          "stages": {
+            "ongoing": "进行中",
+            "fixed": "已修复",
+            "surveySent": "已发送调查",
+            "evaluation": "评估中",
+            "completed": "完成"
+          },
+          "conclusion": "改进实施后，受影响的用户会收到调查问卷来评估这些改进。他们的反馈不仅会更新产品的无障碍评分，还可能产生新的改进问题——形成一个持续循环，让每个解决方案的有效性都由实际用户体验来验证和完善。"
+        },
+        "survey": {
+          "title": "调查问卷",
+          "description1": "调查面板显示活跃的冲刺并提示可用的操作。",
+          "description2": "积极的回应会提高产品的无障碍评分，而所有反馈都通过潜在的新问题为持续改进做出贡献。"
+        },
+        "loop": {
+          "intro": "通过这种方式，创建了一个反馈循环",
+          "benefits": [
+            "在产品团队和用户之间建立可持续的联系，打破沟通障碍",
+            "通过持续验证使团队能够适应用户不断变化的需求",
+            "弥合技术合规性与实际用户体验之间的差距",
+            "将零星的无障碍测试转变为持续改进"
+          ],
+          "flowItems": {
+            "tickets": "问题反馈",
+            "surveyResult": "调查结果",
+            "accessibilityScore": "无障碍评分",
+            "tasks": "任务",
+            "sprints": "Sprint",
+            "improvement": "优化"
+          }
         }
       }
     }
