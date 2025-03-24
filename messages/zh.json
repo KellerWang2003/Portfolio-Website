@@ -95,7 +95,7 @@
       "researchItems": {
         "earlyResearch": "前期调研",
         "primaryResearch": "初步研究",
-        "painPoints": "痛点",
+        "painPoints": "用户痛点",
         "userTypesAndUserStory": "用户类型&故事",
         "designThinking": "设计思考"
       },
@@ -194,7 +194,7 @@
         }
       },
       "painPoints": {
-        "title": "痛点",
+        "title": "用户痛点",
         "productDesignTeam": {
           "title": "产品设计团队",
           "lackOfCollaboration": {

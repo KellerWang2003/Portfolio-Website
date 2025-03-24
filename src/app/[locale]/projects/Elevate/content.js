@@ -93,7 +93,7 @@ const Context = ({ content }) => {
     const t = useTranslations('Elevate');
 
     return (
-        <section className="flex flex-col gap-36 pt-8 md:pt-48">
+        <section className="flex flex-col gap-36 pt-16 md:pt-48">
             {/* <Title title="Context" /> */}
             <div className="flex flex-col gap-36 md:gap-48">
                 <ProjectContent
