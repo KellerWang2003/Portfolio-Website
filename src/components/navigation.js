@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import AnimatedUnderline from './animation/animatedUnderline';
 import { Divide as Hamburger } from 'hamburger-react';
 import { useMenu } from '@/context/menuContext';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import {Link} from '@/i18n/routing';
 import LanguageToggle from './languageToggle';
 
@@ -34,6 +34,9 @@ const NavButton = ({ href, children, textColor, onClick, translationKey }) => {
 
 const DesktopNav = ({ colors }) => {
   const t = useTranslations('Navigation');
+  const locale = useLocale();
+  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
+  
   return (
     <nav className="flex w-full px-8 py-3 rounded-xl
                     font-oxanium text-base justify-between items-center" style={{ backgroundColor: colors.bgColor, color: colors.textColor }}>
@@ -51,9 +54,8 @@ const DesktopNav = ({ colors }) => {
         </svg>
       </Link>
       <div className="flex items-center gap-10">
-        
         <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
-        <a href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" 
+        <a href={resumePath} target="_blank" rel="noopener noreferrer" 
            className="" data-cursor="hoverSmall">
             {t('resume')}
         </a>
@@ -65,6 +67,8 @@ const DesktopNav = ({ colors }) => {
 
 const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
   const t = useTranslations('Navigation');
+  const locale = useLocale();
+  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
 
   const MobileDivider = () => {
     return (
@@ -127,7 +131,7 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
           {t('info')}
         </Link>
         <MobileDivider />
-        <Link href="/Resume/ChineseResume.pdf" target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>
+        <Link href={resumePath} target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>
           {t('resume')}
         </Link>
       </section>

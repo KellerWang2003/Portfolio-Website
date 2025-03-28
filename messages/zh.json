@@ -82,9 +82,9 @@
   },
   "Elevate": {
     "title": "Elevate",
-    "description": "Elevate是一个以数据驱动的平台，通过动态的无障碍评分系统，连接产品团队与残障用户之间的鸿沟，将传统的合规性测试转变为持续、可行的反馈，同时推动商业价值和有意义的包容性。",
+    "description": "Elevate是一个以数据驱动的平台，通过动态的无障碍评分系统，连接产品团队与残障用户之间的鸿沟，将传统的合规性测试转变为可持续性的的反馈，同时推动商业价值和有意义的包容性。",
     "progressBar": {
-      "context": "背景",
+      "context": "项目背景",
       "research": "调研",
       "finalDesign": "最终设计",
       "contextItems": {

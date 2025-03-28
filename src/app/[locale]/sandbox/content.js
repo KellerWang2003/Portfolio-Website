@@ -124,7 +124,6 @@ export default function Content() {
                                 height="1080"
                                 className="w-full h-auto object-cover"
                             />
-                            <div></div>
                         </div>
                     </ProjectCard>
                 </ProjectSection>
