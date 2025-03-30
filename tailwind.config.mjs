@@ -15,6 +15,8 @@ export default {
       fontFamily: {
         oxanium: ['Oxanium', 'Helvetica', 'sans-serif'],
         oswald: ['Oswald', 'Helvetica', 'sans-serif'],
+        mono: ['var(--font-ibm-plex-mono)', 'monospace'],
+        greycliff: ['greycliff-cf', 'sans-serif'],
       },
     },
   },

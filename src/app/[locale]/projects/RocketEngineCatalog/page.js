@@ -44,6 +44,8 @@ export default function RocketEngineCatalog({params}) {
                     title={t('title')}
                     tags={[t('tags.visualDevelopment'), t('tags.interactionDesign')]}
                     description={t('description')}
+                    link={"https://www.figma.com/proto/C5wbDfIy24ExpCAKGl76Kb/Final-Prototype?page-id=3227%3A5758&node-id=3227-8028&node-type=canvas&viewport=8255%2C-18745%2C0.59&t=lzU9Rtl8YEhQCJ0D-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3227%3A8028&show-proto-sidebar=1"}
+                    linkText={t('linkText')}
                     images1={desktopImages}
                     images2={mobileImagesLanding}
                 />

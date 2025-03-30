@@ -391,6 +391,7 @@
       "interactionDesign": "Interaction Design"
     },
     "description": "为所有的火箭引擎设计一个界面，让复杂的技术信息变得生动有趣，易于普通大众理解。这个界面采用清晰的视觉风格和直观的流程，邀请用户在其中玩耍、探索，发现不同引擎类型、规格和组件。",
+    "linkText": "来试试看 - Figma原型",
     "progressBar": {
       "designPrototype": "设计与原型",
       "research": "研究",

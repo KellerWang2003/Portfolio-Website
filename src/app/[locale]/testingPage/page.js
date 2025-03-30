@@ -12,7 +12,9 @@ export default function TestingPage() {
                 <div className="w-full h-[2px] bg-gray-700"></div>
             </header>
             {/* Testing Area */}
-
+            <iframe 
+                src="https://framer.com/m/Test-RVsI.js@UPj5wBYAuGCJj7j5vncO" 
+            ></iframe>
 
         </ContentWrapper>
 

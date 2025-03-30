@@ -390,6 +390,7 @@
       "interactionDesign": "Interaction Design"
     },
     "description": "This project focuses on designing a user-friendly interface for a rocket engine database, making complex technical information engaging and digestible for the general public.\nThe interface features a clear visual style and intuitive flow, inviting users to play, explore, and discover different engine types, specifications, and components.",
+    "linkText": "Try it for yourself - Figma Prototype",
     "progressBar": {
       "designPrototype": "Design & Prototype",
       "research": "Research",

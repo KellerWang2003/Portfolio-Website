@@ -1,5 +1,5 @@
 import './globals.css'
-import { Oxanium } from 'next/font/google';
+import { Oxanium, IBM_Plex_Mono } from 'next/font/google';
 import LayoutWrapper from "@/components/layoutWrapper";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
@@ -16,6 +16,18 @@ export function generateStaticParams() {
 const oxanium = Oxanium({ 
   subsets: ['latin'],
 });
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-ibm-plex-mono',
+});
+
+// Add Greycliff font configuration
+const greycliff = {
+  variable: '--font-greycliff',
+  adjustFontFallback: false,
+};
 
 export async function generateMetadata({params}) {
   const { locale } = await params;
@@ -94,7 +106,7 @@ export default async function LocaleLayout({children, params}) {
         <meta name="theme-color" content="#ffffff" />
         <meta name="color-scheme" content="only light" />
       </head>
-      <body className={`${oxanium.variable} overscroll-none`}>
+      <body className={`${oxanium.variable} ${ibmPlexMono.variable} ${greycliff.variable} overscroll-none`}>
         <NextIntlClientProvider messages={messages}>
           <LayoutWrapper>
             {children}

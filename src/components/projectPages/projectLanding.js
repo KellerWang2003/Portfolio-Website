@@ -1,8 +1,9 @@
 import Tags from "../tags"
 import ScrollingCarousel from "./scrollingCarousel"
 import Image from "next/image";
+import AnimatedLink from "../animation/animatedLink";
 
-export default function ProjectLanding({ textColor = "#000", title, tags, description, images1, images2 }) {
+export default function ProjectLanding({ textColor = "#000", title, tags, description, link, linkText, images1, images2 }) {
 
 
     const MobileLanding = (
@@ -27,7 +28,14 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                 <div className="text-4xl font-oxanium">{title}</div>
 
                 <Tags tags={tags} />
-                <div className="text-sm font-oxanium">{description}</div>
+                <div className="flex flex-col gap-2">
+                    <div className="text-sm font-oxanium">{description}</div>
+                    {link && (
+                        <AnimatedLink href={link} color={textColor}>
+                            {linkText}
+                        </AnimatedLink>
+                    )}
+                </div>
             </section>
         </div>
     )
@@ -38,7 +46,16 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                 <div className="text-5xl font-oxanium">{title}</div>
                 <div className="flex flex-col gap-4">
                     <Tags tags={tags} />
-                    <div className="text-base font-oxanium">{description}</div>
+                    <div className="flex flex-col gap-2">
+                        <div className="text-base font-oxanium">
+                            {description}
+                        </div>
+                    {link && (
+                          <AnimatedLink href={link} color={textColor}>
+                            {linkText}
+                          </AnimatedLink>
+                        )}
+                    </div>
                 </div>
             </section>
             <section className="w-3/5 h-full flex gap-4">
