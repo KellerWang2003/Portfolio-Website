@@ -404,7 +404,8 @@
       "researchItems": {
         "database": "The Database",
         "userArchetypes": "User Archetypes",
-        "visualLanguage": "Visual Language"
+        "visualLanguage": "Visual Language",
+        "iterations": "Iterations"
       }
     },
     "design": {

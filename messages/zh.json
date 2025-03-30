@@ -405,7 +405,8 @@
       "researchItems": {
         "database": "数据库",
         "userArchetypes": "用户原型",
-        "visualLanguage": "视觉语言"
+        "visualLanguage": "视觉语言",
+        "iterations": "迭代"
       }
     },
     "design": {

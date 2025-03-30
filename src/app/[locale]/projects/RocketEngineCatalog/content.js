@@ -21,8 +21,8 @@ const VIDEO_SOURCES = {
         type: "video/mp4"
     },
     landing1: {
-        src: "/images/Rocket/Content/VideoLanding1.mp4",
-        type: "video/mp4"
+        src: "/images/Rocket/Content/VideoLanding1.MOV",
+        type: "video/mov"
     },
 
     landing2: {
@@ -41,7 +41,7 @@ const VIDEO_SOURCES = {
     },
 
     details: {
-        src: "/images/Rocket/Content/VideoDetails.mp4",
+        src: "/images/Rocket/Content/VideoDetails.MOV",
         type: "video/mov"
     }
 };
@@ -78,7 +78,8 @@ export default function Content() {
         items: [
             t('progressBar.researchItems.database'),
             t('progressBar.researchItems.userArchetypes'),
-            t('progressBar.researchItems.visualLanguage')
+            t('progressBar.researchItems.visualLanguage'),
+            t('progressBar.researchItems.iterations')
         ]
     }];
 
@@ -112,7 +113,7 @@ const Design = () => {
     return (
         <div className="flex flex-col gap-4">
             {/* <Title title={t('progressBar.designPrototype')} dark={true} /> */}
-            <div className="flex flex-col gap-32 md:gap-56 pt-12 text-sm md:text-base text-[#EAEAEA]">
+            <div className="flex flex-col gap-32 md:gap-48 pt-12 text-sm md:text-base text-[#EAEAEA]">
                 {/* Engine Factory */}
                 <ProjectContent
                     leftChild={
@@ -454,13 +455,13 @@ const Research = () => {
     const t = useTranslations('RocketEngineCatalog');
 
     return (
-        <div className="flex flex-col gap-32 md:gap-56 font-oxanium text-sm md:text-base">
+        <div className="flex flex-col gap-32 md:gap-48 font-oxanium text-sm md:text-base">
             <Title title="Research & Design Process" dark={true} />
             {/* The Database */}
-            <section className="flex flex-col gap-8 md:gap-16 -mt-16 md:-mt-32">
+            <section className="flex flex-col gap-8 md:gap-16 -mt-16 md:-mt-24">
                 <SubTitle title="THE DATABASE" />
-                <div className="flex flex-col">
-                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-6">
+                <div className="flex flex-col gap-4 lg:gap-0">
+                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-8 lg:py-6">
                         <Image
                             src="/images/Rocket/Content/Research/Merlin.png"
                             alt="Merlin Engine"
@@ -478,7 +479,7 @@ const Research = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-6">
+                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-8 lg:py-6">
                         <Image
                             src="/images/Rocket/Content/Research/MerlinVaccum.png"
                             alt="Raptor Vacuum"
@@ -496,7 +497,7 @@ const Research = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-6">
+                    <div className="w-full flex justify-center items-center gap-12 lg:gap-[10vw] border-b border-[#5B5B5B] py-8 lg:py-6">
                         <Image
                             src="/images/Rocket/Content/Research/Rutherford.png"
                             alt="Rutherford Engine"
@@ -634,7 +635,7 @@ const Research = () => {
             {/* Visual Langauge */}
             <section className="flex flex-col gap-8 md:gap-16">
                 <SubTitle title="VISUAL LANGUAGE" />
-                <main className="flex flex-col gap-32 md:gap-56 mt-0 md:-mt-6">
+                <main className="flex flex-col gap-32 md:gap-48 mt-0 md:-mt-6">
                     {/* General Inspiration */}
                     <ProjectContent
                         leftChild={
@@ -741,6 +742,55 @@ const Research = () => {
                                     </ul>
                                 </div>
                                 <Image src="/images/Rocket/Content/Research/Color.png" alt="Colors" width={1984} height={706} />
+                            </div>
+                        }
+                    />
+                </main>
+            </section>
+
+            {/* Iterations */}
+            <section className="flex flex-col gap-8 md:gap-16">
+                <SubTitle title="ITERATIONS" />
+                <main className="flex flex-col gap-32 md:gap-48 mt-0 md:-mt-6">
+
+                {/* Homepage */}
+                <ProjectContent
+                        leftChild={
+                            <div className="h-full flex flex-col gap-10 justify-between">
+                                <section className="flex flex-col gap-2">
+                                    <div className="border-l px-4">Homepage Iterations ( Engine Factory )</div>
+                                </section>
+                            </div>}
+                        rightChild={
+                            <div className="">
+                                <Image 
+                                    src="/images/Rocket/Content/Research/HomeIterations.gif" 
+                                    alt="Homepage Iterations" 
+                                    width={1200} 
+                                    height={800} 
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        }
+                    />
+
+                    {/* Landing Page */}
+                    <ProjectContent
+                        leftChild={
+                            <div className="h-full flex flex-col gap-10 justify-between">
+                                <section className="flex flex-col gap-2">
+                                    <div className="border-l px-4">Landing Page Iterations ( Fabrication Shop )</div>
+                                </section>
+                            </div>}
+                        rightChild={
+                            <div className="">
+                                <Image 
+                                    src="/images/Rocket/Content/Research/LandingIterations.gif" 
+                                    alt="Landing Page Iterations" 
+                                    width={1200} 
+                                    height={800} 
+                                    className="w-full h-auto"
+                                />
                             </div>
                         }
                     />
