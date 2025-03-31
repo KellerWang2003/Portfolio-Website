@@ -32,6 +32,7 @@ export default function Cursor({ backgroundColor }) {
         x: 0,
         y: 0
     });
+    const [isMouseDown, setIsMouseDown] = useState(false);
     const [hasMouseDevice, setHasMouseDevice] = useState(false);
     const { cursorVariant, cursorText } = useCursor();
     const rafId = useRef(null);
@@ -60,6 +61,14 @@ export default function Cursor({ backgroundColor }) {
         updateMousePosition();
     }, [updateMousePosition]);
 
+    const handleMouseDown = useCallback(() => {
+        setIsMouseDown(true);
+    }, []);
+
+    const handleMouseUp = useCallback(() => {
+        setIsMouseDown(false);
+    }, []);
+
     useEffect(() => {
         const mediaQuery = window.matchMedia('(hover: hover)');
         setHasMouseDevice(mediaQuery.matches);
@@ -72,8 +81,12 @@ export default function Cursor({ backgroundColor }) {
 
         if (mediaQuery.matches) {
             window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('mousedown', handleMouseDown);
+            window.addEventListener('mouseup', handleMouseUp);
             return () => {
                 window.removeEventListener('mousemove', handleMouseMove);
+                window.removeEventListener('mousedown', handleMouseDown);
+                window.removeEventListener('mouseup', handleMouseUp);
                 mediaQuery.removeEventListener('change', updateHasMouseDevice);
                 if (rafId.current) {
                     cancelAnimationFrame(rafId.current);
@@ -87,31 +100,39 @@ export default function Cursor({ backgroundColor }) {
                 cancelAnimationFrame(rafId.current);
             }
         };
-    }, [handleMouseMove]);
+    }, [handleMouseMove, handleMouseDown, handleMouseUp]);
 
     if (!hasMouseDevice) return null;
+    
+    // Get the current variant dimensions
+    const currentVariant = cursorVariants[cursorVariant];
+    const clickMultiplier = isMouseDown ? 0.7 : 1;
     
     return (
         <motion.div
             className="fixed rounded-full z-50 pointer-events-none
                 flex items-center justify-center"
-            variants={cursorVariants}
-            animate={cursorVariant}
+            animate={{
+                width: currentVariant.width * clickMultiplier,
+                height: currentVariant.height * clickMultiplier,
+                x: currentVariant.x * clickMultiplier,
+                y: currentVariant.y * clickMultiplier,
+            }}
             initial={false}
             transition={{
                 type: "spring",
                 damping: 30,
                 stiffness: 200,
-                mass: 0.5 // Added for smoother movement
+                mass: 0.5
             }}
             style={{
                 left: mousePosition.x,
                 top: mousePosition.y,
                 border: '1px solid rgba(0,0,0)',
-                backgroundColor: 'rgba(128, 128, 128, 0.1)', // Neutral gray with transparency
-                backdropFilter: 'invert(1)', // Full inversion for contrast with background
-                filter: 'contrast(1)', // Slightly reduce contrast to prevent harshness
-                willChange: 'transform' // Optimize for animations
+                backgroundColor: 'rgba(128, 128, 128, 0.1)',
+                backdropFilter: 'invert(1)',
+                filter: 'contrast(1)',
+                willChange: 'transform'
             }}
         >
             {(cursorVariant === "hover" || cursorVariant === "hoverSmall") && (

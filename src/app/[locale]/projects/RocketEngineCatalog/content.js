@@ -41,8 +41,8 @@ const VIDEO_SOURCES = {
     },
 
     details: {
-        src: "/images/Rocket/Content/VideoDetails.MOV",
-        type: "video/mov"
+        src: "/images/Rocket/Content/VideoDetails.mp4",
+        type: "video/mp4"
     }
 };
 
@@ -105,7 +105,6 @@ export default function Content() {
         </>
     )
 }
-
 
 const Design = () => {
     const t = useTranslations('RocketEngineCatalog');
