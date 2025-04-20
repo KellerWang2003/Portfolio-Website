@@ -64,7 +64,7 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                     <Image src={cover} alt={title} width={960} height={540} className="rounded object-cover aspect-video" />
                 </section>
                 <section className="max-w-[90%]">{description}</section>
-                <section className="flex flex-col gap-3">
+                <section className="flex flex-col gap-3 border-b border-black pb-3">
                     <Tags tags={tags} />
                     <div className="flex justify-between items-end gap-8">
                         <AnimatedTextReveal
@@ -80,7 +80,6 @@ export default function ProjectCover({ number, cover, year, title, tags, descrip
                             </svg>
                         </div>
                     </div>
-                    <div className="w-full h-px bg-black"></div>
                 </section>
 
             </div>

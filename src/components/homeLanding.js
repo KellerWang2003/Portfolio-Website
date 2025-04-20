@@ -136,7 +136,7 @@ function Introduction() {
             </FadeInAnimation>
             <FadeInAnimation delay={0.25}>
                 <div className='flex flex-col gap-4 text-sm md:text-base'>
-                    <section className='flex flex-col gap-1 text-[#404040]'>
+                    <section className='flex flex-col text-[#404040]'>
                         <p>{t('description.line1')}</p>
                         <p>{t('description.line2')}</p>
                     </section>

@@ -24,7 +24,7 @@ function Title({ children, onInView, margin = "-50%" }) {
 
 function Card({ children }) {
     return (
-        <div className="absolute w-full rounded-md md:rounded-2xl overflow-hidden border border-gray-300">
+        <div className="absolute w-full rounded-md md:rounded-2xl overflow-hidden border border-[#BFBFBF]">
             {children}
         </div>
     )

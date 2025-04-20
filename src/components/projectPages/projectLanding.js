@@ -20,7 +20,7 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                             alt={title}
                             width={1920}
                             height={1300}
-                            className="w-full h-full object-cover rounded -mt-6"
+                            className="w-full h-full object-cover rounded -mt-6 border border-[#BFBFBF] border-opacity-50"
                         />
                 )}
             </section>
@@ -68,7 +68,7 @@ export default function ProjectLanding({ textColor = "#000", title, tags, descri
                             alt={title}
                             width={1920}
                             height={1300}
-                            className="w-full h-full object-cover rounded"
+                            className="w-full h-full object-cover rounded border border-[#BFBFBF] border-opacity-50"
                         />
                     )}
                 </div>

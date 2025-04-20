@@ -9,7 +9,7 @@ export default function ProjectsList({ projects, sandboxLinkText }) {
 
   return (
     <>
-      <div className="flex flex-col gap-24 md:gap-64 py-16">
+      <div className="flex flex-col gap-24 md:gap-36 py-16">
         {projects.map((project, index) => (
           <ProjectCover
             key={index}
@@ -27,7 +27,7 @@ export default function ProjectsList({ projects, sandboxLinkText }) {
       <Link
         href="/sandbox"
         data-cursor="true"
-        className="group w-fit flex gap-4 items-end mt-60 mb-8 text-4xl lg:text-5xl text-black font-oxanium"
+        className="group w-fit flex gap-4 items-end mt-48 mb-8 text-4xl lg:text-5xl text-black font-oxanium"
       >
         <h2 className="w-fit">{sandboxLinkText}</h2>
         <div className="w-4 h-4 lg:w-6 lg:h-6 rotate-45 lg:rotate-0

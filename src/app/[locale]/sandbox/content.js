@@ -11,7 +11,7 @@ export default function Content() {
     return (
         <>
             <h1 className="text-base font-oxanium text-[#7E7E7E] pt-20 pb-[50dvh]">{t('header')}</h1>
-            <main className="w-full flex flex-col gap-36 pb-36 font-oxanium text-black">
+            <main className="w-full flex flex-col gap-36 pb-16 font-oxanium text-black">
                 <ProjectSection title={t('sections.graphicDesign.title')} isFirst={true}>
                     <ProjectCard title={t('sections.graphicDesign.posters.title')}>
                         <div className="w-full flex gap-2 md:gap-4">
@@ -208,9 +208,8 @@ function ProjectSection({ title, children, isFirst = false }) {
     return (
         <FadeInAnimation isFirst={isFirst} delay={0}>
             <div className="w-full flex flex-col items-end gap-12">
-                <div className="w-full flex flex-col gap-2">
+                <div className="w-full flex flex-col border-b border-black pb-3">
                     <h2 className="text-3xl">{title}</h2>
-                    <div className="w-full h-px bg-black"></div>
                 </div>
                 <div className="flex flex-col gap-12 w-full md:w-4/5">
                     {children}
