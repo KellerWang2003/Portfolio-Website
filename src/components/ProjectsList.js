@@ -9,7 +9,7 @@ export default function ProjectsList({ projects, sandboxLinkText }) {
 
   return (
     <>
-      <div className="flex flex-col gap-24 md:gap-36 py-16">
+      <div className="flex flex-col gap-20 md:gap-36 py-10 md:py-16">
         {projects.map((project, index) => (
           <ProjectCover
             key={index}

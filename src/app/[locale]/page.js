@@ -5,13 +5,13 @@ import Footer from "@/components/footer";
 import ProjectsList from "@/components/ProjectsList";
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
 
-import {useTranslations} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function Index({params}) {
+export default function Index({ params }) {
   // Unwrap params using React.use()
   const { locale } = React.use(params);
-  
+
   //enable static rendering
   setRequestLocale(locale);
   const t = useTranslations('Index');
@@ -48,11 +48,18 @@ export default function Index({params}) {
       <main className="flex flex-col">
         <HomeLanding />
         <FadeInAnimation delay={1.25} isFirst={true} className="z-10">
-          <h2 className="text-sm md:text-base font-oxanium text-[#404040] -mt-6">
-            {t('selectedWorks')}
-          </h2>
+          <div className='w-full flex gap-3 items-center -mt-6'>
+            <div className="-mt-[2px] w-[10px] aspect-square rotate-[135deg]">
+              <svg width="100%" height="100%" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9039 11.7764L12 0.1875C9.09727 0.215672 3.3138 0.255443 0.410993 0.283615L0.387154 1.73443C2.99805 1.70878 6.46412 1.68749 9.51328 1.65983L0 11.1729L1.01457 12.1875L10.5278 2.67435L10.4453 11.7925L11.9039 11.7764Z" fill="#404040" />
+              </svg>
+            </div>
+            <h2 className="text-sm md:text-base font-oxanium text-[#404040]">
+              {t('selectedWorks')}
+            </h2>
+          </div>
         </FadeInAnimation>
-        <ProjectsList 
+        <ProjectsList
           projects={projects}
           sandboxLinkText={t('sandboxLink')}
         />

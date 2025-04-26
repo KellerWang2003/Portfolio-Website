@@ -102,10 +102,6 @@ export default async function LocaleLayout({children, params}) {
 
   return (
     <html lang={locale}>
-      <head>
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="color-scheme" content="only light" />
-      </head>
       <body className={`${oxanium.variable} ${ibmPlexMono.variable} ${greycliff.variable} overscroll-none`}>
         <NextIntlClientProvider messages={messages}>
           <LayoutWrapper>
