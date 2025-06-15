@@ -1,5 +1,6 @@
 import './globals.css'
 import { Oxanium, IBM_Plex_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import LayoutWrapper from "@/components/layoutWrapper";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
@@ -30,11 +31,29 @@ const ibmPlexMono = IBM_Plex_Mono({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
-// Add Greycliff font configuration
-const greycliff = {
+const greycliff = localFont({
+  src: [
+    {
+      path: '../../fonts/GreycliffCF-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/GreycliffCF-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../fonts/GreycliffCF-DemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    }
+  ],
   variable: '--font-greycliff',
-  adjustFontFallback: false,
-};
+  display: 'swap',
+  preload: true,
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
+});
 
 export async function generateMetadata({params}) {
   const { locale } = await params;
