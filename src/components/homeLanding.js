@@ -159,7 +159,7 @@ export default function HomeLanding() {
         <>
             <div className="w-full relative 
                 flex flex-col md:flex-row md:justify-between 
-                md:pt-32 overflow-y-clip
+                md:pt-[10vh] lg:pt-[15vh] overflow-y-clip
             ">
                 <Introduction />
                 <FadeInAnimation delay={0.5}>

@@ -128,7 +128,6 @@ export default function Cursor({ backgroundColor }) {
             style={{
                 left: mousePosition.x,
                 top: mousePosition.y,
-                border: '1px solid rgba(0,0,0)',
                 backgroundColor: 'rgba(128, 128, 128, 0.1)',
                 backdropFilter: 'invert(1)',
                 filter: 'contrast(1)',

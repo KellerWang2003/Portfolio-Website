@@ -15,12 +15,19 @@ export function generateStaticParams() {
 
 const oxanium = Oxanium({ 
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  preload: true,
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-ibm-plex-mono',
+  display: 'swap',
+  preload: true,
+  fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
 // Add Greycliff font configuration
