@@ -21,7 +21,7 @@ export default function LayoutWrapper({ children }) {
     return (
         <CursorProvider>
             <MenuProvider>
-                <main className={`h-[100vh] w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
+                <main className={`h-dvh w-full p-[6px] md:p-2 flex flex-col`} style={{ backgroundColor: getBgColor() }}>
                     <Navigation />
                     <Cursor backgroundColor={getBgColor()} />
                         {children}
