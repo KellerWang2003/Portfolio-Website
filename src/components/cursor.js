@@ -46,8 +46,17 @@ export default function Cursor({ backgroundColor }) {
         }
 
         rafId.current = requestAnimationFrame(() => {
-            setMousePosition(lastMousePosition.current);
-            rafId.current = null;
+            setMousePosition(prev => ({
+                x: prev.x + (lastMousePosition.current.x - prev.x) * 0.8,
+                y: prev.y + (lastMousePosition.current.y - prev.y) * 0.8
+            }));
+            // Continue the animation loop for smooth trailing
+            if (Math.abs(lastMousePosition.current.x - mousePosition.x) > 0.01 || 
+                Math.abs(lastMousePosition.current.y - mousePosition.y) > 0.01) {
+                updateMousePosition();
+            } else {
+                rafId.current = null;
+            }
         });
     }, []);
 
@@ -123,7 +132,7 @@ export default function Cursor({ backgroundColor }) {
                 type: "spring",
                 damping: 30,
                 stiffness: 200,
-                mass: 0.5
+                mass: 0.5,
             }}
             style={{
                 left: mousePosition.x,
