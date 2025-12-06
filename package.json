@@ -16,8 +16,8 @@
     "hamburger-react": "^2.5.2",
     "next": "^15.2.2",
     "next-intl": "^3.26.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-use-measure": "^2.1.1"
   },
   "devDependencies": {
