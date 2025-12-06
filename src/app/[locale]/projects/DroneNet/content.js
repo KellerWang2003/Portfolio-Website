@@ -29,7 +29,7 @@ export default function Content() {
     return (
         <>
             <ProgressBar
-                bgColor="#EDEAE3"
+                bgColor="#F3F2EE"
                 content={progressBarContent}
                 currentStep={currentSection}
             />
@@ -47,7 +47,7 @@ export default function Content() {
 
 const Design = () => {
     const t = useTranslations('DroneNet');
-    
+
     return (
         <main className="flex flex-col gap-36 md:px-16 text-sm md:text-base mt-16">
             {/* Home page */}
@@ -242,7 +242,7 @@ const Design = () => {
 
 const Research = () => {
     const t = useTranslations('DroneNet');
-    
+
     return (
         <div className="flex flex-col gap-48 h-[20vh]">
             <Title title={t('research.comingSoon')} />

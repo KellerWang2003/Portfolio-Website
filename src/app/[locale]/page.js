@@ -44,7 +44,7 @@ export default function Index({ params }) {
   ];
 
   return (
-    <ContentWrapper bgColor="#F7F4EC">
+    <ContentWrapper>
       <main className="flex flex-col">
         <HomeLanding />
         <FadeInAnimation delay={1.25} isFirst={true} className="z-10">

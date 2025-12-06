@@ -11,6 +11,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         homeBG: "#9EA4AE",
+        backgroundMain: "var(--background-main)",
+        backgroundSecondary: "var(--background-secondary)",
       },
       fontFamily: {
         oxanium: ['Oxanium', 'Helvetica', 'sans-serif'],

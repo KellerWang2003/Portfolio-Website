@@ -42,10 +42,10 @@ export default function ScrollingImages({ content }) {
     return (
         <>
             {/* Desktop */}
-            <div className="hidden lg:flex w-full items-start font-oxanium text-black bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6">
+            <div className="hidden lg:flex w-full items-start font-oxanium text-black bg-backgroundSecondary rounded-lg border border-[#BFBFBF] p-6">
                 <section className="w-2/5 flex flex-col gap-8 py-[50vh]">
                     {content.map((item, index) => (
-                        <Title 
+                        <Title
                             key={item.key}
                             onInView={(inView) => onTitleInView(index, inView)}
                             margin="-50% 0px -50% 0px"
@@ -62,9 +62,8 @@ export default function ScrollingImages({ content }) {
                                 alt={item.title}
                                 width={2880}
                                 height={2050}
-                                className={`transition-opacity duration-300 ${
-                                    index <= activeIndex ? 'opacity-100' : 'opacity-0'
-                                }`}
+                                className={`transition-opacity duration-300 ${index <= activeIndex ? 'opacity-100' : 'opacity-0'
+                                    }`}
                             />
                         </Card>
                     ))}
@@ -81,16 +80,15 @@ export default function ScrollingImages({ content }) {
                                 alt={item.title}
                                 width={2880}
                                 height={2050}
-                                className={`transition-opacity duration-300 ${
-                                    index <= activeIndex ? 'opacity-100' : 'opacity-0'
-                                }`}
+                                className={`transition-opacity duration-300 ${index <= activeIndex ? 'opacity-100' : 'opacity-0'
+                                    }`}
                             />
                         </Card>
                     ))}
                 </section>
                 <section className="w-full h-full">
                     {content.map((item, index) => (
-                        <Title 
+                        <Title
                             key={item.key}
                             onInView={(inView) => onTitleInView(index, inView)}
                             margin="-75% 0px -25% 0px"

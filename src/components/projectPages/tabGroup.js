@@ -47,10 +47,10 @@ function DesktopTabs({ content }) {
     };
 
     return (
-        <div className="w-full flex flex-col gap-4 bg-[#F2EFE7] p-3 lg:p-4 rounded-md md:rounded-xl">
+        <div className="w-full flex flex-col gap-4 bg-backgroundSecondary p-3 lg:p-4 rounded-md md:rounded-xl">
             <section className="w-full flex border-b border-[#BFBFBF] relative">
                 <div
-                    className="absolute transition-all duration-300 ease-in-out border border-b-0 border-[#BFBFBF] bg-[#f7f4ec] rounded-t"
+                    className="absolute transition-all duration-300 ease-in-out border border-b-0 border-[#BFBFBF] bg-backgroundMain rounded-t"
                     style={bgStyle}
                 />
                 {content.map((item, index) => (
@@ -72,29 +72,29 @@ function DesktopTabs({ content }) {
                             <div className="w-full h-full flex flex-col gap-4 justify-between">
                                 <h2 className="font-bold">{activeItem.title}</h2>
                                 <div className="flex flex-col gap-4">
-                                {activeItem.description}
-                                <div className="flex items-center gap-4 w-full">
-                                    <button
-                                        onClick={handlePrevious}
-                                        disabled={activeIndex === 0}
-                                        className={`w-full px-4 py-2 rounded-md border border-[#BFBFBF] cursor-none ${activeIndex === 0
-                                            ? 'opacity-50'
-                                            : 'hover:bg-[#e9e6de] transition-colors'
-                                            }`}
-                                    >
-                                        Previous
-                                    </button>
-                                    <button
-                                        onClick={handleNext}
-                                        disabled={activeIndex === content.length - 1}
-                                        className={`w-full px-5 py-2 rounded-md bg-[#383838] text-white cursor-none ${activeIndex === content.length - 1
-                                            ? 'opacity-50 '
-                                            : 'hover:bg-[#1b1b1b] transition-colors'
-                                            }`}
-                                    >
-                                        Next
-                                    </button>
-                                </div>
+                                    {activeItem.description}
+                                    <div className="flex items-center gap-4 w-full">
+                                        <button
+                                            onClick={handlePrevious}
+                                            disabled={activeIndex === 0}
+                                            className={`w-full px-4 py-2 rounded-md border border-[#BFBFBF] cursor-none ${activeIndex === 0
+                                                ? 'opacity-50'
+                                                : 'hover:bg-[#e9e6de] transition-colors'
+                                                }`}
+                                        >
+                                            Previous
+                                        </button>
+                                        <button
+                                            onClick={handleNext}
+                                            disabled={activeIndex === content.length - 1}
+                                            className={`w-full px-5 py-2 rounded-md bg-[#383838] text-white cursor-none ${activeIndex === content.length - 1
+                                                ? 'opacity-50 '
+                                                : 'hover:bg-[#1b1b1b] transition-colors'
+                                                }`}
+                                        >
+                                            Next
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </>
@@ -124,7 +124,7 @@ function MobileTabs({ content }) {
     useEffect(() => {
         // Initialize refs array
         tabRefs.current = tabRefs.current.slice(0, content.length);
-        
+
         // Create an observer to track which tab has the most visibility
         const options = {
             root: null, // Use the viewport
@@ -135,11 +135,11 @@ function MobileTabs({ content }) {
         const observer = new IntersectionObserver((entries) => {
             // Don't update during manual scrolling
             if (isManualScrollRef.current) return;
-            
+
             // Debounce updates (only update every 100ms)
             const now = Date.now();
             if (now - lastUpdateTimeRef.current < 100) return;
-            
+
             // Find the entry with the highest intersection ratio
             let maxRatio = 0.5; // Minimum threshold to consider a change
             let maxIndex = activeIndex;
@@ -175,14 +175,14 @@ function MobileTabs({ content }) {
         if (activeIndex > 0) {
             isManualScrollRef.current = true;
             setActiveIndex(activeIndex - 1);
-            
+
             // Scroll to the previous tab
             tabRefs.current[activeIndex - 1]?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'nearest',
                 inline: 'center'
             });
-            
+
             // Reset manual scroll flag after animation completes
             setTimeout(() => {
                 isManualScrollRef.current = false;
@@ -194,14 +194,14 @@ function MobileTabs({ content }) {
         if (activeIndex < content.length - 1) {
             isManualScrollRef.current = true;
             setActiveIndex(activeIndex + 1);
-            
+
             // Scroll to the next tab
             tabRefs.current[activeIndex + 1]?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'nearest',
                 inline: 'center'
             });
-            
+
             // Reset manual scroll flag after animation completes
             setTimeout(() => {
                 isManualScrollRef.current = false;
@@ -212,13 +212,13 @@ function MobileTabs({ content }) {
     const handleDotClick = (index) => {
         isManualScrollRef.current = true;
         setActiveIndex(index);
-        
+
         tabRefs.current[index]?.scrollIntoView({
             behavior: 'smooth',
             block: 'nearest',
             inline: 'center'
         });
-        
+
         // Reset manual scroll flag after animation completes
         setTimeout(() => {
             isManualScrollRef.current = false;
@@ -226,17 +226,17 @@ function MobileTabs({ content }) {
     };
 
     return (
-        <div className="w-full max-h-[85vh] flex flex-col bg-[#F2EFE7] border border-[#BFBFBF] border-opacity-50 rounded-2xl">
-            <div 
+        <div className="w-full max-h-[85vh] flex flex-col bg-backgroundSecondary border border-[#BFBFBF] border-opacity-50 rounded-2xl">
+            <div
                 ref={containerRef}
-                className="w-full h-full flex p-2 md:p-4 gap-2 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide" 
+                className="w-full h-full flex p-2 md:p-4 gap-2 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
             >
                 {content.map((item, index) => (
                     <section
                         key={item.key}
                         ref={el => tabRefs.current[index] = el}
                         data-index={index}
-                        className="min-w-[100%] md:min-w-[70%] flex-1 p-2 md:p-3 flex flex-col gap-2 border border-[#BFBFBF] bg-[#F7F4EC] rounded-lg md:rounded-md snap-center scroll-mt-5 md:scroll-mt-16"
+                        className="min-w-[100%] md:min-w-[70%] flex-1 p-2 md:p-3 flex flex-col gap-2 border border-[#BFBFBF] bg-backgroundMain rounded-lg md:rounded-md snap-center scroll-mt-5 md:scroll-mt-16"
                     >
                         <Image
                             src={item.image}
@@ -257,36 +257,33 @@ function MobileTabs({ content }) {
             {/* dots */}
             <div className="w-full flex justify-center gap-2 py-1 mb-1 md:mb-0">
                 {content.map((_, index) => (
-                    <div 
+                    <div
                         key={index}
-                        className={`w-2 h-2 rounded-full ${
-                            activeIndex === index 
-                            ? 'bg-[#383838]' 
+                        className={`w-2 h-2 rounded-full ${activeIndex === index
+                            ? 'bg-[#383838]'
                             : 'bg-[#BFBFBF]'
-                        }`}
+                            }`}
                         onClick={() => handleDotClick(index)}
                     />
                 ))}
             </div>
             {/* buttons */}
             <div className="w-full h-full p-2 md:p-4 pt-0 flex gap-2 md:gap-4 items-center justify-center">
-                <button 
-                    className={`w-full px-4 py-2 rounded-lg md:rounded-md border border-[#BFBFBF] ${
-                        activeIndex === 0 
-                        ? 'opacity-50 cursor-not-allowed' 
+                <button
+                    className={`w-full px-4 py-2 rounded-lg md:rounded-md border border-[#BFBFBF] ${activeIndex === 0
+                        ? 'opacity-50 cursor-not-allowed'
                         : 'hover:bg-[#e9e6de] cursor-none'
-                    }`}
+                        }`}
                     onClick={handlePrevious}
                     disabled={activeIndex === 0}
                 >
                     Previous
                 </button>
-                <button 
-                    className={`w-full px-4 py-2 rounded-lg md:rounded-md bg-[#383838] text-white ${
-                        activeIndex === content.length - 1 
-                        ? 'opacity-50 cursor-not-allowed' 
+                <button
+                    className={`w-full px-4 py-2 rounded-lg md:rounded-md bg-[#383838] text-white ${activeIndex === content.length - 1
+                        ? 'opacity-50 cursor-not-allowed'
                         : 'hover:bg-[#1b1b1b] cursor-none'
-                    }`}
+                        }`}
                     onClick={handleNext}
                     disabled={activeIndex === content.length - 1}
                 >

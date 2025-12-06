@@ -18,7 +18,7 @@ function SubTitle({ title }) {
 
 function Box({ children, className }) {
     return (
-        <div className={`w-full bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg p-6 ${className}`}>
+        <div className={`w-full bg-backgroundSecondary border border-[#BFBFBF] rounded-lg p-6 ${className}`}>
             {children}
         </div>
     )
@@ -66,7 +66,7 @@ export default function Content() {
     return (
         <>
             <ProgressBar
-                bgColor="#EDEAE3"
+                bgColor="#F3F2EE"
                 content={progressBarContent}
                 currentStep={currentSection}
                 onSectionClick={(sectionKey) => {
@@ -101,7 +101,7 @@ const Context = ({ content }) => {
                         <SubTitle title={t('context.problem.title')} />
                     }
                     rightChild={
-                        <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
+                        <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-backgroundSecondary rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
                             <span>{t('context.problem.description.part1')}</span>
                             <span className="text-[#2590DC]"> {t('context.problem.description.highlight')} </span>
                             <span>{t('context.problem.description.part2')}</span>
@@ -114,7 +114,7 @@ const Context = ({ content }) => {
                         <SubTitle title={t('context.solution.title')} />
                     }
                     rightChild={
-                        <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-[#F2EFE7] rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
+                        <h1 className="w-full text-sm md:text-lg font-oxanium leading-normal bg-backgroundSecondary rounded-lg border border-[#BFBFBF] p-6 -mt-4 lg:mt-0">
                             <span>{t('context.solution.description.part1')}</span>
                             <span className="text-[#2590DC]"> {t('context.solution.description.highlight')} </span>
                             <span>{t('context.solution.description.part2')}</span>
@@ -126,7 +126,7 @@ const Context = ({ content }) => {
                     <SubTitle title={t('context.featureOverview.title')} />
                     <ScrollingImages content={content} />
                 </div>
-                
+
             </div>
         </section>
     )
@@ -138,7 +138,7 @@ const Research = () => {
     const Pill = ({ content, className }) => {
         return (
             <div
-                className={`absolute w-fit h-fit text-center text-sm px-2 py-1 bg-[#F7F4EC] border border-[#BFBFBF] rounded ${className}`}
+                className={`absolute w-fit h-fit text-center text-sm px-2 py-1 bg-backgroundMain border border-[#BFBFBF] rounded ${className}`}
             >
                 {content}
             </div>
@@ -202,10 +202,10 @@ const Research = () => {
                             })}
                         </p>
                         <div className="flex flex-col lg:flex-row gap-4 pt-4 border-t border-[#BFBFBF]">
-                            <div className="w-full h-full p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">
+                            <div className="w-full h-full p-6 bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">
                                 "{t('research.primaryResearch.insight1.quote1')}"
                             </div>
-                            <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">
+                            <div className="w-full grow-1 p-6 bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">
                                 "{t('research.primaryResearch.insight1.quote2')}"
                             </div>
                         </div>
@@ -227,13 +227,13 @@ const Research = () => {
                             })}
                         </p>
                         <div className="flex flex-col lg:flex-row gap-4 pt-4 border-t border-[#BFBFBF]">
-                            <div className="w-full h-full p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">
+                            <div className="w-full h-full p-6 bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">
                                 "{t('research.primaryResearch.insight2.quote1')}"
                             </div>
-                            <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">
+                            <div className="w-full grow-1 p-6 bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">
                                 "{t('research.primaryResearch.insight2.quote2')}"
                             </div>
-                            <div className="w-full grow-1 p-6 bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">
+                            <div className="w-full grow-1 p-6 bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">
                                 "{t('research.primaryResearch.insight2.quote3')}"
                             </div>
                         </div>
@@ -361,16 +361,16 @@ const Research = () => {
                 <SubTitle title={t('research.designThinking.title')} />
                 <div className="flex flex-col lg:flex-row gap-4">
                     <Box className="grow-1 flex flex-col gap-4 justify-between">
-                            <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.accessibilityScore.hmwPrefix')}</strong> {t('research.designThinking.accessibilityScore.hmw')}</p>
-                            <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
-                                {t('research.designThinking.accessibilityScore.solution')}
-                            </p>
+                        <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.accessibilityScore.hmwPrefix')}</strong> {t('research.designThinking.accessibilityScore.hmw')}</p>
+                        <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
+                            {t('research.designThinking.accessibilityScore.solution')}
+                        </p>
                     </Box>
                     <Box className="grow-1 flex flex-col gap-4 justify-between">
-                            <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.feedbackLoop.hmwPrefix')}</strong> {t('research.designThinking.feedbackLoop.hmw')}</p>
-                            <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
-                                {t('research.designThinking.feedbackLoop.solution')}
-                            </p>
+                        <p className="md:px-12 py-2 md:py-6"><strong>{t('research.designThinking.feedbackLoop.hmwPrefix')}</strong> {t('research.designThinking.feedbackLoop.hmw')}</p>
+                        <p className="w-full p-6 font-oxanium text-center bg-[#383838] text-white rounded-lg">
+                            {t('research.designThinking.feedbackLoop.solution')}
+                        </p>
                     </Box>
                 </div>
             </section>
@@ -482,7 +482,7 @@ const Research = () => {
 
 const FinalDesign = ({ content }) => {
     const t = useTranslations('Elevate');
-    
+
     const accessibilityScore = [
         {
             key: 1,
@@ -634,24 +634,24 @@ const FinalDesign = ({ content }) => {
                         rightChild={
                             <div className="w-full h-[250px] md:h-[330px] lg:h-[400px] flex text-xs md:text-base">
                                 <section className="relative w-1/4 h-full flex flex-col gap-4 md:gap-8">
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tickets')}</div>
+                                    <div className="py-3 md:py-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tickets')}</div>
                                     <Arrow />
                                     <Arrow orientation="horizontal" className={"w-[58%] sm:w-[80%] absolute top-1/2 -translate-y-1/2 left-1/2 rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.surveyResult')}</div>
+                                    <div className="py-3 md:py-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.surveyResult')}</div>
                                 </section>
 
                                 <section className="relative w-1/2 h-full flex flex-col justify-between items-center py-5 px-4 md:px-8">
                                     <Arrow orientation="horizontal" className={"rotate-180"} />
-                                    <div className="absolute top-1/2 -translate-y-1/2 p-3 md:p-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg whitespace-nowrap">{t('theSolution.feedbackLoop.loop.flowItems.accessibilityScore')}</div>
+                                    <div className="absolute top-1/2 -translate-y-1/2 p-3 md:p-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg whitespace-nowrap">{t('theSolution.feedbackLoop.loop.flowItems.accessibilityScore')}</div>
                                     <Arrow orientation="horizontal" />
                                 </section>
 
                                 <section className="w-1/4 h-full flex flex-col justify-between gap-4 md:gap-8">
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tasks')}</div>
+                                    <div className="py-3 md:py-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.tasks')}</div>
                                     <Arrow className={"rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.sprints')}</div>
+                                    <div className="py-3 md:py-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.sprints')}</div>
                                     <Arrow className={"rotate-180"} />
-                                    <div className="py-3 md:py-4 text-center bg-[#F2EFE7] border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.improvement')}</div>
+                                    <div className="py-3 md:py-4 text-center bg-backgroundSecondary border border-[#BFBFBF] rounded-lg">{t('theSolution.feedbackLoop.loop.flowItems.improvement')}</div>
                                 </section>
                             </div>
                         }

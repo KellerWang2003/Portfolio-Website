@@ -5,6 +5,8 @@
 :root {
   --foreground: #000000;
   --background: #9EA4AE;
+  --background-main: #FBFAF6;
+  --background-secondary: #F3F2EE;
 }
 
 
@@ -18,16 +20,16 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scrollbar-show {
     -ms-overflow-style: auto;
     scrollbar-width: auto;
   }
-  
+
   .scrollbar-show::-webkit-scrollbar {
     display: block;
   }
@@ -60,5 +62,3 @@ body {
 }
 
 /* Remove the previous rounded-xl rule as it's not helping */
-
-
