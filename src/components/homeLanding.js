@@ -140,7 +140,7 @@ function Introduction() {
                         <p>{t('description.line1')}</p>
                         <p>{t('description.line2')}</p>
                     </section>
-                    <section className='flex gap-8'>
+                    <section className='flex gap-8 text-black/60'>
                         <AnimatedLink href='https://www.linkedin.com/in/keller-wang-996474227' color='black'>
                             {t('links.linkedin')}
                         </AnimatedLink>
