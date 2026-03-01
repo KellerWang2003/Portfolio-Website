@@ -8,9 +8,9 @@
     "ogImageAlt": "Keller Wang Portfolio Preview"
   },
   "Navigation": {
-    "index": "Index",
+    "index": "Home",
     "sandbox": "Sandbox",
-    "info": "Info",
+    "about-me": "About Me",
     "resume": "Resume"
   },
   "Index": {
@@ -77,7 +77,7 @@
       }
     }
   },
-  "Info": {
+  "AboutMe": {
     "comingSoon": "Coming soon!"
   },
   "Elevate": {

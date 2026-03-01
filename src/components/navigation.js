@@ -54,7 +54,7 @@ const DesktopNav = ({ colors }) => {
         </svg>
       </Link>
       <div className="flex items-center gap-10">
-        <NavButton href="/info" textColor={colors.textColor} translationKey="info" />
+        <NavButton href="/about-me" textColor={colors.textColor} translationKey="about-me" />
         <a href={resumePath} target="_blank" rel="noopener noreferrer"
           className="" data-cursor="hoverSmall">
           {t('resume')}
@@ -127,8 +127,8 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
           {t('sandbox')}
         </Link>
         <MobileDivider />
-        <Link href="/info" onClick={handleLinkClick} className='h-full flex items-center'>
-          {t('info')}
+        <Link href="/about-me" onClick={handleLinkClick} className='h-full flex items-center'>
+          {t('about-me')}
         </Link>
         <MobileDivider />
         <Link href={resumePath} target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>

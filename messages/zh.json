@@ -10,7 +10,7 @@
   "Navigation": {
     "index": "主页",
     "sandbox": "视觉实验",
-    "info": "关于我",
+    "about-me": "关于我",
     "resume": "简历"
   },
   "Index": {
@@ -77,7 +77,7 @@
       }
     }
   },
-  "Info": {
+  "AboutMe": {
     "comingSoon": "敬请期待！"
   },
   "Elevate": {

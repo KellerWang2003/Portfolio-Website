@@ -13,11 +13,11 @@ const slideVariants = {
 }
 
 const underlineVariants = {
-    initial: { 
+    initial: {
         scaleX: 0,
-        transformOrigin: "left" 
+        transformOrigin: "left"
     },
-    hover: { 
+    hover: {
         scaleX: 1,
         transformOrigin: "left"
     },
@@ -29,9 +29,9 @@ const underlineVariants = {
 
 export default function AnimatedLink({ href, children, color = "black" }) {
     return (
-        <motion.a 
-            href={href} 
-            target="_blank" 
+        <motion.a
+            href={href}
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex gap-2 items-center"
             initial="initial"
