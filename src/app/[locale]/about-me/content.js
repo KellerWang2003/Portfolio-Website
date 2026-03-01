@@ -13,8 +13,8 @@ export default function Content() {
                 <FadeInAnimation isFirst={true} delay={0}>
                     <div className="w-full flex flex-col gap-10 md:gap-12 items-end">
                         {/* About Keller */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 pb-0">
-                            <h2 className="w-full text-2xl md:text-3xl font-bold md:col-start-1 md:col-span-2">About Keller</h2>
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 items-start border-b border-black pb-5 md:pb-8">
+                            <h2 className="text-3xl md:col-start-1 md:col-span-2">About Keller</h2>
                             <div className="flex flex-col gap-1 text-sm md:text-base min-w-0 md:col-span-3 md:col-start-3">
                                 <p>
                                     Keller is an interaction designer specializing in simplifying complex systems into scalable, intuitive, and human-centered experiences.
@@ -23,9 +23,8 @@ export default function Content() {
                         </section>
 
                         {/* Experience */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-4 md:border-t-0 md:pt-0">
-                            <div className="hidden md:block md:col-start-1 md:col-span-5 border-t border-[#9E9E9E] pt-4" aria-hidden />
-                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-1 md:col-span-1">Experience</h3>
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2">
+                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-2 md:col-span-1">Experience</h3>
                             <div className="flex flex-col gap-6 md:gap-9 text-sm md:text-base min-w-0 md:col-span-3 md:col-start-3">
                                 <div className="flex flex-col gap-1 text-[#7E7E7E] min-w-0">
                                     <div className="flex flex-row flex-wrap items-baseline justify-between gap-1 text-xs md:text-sm">
@@ -46,9 +45,9 @@ export default function Content() {
                         </section>
 
                         {/* Education */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-4 md:border-t-0 md:pt-0">
-                            <div className="hidden md:block md:col-start-1 md:col-span-5 border-t border-[#9E9E9E] pt-4" aria-hidden />
-                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-1 md:col-span-1">Education</h3>
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-10 md:border-t-0 md:pt-0">
+                            <div className="hidden md:block md:col-start-2 md:col-span-4 border-t border-[#9E9E9E] pt-10" aria-hidden />
+                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-2 md:col-span-1">Education</h3>
                             <div className="flex flex-col gap-6 md:gap-9 text-sm md:text-base min-w-0 md:col-span-3 md:col-start-3">
                                 <div className="flex flex-col gap-1 text-[#7E7E7E] min-w-0">
                                     <div className="flex flex-row flex-wrap items-baseline justify-between gap-1 text-xs md:text-sm">
@@ -85,9 +84,9 @@ export default function Content() {
                         </section>
 
                         {/* Skills */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-4 md:border-t-0 md:pt-0">
-                            <div className="hidden md:block md:col-start-1 md:col-span-5 border-t border-[#9E9E9E] pt-4" aria-hidden />
-                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-1 md:col-span-1">Skills</h3>
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-10 md:border-t-0 md:pt-0">
+                            <div className="hidden md:block md:col-start-2 md:col-span-4 border-t border-[#9E9E9E] pt-10" aria-hidden />
+                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-2 md:col-span-1">Skills</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4 md:col-span-3 md:col-start-3">
                                 <div className="flex flex-col gap-2 min-w-0">
                                     <h4 className="font-bold text-black text-base">Expertise</h4>
@@ -113,9 +112,9 @@ export default function Content() {
                         </section>
 
                         {/* Contact */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-4 md:border-t-0 md:pt-0">
-                            <div className="hidden md:block md:col-start-1 md:col-span-5 border-t border-[#9E9E9E] pt-4" aria-hidden />
-                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-1 md:col-span-1">Contact</h3>
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-10 md:border-t-0 md:pt-0">
+                            <div className="hidden md:block md:col-start-2 md:col-span-4 border-t border-[#9E9E9E] pt-10" aria-hidden />
+                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-2 md:col-span-1">Contact</h3>
                             <div className="flex flex-col gap-2 items-start text-black md:col-span-3 md:col-start-3">
                                 <span className="min-h-[44px] md:min-h-0 flex items-center -ml-1 pl-1 pr-2 py-2 md:py-0 touch-manipulation">
                                     <AnimatedLink href="mailto:yuntianwang2003@gmail.com" color="#000000">
