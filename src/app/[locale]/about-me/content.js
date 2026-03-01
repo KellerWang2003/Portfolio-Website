@@ -1,14 +1,14 @@
 "use client"
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
- import AnimatedLink from "@/components/animation/animatedLink";
+import AnimatedLink from "@/components/animation/animatedLink";
 
- export default function Content() {
+export default function Content() {
 
-     return (
-         <>
-             <h1 className="text-base font-oxanium text-[#7E7E7E] pt-12 md:pt-20 pb-[30dvh] md:pb-[50dvh]">
-                 Glad you are here!
-             </h1>
+    return (
+        <>
+            <h1 className="text-base font-oxanium text-[#7E7E7E] pt-12 md:pt-20 pb-[30dvh] md:pb-[50dvh]">
+                Glad you are here!
+            </h1>
             <main className="w-full flex flex-col gap-16 md:gap-36 pb-12 md:pb-16 font-oxanium text-black overflow-x-hidden">
                 <FadeInAnimation isFirst={true} delay={0}>
                     <div className="w-full flex flex-col gap-10 md:gap-12 items-end">
@@ -34,7 +34,7 @@ import FadeInAnimation from "@/components/animation/fadeInAnimation";
                                         </p>
                                         <span className="shrink-0 text-right">May - August 2025 · 4 mos</span>
                                     </div>
-                                    <span className="min-w-0 text-sm">Shenzhen, Guangdong, China · On-site</span>
+                                    <span className="min-w-0 text-xs md:text-sm">Shenzhen, Guangdong, China · On-site</span>
                                     <p className="text-black min-w-0 pt-2">
                                         User Experience Designer - Internship
                                     </p>
@@ -57,7 +57,7 @@ import FadeInAnimation from "@/components/animation/fadeInAnimation";
                                         </p>
                                         <span className="shrink-0 text-right">September 2023 · Present</span>
                                     </div>
-                                    <span className="min-w-0 text-sm">Pasadena, CA</span>
+                                    <span className="min-w-0 text-xs md:text-sm">Pasadena, CA</span>
                                     <p className="text-black min-w-0 pt-2">
                                         Bachelor of Science in Interaction Design
                                     </p>
@@ -73,13 +73,41 @@ import FadeInAnimation from "@/components/animation/fadeInAnimation";
                                         </p>
                                         <span className="shrink-0 text-right">September - December 2024</span>
                                     </div>
-                                    <span className="min-w-0 text-sm">Pasadena, CA</span>
+                                    <span className="min-w-0 text-xs md:text-sm">Pasadena, CA</span>
                                     <p className="text-black min-w-0 pt-2">
                                         Exchange student in Computer Science
                                     </p>
                                     {/* <p className="text-black text-sm md:text-base text-[#7E7E7E] min-w-0 opacity-60">
                                         Description - Lorum
                                     </p> */}
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Skills */}
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 gap-y-2 md:gap-y-2 border-t border-[#9E9E9E] pt-4 md:border-t-0 md:pt-0">
+                            <div className="hidden md:block md:col-start-1 md:col-span-5 border-t border-[#9E9E9E] pt-4" aria-hidden />
+                            <h3 className="text-base font-normal text-[#7E7E7E] md:col-start-1 md:col-span-1">Skills</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4 md:col-span-3 md:col-start-3">
+                                <div className="flex flex-col gap-2 min-w-0">
+                                    <h4 className="font-bold text-black text-base">Expertise</h4>
+                                    <ul className="flex flex-col gap-1 text-sm md:text-base text-[#7E7E7E]">
+                                        <li>Product design</li>
+                                        <li>Interaction design</li>
+                                        <li>UI design</li>
+                                        <li>UX research</li>
+                                        <li>Rapid prototyping</li>
+                                    </ul>
+                                </div>
+                                <div className="flex flex-col gap-2 min-w-0">
+                                    <h4 className="font-bold text-black text-base">Software</h4>
+                                    <ul className="flex flex-col gap-1 text-sm md:text-base text-[#7E7E7E]">
+                                        <li>Figma</li>
+                                        <li>Adobe Design Suite</li>
+                                        <li>Keyshot</li>
+                                        <li>Solidworks</li>
+                                        <li>Cursor</li>
+                                    </ul>
                                 </div>
                             </div>
                         </section>
@@ -109,6 +137,6 @@ import FadeInAnimation from "@/components/animation/fadeInAnimation";
                     </div>
                 </FadeInAnimation>
             </main>
-         </>
-     )
- }
+        </>
+    )
+}
