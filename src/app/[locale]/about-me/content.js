@@ -1,19 +1,22 @@
 "use client"
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
 import AnimatedLink from "@/components/animation/animatedLink";
+import { useLocale } from 'next-intl';
 
 export default function Content() {
+    const locale = useLocale();
+    const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
 
     return (
         <>
             <h1 className="text-base font-oxanium text-[#7E7E7E] pt-12 md:pt-20 pb-[30dvh] md:pb-[50dvh]">
-                Glad you are here!
+                GLAD YOU ARE HERE!
             </h1>
             <main className="w-full flex flex-col gap-16 md:gap-36 pb-12 md:pb-16 font-oxanium text-black overflow-x-hidden">
                 <FadeInAnimation isFirst={true} delay={0}>
                     <div className="w-full flex flex-col gap-10 md:gap-12 items-end">
                         {/* About Keller */}
-                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 items-start border-b border-black pb-5 md:pb-8">
+                        <section className="w-full grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 items-start border-b border-[#9E9E9E] pb-5 md:pb-8">
                             <h2 className="text-3xl md:col-start-1 md:col-span-2">About Keller</h2>
                             <div className="flex flex-col gap-1 text-sm md:text-base min-w-0 md:col-span-3 md:col-start-3">
                                 <p>
@@ -127,7 +130,7 @@ export default function Content() {
                                     </AnimatedLink>
                                 </span>
                                 <span className="min-h-[44px] md:min-h-0 flex items-center -ml-1 pl-1 pr-2 py-2 md:py-0 touch-manipulation">
-                                    <AnimatedLink href="/resume.pdf" color="#000000">
+                                    <AnimatedLink href={resumePath} color="#000000">
                                         Resume
                                     </AnimatedLink>
                                 </span>

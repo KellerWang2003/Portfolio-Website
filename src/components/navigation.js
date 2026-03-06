@@ -131,9 +131,9 @@ const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
           {t('about-me')}
         </Link>
         <MobileDivider />
-        <Link href={resumePath} target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>
+        <a href={resumePath} target="_blank" rel="noopener noreferrer" className='h-full flex items-center'>
           {t('resume')}
-        </Link>
+        </a>
       </section>
     </nav>
   )
