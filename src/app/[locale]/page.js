@@ -4,6 +4,7 @@ import HomeLanding from "@/components/homeLanding";
 import Footer from "@/components/footer";
 import ProjectsList from "@/components/ProjectsList";
 import FadeInAnimation from "@/components/animation/fadeInAnimation";
+import NewSiteBadge from "@/components/newSiteBadge";
 
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
@@ -45,7 +46,8 @@ export default function Index({ params }) {
 
   return (
     <ContentWrapper>
-      <main className="flex flex-col">
+      <main className="flex flex-col relative">
+        <NewSiteBadge />
         <HomeLanding />
         <FadeInAnimation delay={1.25} isFirst={true} className="z-10">
           <div className='w-full flex gap-3 items-center -mt-6'>
