@@ -35,7 +35,7 @@ const NavButton = ({ href, children, textColor, onClick, translationKey }) => {
 const DesktopNav = ({ colors }) => {
   const t = useTranslations('Navigation');
   const locale = useLocale();
-  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
+  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang - Product Designer Resume.pdf';
 
   return (
     <nav className="flex w-full px-8 py-3 rounded-xl
@@ -68,7 +68,7 @@ const DesktopNav = ({ colors }) => {
 const MobileNav = ({ colors, isMenuOpen, setIsMenuOpen, handleLinkClick }) => {
   const t = useTranslations('Navigation');
   const locale = useLocale();
-  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
+  const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang - Product Designer Resume.pdf';
 
   const MobileDivider = () => {
     return (

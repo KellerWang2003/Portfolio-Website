@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl';
 
 export default function Content() {
     const locale = useLocale();
-    const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang-Resume-UIUX Designer.pdf';
+    const resumePath = locale === 'zh' ? '/Resume/王云天-简历-交互设计.pdf' : '/Resume/Keller Wang - Product Designer Resume.pdf';
 
     return (
         <>
